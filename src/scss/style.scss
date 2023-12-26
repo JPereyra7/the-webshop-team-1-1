@@ -1,97 +1,195 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import url('https://fonts.googleapis.com/css2?family=Cabin&family=Inter:wght@300&display=swap');
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+//Navigation Bar
+
+.navOnecontainer {
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #c2af7a;
 }
 
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #3178c6aa);
+  width: 180px;
 }
 
-.card {
-  padding: 2em;
+.wishlistIcon {
+  width: 30px;
 }
 
-.read-the-docs {
-  color: #888;
+.cartIcon {
+  width: 30px;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.hamburgerIcon {
+  width: 70px;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.navTwocontainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 20px;
+  border-bottom: 1px solid black;
+  background-color: #c2af7a;
+}
+
+.searchIcon {
+  width: 35px;
+  border-style: none;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.searchDiv {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid grey;
+  border-radius: 20px;
+  background-color: white;
+}
+
+.inputSearchbar { //The actual searchbar input
+  width: 300px;
+  padding: 10px;
+  border-style: none;
+  outline: none;
+  border-radius: 20px;
+}
+//-----------------
+//Main
+
+.heroContainer {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.heroImage {
+  width: 560px;
+  margin-top: 15px;
+  max-width: 100%;
+  // border: 1px solid black;
+  border-radius: 20%;
+}
+
+.heroHeader {
+  margin-top: 10px;
+  font-family: 'Cabin', sans-serif;
+  text-transform: uppercase;
+}
+
+.heroParagraph {
+  margin-top: 10px;
+  font-family: 'Cabin', sans-serif;
+  color: gray;
+  font-weight: 400;
+  text-align: center;
+  max-width: 80%;
+}
+
+.heroButton {
+  color: antiquewhite;
+  font-size: 15px;
+  margin-top: 15px;
+  font-family: 'Cabin', sans-serif;
+  padding: 15px 40px;
+  border-radius: 30px;
+  font-weight: 200;
+  background-color: #c2af7a;
+  border-style: none;
+  margin-bottom: 20px;
+
+  &:hover {
+    background-color: #b39a7b;
   }
-  a:hover {
-    color: #747bff;
+}
+
+//Carousel Slider
+
+
+//Month Container
+.monthContainer {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.monthImage {
+  width: 560px;
+  margin-top: 15px;
+  max-width: 100%;
+  // border: 1px solid black;
+  border-radius: 3%;
+}
+
+.monthHeader {
+  margin-top: 20px;
+  font-family: 'Cabin', sans-serif;
+  text-transform: uppercase;
+}
+
+.monthParagraph {
+  margin-top: 10px;
+  font-family: 'Cabin', sans-serif;
+  color: gray;
+  font-weight: 400;
+  text-align: center;
+  max-width: 80%;
+}
+
+.monthButton {
+  color: antiquewhite;
+  font-size: 15px;
+  margin-top: 15px;
+  font-family: 'Cabin', sans-serif;
+  padding: 15px 40px;
+  border-radius: 30px;
+  font-weight: 200;
+  background-color: #c2af7a;
+  border-style: none;
+  margin-bottom: 20px;
+
+  &:hover {
+    background-color: #b39a7b;
   }
-  button {
-    background-color: #f9f9f9;
+}
+
+//Month Deal
+.monthDeal {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.monthDealHeader {
+  margin-top: 25px;
+  font-family: 'Cabin', sans-serif;
+  text-align: left;
+}
+
+.monthdealImage {
+  width: 560px;
+  margin-top: 15px;
+  max-width: 80%;
+  // border: 1px solid black;
+  border-radius: 2%;
+  margin-bottom: 20px;
+
+  &:hover {
+    cursor: pointer;
   }
 }

@@ -25,4 +25,3 @@ const fredskalla = new Plant ("Fredskalla",
 "Tacksam och lättodlad växt med gröna, blanka blad och blommor med vita hölsterblad. Har luftrenande egenskaper. Trivs på ljusa till halvskuggiga växtplatser.",
 4);
 
-const plantList = [monstera, alokasia, zamiakalla, fredskalla];
