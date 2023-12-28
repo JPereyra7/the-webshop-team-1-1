@@ -1,8 +1,7 @@
 import "./../scss/style.scss";
-import { createHtmlForProductPage } from "./createHtml";
+import { createHtmlForLandingpage } from "./createHtml";
 
-    document.getElementById("showPlant")?.addEventListener("click", ()=>{
-        createHtmlForProductPage()
-    });
+createHtmlForLandingpage() //We call this imported function here
+
 
 
