@@ -1,12 +1,8 @@
 import "./../scss/style.scss";
-import { createHtmlForProductPage } from "./createHtml";
+import "./../scss/productPage.scss";
 import { createHtmlForLandingpage } from "./createHtml";
 
 createHtmlForLandingpage() //We call this imported function here
-
-document.getElementById("showPlant")?.addEventListener("click", ()=>{
-    createHtmlForProductPage()
-})
 
 const addButton = document.getElementById("increment") as HTMLButtonElement;
 const removeButton = document.getElementById("decrement") as HTMLButtonElement;
