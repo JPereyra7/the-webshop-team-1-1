@@ -26,12 +26,23 @@ export function createHtmlForLandingpage() {
       plantItemDiv.appendChild(imageElement);
       plantItemDiv.appendChild(nameElement);
       plantItemDiv.appendChild(priceElement);
-      // Append the wrapper div to the main container
-      productpageDiv.appendChild(plantItemDiv);
-    }
-  }
+
+            // When clicking on the products in landing page this will open up
+            plantItemDiv.addEventListener("click", () =>{
+              window.location.replace("/productPage.html");
+               
+            })
+      
+            // Append the wrapper div to the main container
+            productpageDiv.appendChild(plantItemDiv);
+          }
+        }
+      
   
-export function createHtmlForProductPage(){
+ createHtmlForProductPage()
+function createHtmlForProductPage(){
+
+
     const plantName = document.getElementById("plantName") as HTMLHeadElement;
     const productPlantImg = document.getElementById("productPlantImg") as HTMLImageElement;
     const plantDescription = document.getElementById("plantDescription") as HTMLParagraphElement;
