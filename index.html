@@ -4,25 +4,93 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sell it or buy it?</title>
+    <title>Kassa – Växthuset</title>
   </head>
   <body>
     <div id="app"></div>
 
+    <!-- Cart -->
+    <table>
+      <caption>Varukorg</caption>
+      <thead>
+        <tr>
+          <th scope="col">Produkt</th>
+          <th scope="col">Pris</th>
+          <th scope="col">Antal</th>
+          <th scope="col">Belopp</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Fredskalla</th>
+          <td>79,00</td>
+          <td>
+            <input type="number" value="1" min="0" max="10" required>
+          </td>
+          <td>79,00</td>
+        </tr>
+        <tr>
+          <th scope="row">Alokasia</th>
+          <td>79,00</td>
+          <td>
+            <input type="number" value="2" min="0" max="10" required>
+          </td>
+          <td>158,00</td>
+        </tr>
+        <tr>
+          <th scope="row">Monstera</th>
+          <td>68,00</td>
+          <td>
+            <input type="number" value="1" min="0" max="10" required>
+          </td>
+          <td>68,00</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th scope="row" colspan="3">Fraktkostnad</th>
+          <td colspan="1">59,00</td>
+        </tr>
+        <th scope="row" colspan="3">Totalbelopp</th>
+        <td colspan="1">364,00</td>
+      </tfoot>
+    </table>
+    <button>Till kassan</button>
 
-
-
-    <!-- Produkt sidan -->
-    <section id="productPage">
-      <div id="showPlant">klicka på mig</div>
-      <h1 id="plantName"></h1>
-      <img id="productPlantImg" src="" alt="">
-      <p id="plantDescription"></p>
-      
-      <div id="plantCare"></div>
-      <button id="addToCart"></button>
-
-
+    <!-- Checkout -->
+    <section id ="checkout">
+      <h1>Kassa</h1>
+      <h2>Din order</h2>
+      <ul>
+        <li>Fredskalla
+          <ul>
+            <li>Produktbild</li>
+            <li>Antal</li>
+            <li>Styckpris × antal = delbelopp</li>
+            <li>Produktnummer</li>
+          </ul>
+        </li>
+        <li>Alokasia
+          <ul>
+            <li>Produktbild</li>
+            <li>Antal</li>
+            <li>Styckpris × antal = delbelopp</li>
+            <li>Produktnummer</li>
+          </ul>
+        </li>
+        <li>Monstera
+          <ul>
+            <li>Produktbild</li>
+            <li>Antal</li>
+            <li>Styckpris × antal = delbelopp</li>
+            <li>Produktnummer</li>
+          </ul>
+        </li>
+      </ul>
+      <h3>Fraktkostnad: 59,00</h3>
+      <h3>Totalbelopp: 364,00</h3>
+      <button>Fortsätt handla</button>
+      <button>Genomför köp</button>
     </section>
 
     <script type="module" src="/src/ts/main.ts"></script>
