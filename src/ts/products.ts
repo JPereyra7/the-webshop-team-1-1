@@ -6,7 +6,9 @@ export class Plant {
         public productInfo: string,
         public plantId: number,
         public watering: string,
-        public needOfSunlight: string
+        public needOfSunlight: string,
+        public plantSpecifications: string,
+        public plantCareSpecifications: string
     ){}
 }
 
