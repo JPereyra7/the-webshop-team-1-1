@@ -1,5 +1,229 @@
-#productPlantImg{
-  width: 90vw;
+@import url('https://fonts.googleapis.com/css2?family=Cabin&family=Inter:wght@300&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+//Navigation Bar
+
+.navOnecontainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #c2af7a;
+}
+
+.logo {
+  width: 180px;
+}
+
+.wishlistIcon {
+  width: 30px;
+}
+
+.cartIcon {
+  width: 30px;
+}
+
+.hamburgerIcon {
+  width: 70px;
+}
+
+.navTwocontainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 20px;
+  border-bottom: 1px solid black;
+  background-color: #c2af7a;
+}
+
+.searchIcon {
+  width: 35px;
+  border-style: none;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.searchDiv {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid grey;
+  border-radius: 20px;
+  background-color: white;
+}
+
+.inputSearchbar { //The actual searchbar input
+  width: 300px;
+  padding: 10px;
+  border-style: none;
+  outline: none;
+  border-radius: 20px;
+}
+//-----------------
+//Main
+
+.heroContainer {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.heroImage {
+  width: 560px;
+  margin-top: 15px;
+  max-width: 100%;
+  // border: 1px solid black;
+  border-radius: 20%;
+}
+
+.heroHeader {
+  margin-top: 10px;
+  font-family: 'Cabin', sans-serif;
+  text-transform: uppercase;
+}
+
+.heroParagraph {
+  margin-top: 10px;
+  font-family: 'Cabin', sans-serif;
+  color: gray;
+  font-weight: 400;
+  text-align: center;
+  max-width: 80%;
+}
+
+.heroButton {
+  color: antiquewhite;
+  font-size: 15px;
+  margin-top: 15px;
+  font-family: 'Cabin', sans-serif;
+  padding: 15px 40px;
+  border-radius: 30px;
+  font-weight: 200;
+  background-color: #c2af7a;
+  border-style: none;
+  margin-bottom: 20px;
+
+  &:hover {
+    background-color: #b39a7b;
+  }
+}
+
+//Carousel Slider
+
+
+//Month Container
+.monthContainer {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.monthImage {
+  width: 560px;
+  margin-top: 15px;
+  max-width: 100%;
+  // border: 1px solid black;
+  border-radius: 3%;
+}
+
+.monthHeader {
+  margin-top: 20px;
+  font-family: 'Cabin', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.monthParagraph {
+  margin-top: 10px;
+  font-family: 'Cabin', sans-serif;
+  color: gray;
+  font-weight: 400;
+  text-align: center;
+  max-width: 80%;
+}
+
+.monthButton {
+  color: antiquewhite;
+  font-size: 15px;
+  margin-top: 15px;
+  font-family: 'Cabin', sans-serif;
+  padding: 15px 40px;
+  border-radius: 30px;
+  font-weight: 200;
+  background-color: #c2af7a;
+  border-style: none;
+  margin-bottom: 20px;
+
+  &:hover {
+    background-color: #b39a7b;
+  }
+}
+
+//Month Deal
+.monthDeal {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.monthDealHeader {
+  margin-top: 25px;
+  font-family: 'Cabin', sans-serif;
+  text-align: left;
+}
+
+.monthdealImage {
+  width: 560px;
+  margin-top: 15px;
+  max-width: 80%;
+  // border: 1px solid black;
+  border-radius: 2%;
+  margin-bottom: 20px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+// #showPlant {
+//   display: flex;
+//   flex-direction: row;
+//   flex-wrap: nowrap;
+// }
+
+.bestSellerHeader {
+  font-family: 'Cabin', sans-serif;
+  text-align: left;
+  margin-top: 25px;
+  margin-left: 15px;
+}
+
+#productPage {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row; 
+  justify-content: space-around; 
+}
+
+.plant {
+  border: 1px solid #ccc;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+img {
+  max-width: 70%; /* Ensure images don't exceed their container */
 }
 #counter{
   display: flex;

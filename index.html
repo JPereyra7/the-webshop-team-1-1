@@ -4,9 +4,87 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sell it or buy it?</title>
+    <title>Växthuset - Allt för dina växter</title>
   </head>
   <body>
+    <div id="app">
+
+      <!--Navigation bar divided into two parts-->
+      <nav>
+        <!--First Container-->
+        <div class="navOnecontainer">
+          <img class="hamburgerIcon" src="/src/img/hamburgermenu.png" alt="">
+
+          <img class="logo" src="/src/img/Växthuset.png" alt="">
+          
+          <div class="navIcons">
+          <img class="wishlistIcon" src="/src/img/wishlist.png" alt="">
+          <img class="cartIcon" src="/src/img/cart.png" alt="">
+        </div>
+        </div>
+
+        <!--Second Container-->
+        <div class="navTwocontainer">
+          <div class="searchDiv">
+          <img class="searchIcon" src="/src/img/searchicon.png" alt="">
+          <input class="inputSearchbar" type="text" placeholder="Hej! Sök efter tips, råd och produkter">
+        </div>
+        </div>
+      </nav>
+
+      <main>
+      <!--The header container-->  
+        <section class="heroContainer">
+        <img class="heroImage" src="/src/img/hero-image.jpg" alt="">
+        <h1 class="heroHeader">Gott Nytt År!</h1>
+        <p class="heroParagraph">Hos oss hittar du det senaste nytt inom växter och blommor. Vi skapar den rätta stämningen inför det nya året, vare sig det är till dig själv eller till en alldeles speciell person</p>
+        <button class="heroButton">Köp din nyårsbukett här!</button>
+        </section>
+
+        <!-- Products
+        <section class="productContainer">
+          <div id="products">
+            <h1>[[Här ska produkter vara]]</h1>
+          </div>
+        </section> -->
+
+            <!-- Produkt sidan Amanda-->
+    <div class="bestSellerHeader">
+      <h3>Bästsäljare</h3>
+    </div>
+    
+    <section id="productPage">
+      <div id="showPlant"></div>
+      <h1 id="plantName"></h1>
+      <img id="productPlantImg" src="" alt="">
+      <p id="plantDescription"></p>
+      
+      <div id="plantCare"></div>
+      <button id="addToCart"></button>
+    </section>
+
+
+      <!--The Bouquet of the month-->  
+      <section class="monthContainer">
+        <img class="monthImage" src="/src/img/monthContainer.jpg" alt="">
+        <h1 class="monthHeader">Missa inte månadens bukett!</h1>
+        <p class="monthParagraph">Ge bort månadens bukett till någon du tycker om!</p>
+        <button class="monthButton">Läs mer</button>
+        </section>
+
+        
+        <h3 class="monthDealHeader">Månadens Erbjudanden</h3>
+        <section class="monthDeal">
+          
+          <img class="monthdealImage" src="/src/img/monthDealicon.png" alt="">
+        </section>
+        
+      </main>
+
+    </div>
+
+
+
     <div id="app"></div>
 
     <script type="module" src="/src/ts/main.ts"></script>
