@@ -10,17 +10,19 @@
     <div id="app">
 
       <!--Navigation bar divided into two parts-->
-      <nav>
         <!--First Container-->
+        <!-- First Container -->
         <div class="navOnecontainer">
-          <img class="hamburgerIcon" src="/src/img/hamburgermenu.png" alt="">
+          <div class="hamburger-menu">
+            <img class="hamburgerIcon" src="/src/img/hamburgermenu.png" alt="">
+          </div>
 
           <img class="logo" src="/src/img/Växthuset.png" alt="">
           
           <div class="navIcons">
-          <img class="wishlistIcon" src="/src/img/wishlist.png" alt="">
-          <img class="cartIcon" src="/src/img/cart.png" alt="">
-        </div>
+            <img class="wishlistIcon" src="/src/img/wishlist.png" alt="">
+            <img id="cartBtn" class="cartIcon" src="/src/img/cart.png" alt="">
+          </div>
         </div>
 
         <!--Second Container-->
@@ -30,6 +32,31 @@
           <input class="inputSearchbar" type="text" placeholder="Hej! Sök efter tips, råd och produkter">
         </div>
         </div>
+
+          <!-- Hamburger Menu -->
+  <!-- <div class="hamburger-menu">
+    <div class="hamburger-icon"></div>
+  </div> -->
+
+  <!-- Navigation Menu -->
+<nav class="navigation-menu">
+  <div class="close-button">&times;</div>
+  <ul class="navList">
+    <li><a href="/plants">Växter</a></li>
+    <li><a href="/care">Skötselråd</a></li>
+    <li><a href="/about">Om oss</a></li>
+    <li><a href="/contact">Kontakt</a></li>
+  </ul>
+</nav>
+
+             <!-- Cart Section -->
+             <div class="cartContainer">
+              <h1>Kundvagn</h1>
+              <button class="gotoCheckoutbtn">Gå till kassan - </button>
+              <div class="productCard">
+                <!-- Javascript code -->
+              </div>
+            </div>
       </nav>
 
       <main>

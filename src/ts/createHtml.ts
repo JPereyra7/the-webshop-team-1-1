@@ -13,7 +13,6 @@ export function createHtmlForLandingpage() {
       imageElement.src = plant.image;
       imageElement.alt = plant.plantName;
   
-      // Create a heading element for the plant name
       const nameElement = document.createElement("h1");
       nameElement.innerHTML = plant.plantName;
 
@@ -26,7 +25,7 @@ export function createHtmlForLandingpage() {
 
       // When clicking on the products in landing page this will open up
       plantItemDiv.addEventListener("click", () =>{
-        window.location.replace("https://medieinstitutet.se/utbildningar/front-end-developer/");
+        window.location.replace("/checkoutPage.html");
       })
 
       // Append the wrapper div to the main container
