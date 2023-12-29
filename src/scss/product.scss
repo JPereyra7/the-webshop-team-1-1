@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    line-height: 1.4;
+}
+
+#productPlantImg{
+    margin: 20px 0 20px 0;
+    background-color: aquamarine;
+    width: 90vw;
+ 
+}
+.centerContainer{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+#plantNameAndPrice{
+    text-align: center;
+    .italicText{
+        color: rgb(202, 165, 126);
+    }
+}
+#plantCare{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+}
+#counter{
+    display: flex;
+    gap: 5px;
+    .numberBtn{
+      width: 30px;
+      border-radius: 100px;
+      border-color: black;
+      background-color: white;
+      padding:0 5px;
+      font-size: 1.1rem;
+    }
+    #numberOfPlant{
+      padding: 10px;
+      -moz-box-shadow: inset 0px 0px 6px -3px rgba(0,0,0,0.75);
+      box-shadow: inset 0px 0px 6px -3px rgba(0,0,0,0.75);
+      border-radius: 5px;
+    }
+  }
+  #addToCart{
+    padding: 10px 25px;
+    background-color: rgb(11, 86, 11);
+    color: white;
+    border-radius: 10px;
+    border: none;
+    font-size: 1.1rem;
+  }
+  #addToCartContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .borderBottom{
+    border-bottom: solid 1px rgb(202, 165, 126);
+    padding-bottom: 10px;
+  }
+  #infoContainer{
+    display: flex;
+    flex-direction: column;
+    padding:25px;
+    margin-bottom: 50px;
+
+    .marginTop{
+        margin-top: 10px;
+    }
+   
+   #listInfoDelivery{
+    list-style-type: circle;
+    margin-bottom: 20px;
+   }
+  }

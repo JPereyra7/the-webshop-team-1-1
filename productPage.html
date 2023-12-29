@@ -4,46 +4,95 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sell it or buy it?</title>
+    <title>Växthuset - Allt för dina växter</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+
+      <!--Navigation bar divided into two parts-->
+      <nav>
+        <!--First Container-->
+        <div class="navOnecontainer">
+          <img class="hamburgerIcon" src="/src/img/hamburgermenu.png" alt="">
+
+          <img class="logo" src="/src/img/Växthuset.png" alt="">
+          
+          <div class="navIcons">
+          <img class="wishlistIcon" src="/src/img/wishlist.png" alt="">
+          <img class="cartIcon" src="/src/img/cart.png" alt="">
+        </div>
+        </div>
+
+        <!--Second Container-->
+        <div class="navTwocontainer">
+          <div class="searchDiv">
+          <img class="searchIcon" src="/src/img/searchicon.png" alt="">
+          <input class="inputSearchbar" type="text" placeholder="Hej! Sök efter tips, råd och produkter">
+        </div>
+        </div>
+      </nav> 
 
     <!-- Produkt sidan -->
     <section id="productPage">
-      <div id="showPlant">klicka på mig</div>
-      <h1 id="plantName"></h1>
+      <div class="centerContainer">
       <img id="productPlantImg" src="" alt="">
+      </div>
+      <div class="centerContainer">
+      <div id="plantNameAndPrice">
+      <h1 id="plantName">Plant Name</h1>
+      <p class="italicText" id="nameInLatin">name in latin</p>
+      <p id="priceOfPlant">price</p>
+      </div>
+      </div>
+
       <div id="plantCare">
-      <p id="plantDescription"></p>
+      <p id="plantDescription">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus, dicta?</p>
       Skötselråd:
-      <p id="plantCareWatering"></p>
-      <p id="plantCareSunlight"></p>
+      <p id="plantCareWatering">Lorem ipsum dolor sit, amet consectetur adipisicing elit. At, est.</p>
+      <p id="plantCareSunlight">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit, veniam.</p>
       </div>
 
       <div id="addToCartContainer">
       <div id="counter">
-        <button id="increment" class="numberBtn">+</button>
-        <div id="numberOfPlant">1</div>
         <button id="decrement" class="numberBtn">-</button>
+        <div id="numberOfPlant">1</div>
+        <button id="increment" class="numberBtn">+</button>
       </div>
       <button id="addToCart">Lägg till i varukorgen</button>
       </div>
       
-      <h3>Specifikationer</h3>
-      <div id="plantSpecifications" class="showAndHideInfo"></div>
-      <h3>Skötselråd</h3>
-      <div id="plantCareSpecifications" class="showAndHideInfo"></div>
-      <h3>Leveransinformation</h3>
-      <ul>
-        <li>Frakt och Leverans: Vi erbjuder snabb och pålitlig leverans till din dörr. Din beställning behandlas inom 1-2 arbetsdagar, och leveranstiden varierar beroende på din plats.</li>
-        <li>Fraktkostnad: Vi erbjuder förmånliga fraktkostnader som beräknas vid kassan baserat på din leveransadress.</li>
-        <li>Spårning av Din Beställning: När din beställning har skickats kommer du att få ett spårningsnummer via e-post. Du kan enkelt följa din leverans för att veta när den kommer att anlända.</li>
-        <li>Säkert Förpackade Plantor: Vi lägger stor vikt vid att säkerställa att dina växter når dig i bästa möjliga skick. Våra plantor packas noggrant och säkert för att minimera stress under transporten.</li>
-        <li>Returer och Kundtjänst: Om du skulle uppleva några problem med din beställning, är vår kundtjänst redo att hjälpa dig. Vi strävar efter att lösa eventuella frågor eller bekymmer på ett snabbt och vänligt sätt.</li>
+      <div id="infoContainer">
+      <h3 class="marginTop">Specifikationer</h3>
+      <div id="plantSpecifications" class="showAndHideInfo borderBottom">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti, possimus!</div>
+      <h3 class="marginTop">Skötselråd</h3>
+      <div id="plantCareSpecifications" class="showAndHideInfo borderBottom">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, quam.</div>
+      <h3 class="marginTop">Leveransinformation</h3>
+      <ul id="deliverInfo">
+        <li id="listInfoDelivery">Frakt och Leverans: Vi erbjuder snabb och pålitlig leverans till din dörr. Din beställning behandlas inom 1-2 arbetsdagar, och leveranstiden varierar beroende på din plats.</li>
+        <li id="listInfoDelivery">Fraktkostnad: Vi erbjuder förmånliga fraktkostnader som beräknas vid kassan baserat på din leveransadress.</li>
+        <li id="listInfoDelivery">Spårning av Din Beställning: När din beställning har skickats kommer du att få ett spårningsnummer via e-post. Du kan enkelt följa din leverans för att veta när den kommer att anlända.</li>
+        <li id="listInfoDelivery">Säkert Förpackade Plantor: Vi lägger stor vikt vid att säkerställa att dina växter når dig i bästa möjliga skick. Våra plantor packas noggrant och säkert för att minimera stress under transporten.</li>
+        <li id="listInfoDelivery">Returer och Kundtjänst: Om du skulle uppleva några problem med din beställning, är vår kundtjänst redo att hjälpa dig. Vi strävar efter att lösa eventuella frågor eller bekymmer på ett snabbt och vänligt sätt.</li>
       </ul>
+      </div>
     </section>
+    <!--The Bouquet of the month-->  
+    <section class="monthContainer">
+      <img class="monthImage" src="/src/img/monthContainer.jpg" alt="">
+      <h1 class="monthHeader">Missa inte månadens bukett!</h1>
+      <p class="monthParagraph">Ge bort månadens bukett till någon du tycker om!</p>
+      <button class="monthButton">Läs mer</button>
+      </section>
 
-    <script type="module" src="/src/ts/main.ts"></script>
+      
+      <h3 class="monthDealHeader">Månadens Erbjudanden</h3>
+      <section class="monthDeal">
+        
+        <img class="monthdealImage" src="/src/img/monthDealicon.png" alt="">
+      </section>
+
+    <script type="module" src="/src/ts/productPage.ts"></script>
+    <!-- <script type="module" src="/src/ts/main.ts"></script> -->
+    
   </body>
 </html>
