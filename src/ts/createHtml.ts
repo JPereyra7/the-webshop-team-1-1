@@ -40,6 +40,7 @@ export function createHtmlForVaxterPage() {
 
         plantItemDiv.addEventListener("click", () => {
             window.location.replace(`/productPage.html?plantIndex=${i}`);
+            window.sessionStorage.setItem("selectedPlant", JSON.stringify(plant));
         });
 
         plantContainerParent.appendChild(plantItemDiv);
@@ -78,6 +79,7 @@ export function createHtmlForLandingpage() {
 
         // When clicking on the products in the landing page, open the product page
         plantItemDiv.addEventListener("click", () => {
+            window.sessionStorage.setItem("selectedPlant", JSON.stringify(plant));
             window.location.replace("/productPage.html");
         });
 
@@ -89,54 +91,54 @@ export function createHtmlForLandingpage() {
 }
   
   //Function & Loop for product page
-export function createHtmlForProductPage(){
-    const plantName = document.getElementById("plantName") as HTMLHeadElement;
-    const productPlantImg = document.getElementById("productPlantImg") as HTMLImageElement;
-    const plantDescription = document.getElementById("plantDescription") as HTMLParagraphElement;
-    const plantCareWatering = document.getElementById("plantCareWatering")as HTMLParagraphElement;
-    const plantCareSunlight = document.getElementById("plantCareSunlight")as HTMLParagraphElement;
-    const plantSpecifications = document.getElementById("plantSpecifications") as HTMLDivElement;
-    const plantCareSpecifications = document.getElementById("plantCareSpecifications") as HTMLDivElement;
-        for(let i=0; i<plantList.length; i++){  
-            plantName.innerHTML = plantList[i].plantName;
-            plantName.className = "plantName";
+// export function createHtmlForProductPage(){
+//     const plantName = document.getElementById("plantName") as HTMLHeadElement;
+//     const productPlantImg = document.getElementById("productPlantImg") as HTMLImageElement;
+//     const plantDescription = document.getElementById("plantDescription") as HTMLParagraphElement;
+//     const plantCareWatering = document.getElementById("plantCareWatering")as HTMLParagraphElement;
+//     const plantCareSunlight = document.getElementById("plantCareSunlight")as HTMLParagraphElement;
+//     const plantSpecifications = document.getElementById("plantSpecifications") as HTMLDivElement;
+//     const plantCareSpecifications = document.getElementById("plantCareSpecifications") as HTMLDivElement;
+//         for(let i=0; i<plantList.length; i++){  
+//             plantName.innerHTML = plantList[i].plantName;
+//             plantName.className = "plantName";
 
-            productPlantImg.src = plantList[i].image;
-            productPlantImg.className = "productPlantImg";
+//             productPlantImg.src = plantList[i].image;
+//             productPlantImg.className = "productPlantImg";
 
-            plantDescription.innerHTML = plantList[i].productInfo;
-            plantDescription.className = "plantDescription";
+//             plantDescription.innerHTML = plantList[i].productInfo;
+//             plantDescription.className = "plantDescription";
 
-            plantCareSunlight.innerHTML = plantList[i].needOfSunlight;
-            plantCareSunlight.className = "plantCareSunlight";
+//             plantCareSunlight.innerHTML = plantList[i].needOfSunlight;
+//             plantCareSunlight.className = "plantCareSunlight";
 
-            plantCareWatering.innerHTML = plantList[i].watering;
-            plantCareWatering.className = "plantCareWatering";
+//             plantCareWatering.innerHTML = plantList[i].watering;
+//             plantCareWatering.className = "plantCareWatering";
 
-            plantCareSpecifications.innerHTML = plantList[i].plantCareSpecifications;
-            plantCareSpecifications.className = "plantCareSpecifications";
+//             plantCareSpecifications.innerHTML = plantList[i].plantCareSpecifications;
+//             plantCareSpecifications.className = "plantCareSpecifications";
 
-            plantSpecifications.innerHTML = plantList[i].plantSpecifications;
-            plantSpecifications.className = "plantSpecifications";
+//             plantSpecifications.innerHTML = plantList[i].plantSpecifications;
+//             plantSpecifications.className = "plantSpecifications";
 
 
-        }
-    }
+//         }
+//     }
 
-    //   const priceElement = document.createElement("p");
-    //   priceElement.innerHTML = `${plant.price} kr`;
-  
-    //   plantItemDiv.appendChild(imageElement);
-    //   plantItemDiv.appendChild(nameElement);
-    //   plantItemDiv.appendChild(priceElement);
-    //   productpageDiv?.appendChild(plantItemDiv);
-    //         // When clicking on the products in landing page this will open up
-    //         plantItemDiv.addEventListener("click", () =>{
-    //           window.sessionStorage.setItem("selectedPlant", JSON.stringify(plant));
-    //           window.location.replace("/productPage.html");
-    //         })
-    //         // Append the wrapper div to the main container
+
            
 
       
-  
+// const priceElement = document.createElement("p");
+// priceElement.innerHTML = `${plant.price} kr`;
+
+// plantItemDiv.appendChild(imageElement);
+// plantItemDiv.appendChild(nameElement);
+// plantItemDiv.appendChild(priceElement);
+// productpageDiv?.appendChild(plantItemDiv);
+//       // When clicking on the products in landing page this will open up
+//       plantItemDiv.addEventListener("click", () =>{
+//         window.sessionStorage.setItem("selectedPlant", JSON.stringify(plant));
+//         window.location.replace("/productPage.html");
+//       })
+//       // Append the wrapper div to the main container

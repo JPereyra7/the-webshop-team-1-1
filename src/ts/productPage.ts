@@ -1,7 +1,6 @@
 import "./../scss/style.scss";
 import "./../scss/product.scss"
 
-
 const addButton = document.getElementById("increment") as HTMLButtonElement;
 const removeButton = document.getElementById("decrement") as HTMLButtonElement;
 const numberOfPlant = document.getElementById("numberOfPlant") as HTMLDivElement;

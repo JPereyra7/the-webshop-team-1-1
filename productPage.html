@@ -9,28 +9,56 @@
   <body>
     <div id="app">
 
-      <!--Navigation bar divided into two parts-->
-      <nav>
-        <!--First Container-->
-        <div class="navOnecontainer">
-          <img class="hamburgerIcon" src="/src/img/hamburgermenu.png" alt="">
+<!--Navigation bar divided into two parts-->
+<!--First Container-->
+<div class="navOnecontainer">
+  <div class="hamburger-menu" id="menuToggle">
+    <div class="hamburger-icon"></div>
+    <img class="hamburgerIcon" src="/src/img/hamburgermenu.png" alt="">
+  </div>
 
-          <img class="logo" src="/src/img/Växthuset.png" alt="">
-          
-          <div class="navIcons">
-          <img class="wishlistIcon" src="/src/img/wishlist.png" alt="">
-          <img class="cartIcon" src="/src/img/cart.png" alt="">
-        </div>
-        </div>
+  <img class="logo" href="index.html" src="/src/img/Växthuset.png" alt="">
 
-        <!--Second Container-->
-        <div class="navTwocontainer">
-          <div class="searchDiv">
-          <img class="searchIcon" src="/src/img/searchicon.png" alt="">
-          <input class="inputSearchbar" type="text" placeholder="Hej! Sök efter tips, råd och produkter">
-        </div>
-        </div>
-      </nav> 
+  <div class="navIcons">
+    <img class="wishlistIcon" src="/src/img/wishlist.png" alt="">
+    <img id="cartBtn" class="cartIcon" src="/src/img/cart.png" alt="">
+  </div>
+</div>
+
+      <!--Second Container-->
+      <div class="navTwocontainer">
+        <div class="searchDiv">
+        <img class="searchIcon" src="/src/img/searchicon.png" alt="">
+        <input class="inputSearchbar" type="text" placeholder="Hej! Sök efter tips, råd och produkter">
+      </div>
+      </div>
+
+        <!-- Hamburger Menu -->
+<!-- <div class="hamburger-menu">
+  <div class="hamburger-icon"></div>
+</div> -->
+
+      <!-- Navigation Menu -->
+    <nav class="navigation-menu">
+      <div class="close-button">&times;</div>
+      <ul class="navList">
+        <li><a href="/vaxter.html">Växter</a></li>
+        <li><a href="/index.html">Skötselråd</a></li>
+        <li><a href="/index.html">Om oss</a></li>
+        <li><a href="/index.html">Kontakt</a></li>
+      </ul>
+    </nav>
+
+                <!-- Cart Section -->
+                <div class="cartContainer">
+                  <h1>Kundvagn</h1>
+                  <button class="gotoCheckoutbtn">Gå till kassan - </button>
+                <div class="productCard">
+                        <!-- Javascript code -->
+                    </div>
+                  </div>
+              </div>
+
 
     <!-- Produkt sidan -->
     <section id="productPage">
@@ -92,6 +120,7 @@
       </section>
 
     <script type="module" src="/src/ts/productPage.ts"></script>
+    <script type="module" src="/src/ts/main.ts"></script>
     <!-- <script type="module" src="/src/ts/main.ts"></script> -->
     
   </body>
