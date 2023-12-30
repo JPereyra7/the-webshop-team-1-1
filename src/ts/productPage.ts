@@ -1,5 +1,8 @@
 import "./../scss/style.scss";
 import "./../scss/product.scss"
+import { plantList } from "./plantListArray";
+import { Plant } from "./products";
+import { IProduct } from "./IProduct";
 
 
 const addButton = document.getElementById("increment") as HTMLButtonElement;
@@ -21,9 +24,7 @@ removeButton.addEventListener("click", () => {
         return false;
     }
 })
-
 let selectedPlantData = window.sessionStorage.getItem("selectedPlant");
-
 let selectedPlant = null;
 if (selectedPlantData !== null) {
     selectedPlant = JSON.parse(selectedPlantData);
@@ -31,8 +32,8 @@ if (selectedPlantData !== null) {
 else {
     console.log("did not find selected plant in sessionStorage");
 }
-
 console.log(selectedPlant.plantName);
+
 
 
 const plantName = document.getElementById("plantName") as HTMLHeadElement;
@@ -54,3 +55,15 @@ plantCareSpecifications.innerHTML = selectedPlant.plantCareSpecifications;
 plantSpecifications.innerHTML = selectedPlant.plantSpecifications;
 priceOfPlant.innerHTML = selectedPlant.price +"kr inkl. moms";
 nameInLatin.innerHTML= selectedPlant.nameInLatin;
+
+
+
+document.getElementById("addToCart")?.addEventListener("click",()=>{
+    const productsToCart = window.sessionStorage.getItem("selectedPlant");
+    const products: IProduct[] = productsToCart ? JSON.parse(productsToCart) : [];
+    const productList: IProduct[] = [];
+    products.forEach(function(product){
+     productList.push(product);   
+    });
+    console.log(productList);
+});
