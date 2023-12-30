@@ -1,4 +1,5 @@
 import { plantList } from "./plantListArray";
+import { Plant } from "./products";
 
 // Function for Växter.html page
 export function createHtmlForVaxterPage() {
@@ -52,8 +53,7 @@ export function createHtmlForVaxterPage() {
     vaxterPageDiv.appendChild(productParent);
 }
 
-
-  //For Loop for Landing page
+// For Loop for Landing page
 export function createHtmlForLandingpage() {
     const productpageDiv = document.getElementById("showPlant") as HTMLDivElement;
 
@@ -89,60 +89,91 @@ export function createHtmlForLandingpage() {
         }
     }
 }
-  
-  //Function & Loop for product page
 
-// export function createHtmlForProductPage(){
-//     const plantName = document.getElementById("plantName") as HTMLHeadElement;
-//     const productPlantImg = document.getElementById("productPlantImg") as HTMLImageElement;
-//     const plantDescription = document.getElementById("plantDescription") as HTMLParagraphElement;
-//     const plantCareWatering = document.getElementById("plantCareWatering")as HTMLParagraphElement;
-//     const plantCareSunlight = document.getElementById("plantCareSunlight")as HTMLParagraphElement;
-//     const plantSpecifications = document.getElementById("plantSpecifications") as HTMLDivElement;
-//     const plantCareSpecifications = document.getElementById("plantCareSpecifications") as HTMLDivElement;
-//         for(let i=0; i<plantList.length; i++){  
-//             plantName.innerHTML = plantList[i].plantName;
-//             plantName.className = "plantName";
+// Function for searchbar
+export function searchbarFunctionality() {
+    document.addEventListener("DOMContentLoaded", () => {
+        // Function to make suggestions clickable
+        function createSuggestionItem(plant: Plant): HTMLLIElement {
+            const listItem = document.createElement('li');
+            listItem.textContent = plant.plantName;
 
-//             productPlantImg.src = plantList[i].image;
-//             productPlantImg.className = "productPlantImg";
+            listItem.addEventListener('click', () => {
+                if (plant.plantId !== undefined) {
+                    // Navigate to productPage.html if plantId is available
+                    window.location.replace(`/productPage.html?plantId=${plant.plantId}`);
+                } else {
+                    // Fallback to default behavior for other pages
+                    window.location.replace(`/productPage.html?plantIndex=${plantList.indexOf(plant)}`);
+                }
+                window.sessionStorage.setItem('selectedPlant', JSON.stringify(plant));
+            });
+            return listItem;
+        }
 
-//             plantDescription.innerHTML = plantList[i].productInfo;
-//             plantDescription.className = "plantDescription";
+        function renderPlants(plants?: Plant[]) {
+            const plantListElement = document.getElementById('plantList');
 
-//             plantCareSunlight.innerHTML = plantList[i].needOfSunlight;
-//             plantCareSunlight.className = "plantCareSunlight";
+            if (plantListElement) {
+                plantListElement.innerHTML = "";
 
-//             plantCareWatering.innerHTML = plantList[i].watering;
-//             plantCareWatering.className = "plantCareWatering";
+                if (plants) {
+                    plants.forEach((plant) => {
+                        const listItem = createSuggestionItem(plant);
+                        plantListElement.appendChild(listItem);
+                        plantListElement.appendChild(listItem);
+                    });
+                }
+            }
+        }
 
-//             plantCareSpecifications.innerHTML = plantList[i].plantCareSpecifications;
-//             plantCareSpecifications.className = "plantCareSpecifications";
+        // Search logic
+        function handleSearch() {
+            const searchInput = document.querySelector('.inputSearchbar') as HTMLInputElement;
+            const searchSuggestions = document.getElementById('plantList') as HTMLUListElement;
 
-//             plantSpecifications.innerHTML = plantList[i].plantSpecifications;
-//             plantSpecifications.className = "plantSpecifications";
+            if (searchInput && searchSuggestions) {
+                const searchTerm = searchInput.value.toLowerCase();
 
+                if (searchTerm.trim() === '') {
+                    searchSuggestions.style.display = 'none';
+                    return;
+                }
 
-//         }
-//     }
+                const filteredPlants = plantList.filter((plant) =>
+                    plant.plantName.toLowerCase().includes(searchTerm)
+                );
 
+                renderPlants(filteredPlants);
 
-           
+                if (filteredPlants.length > 0) {
+                    searchSuggestions.style.display = 'block';
+                } else {
+                    searchSuggestions.style.display = 'none';
+                }
+            }
+        }
 
-      
-// const priceElement = document.createElement("p");
-// priceElement.innerHTML = `${plant.price} kr`;
+        document.addEventListener('click', (event) => {
+            const searchInput = document.querySelector('.inputSearchbar') as HTMLInputElement;
+            const searchSuggestions = document.getElementById('plantList') as HTMLUListElement;
 
-// plantItemDiv.appendChild(imageElement);
-// plantItemDiv.appendChild(nameElement);
-// plantItemDiv.appendChild(priceElement);
-// productpageDiv?.appendChild(plantItemDiv);
-//       // When clicking on the products in landing page this will open up
-//       plantItemDiv.addEventListener("click", () =>{
-//         window.sessionStorage.setItem("selectedPlant", JSON.stringify(plant));
-//         window.location.replace("/productPage.html");
-//       })
-//       // Append the wrapper div to the main container
+            if (searchInput && searchSuggestions) {
+                if (!searchInput.contains(event.target as Node) && !searchSuggestions.contains(event.target as Node)) {
+                    searchSuggestions.style.display = 'none';
+                }
+            }
+        });
 
-// Hejhej
+        document.querySelector('.inputSearchbar')?.addEventListener('focus', () => {
+            const searchSuggestions = document.getElementById('plantList') as HTMLUListElement
+            if (searchSuggestions) {
+                searchSuggestions.style.display = 'none';
+            }
+        });
 
+        document.querySelector('.inputSearchbar')?.addEventListener('input', handleSearch);
+
+        renderPlants(plantList);
+    });
+}

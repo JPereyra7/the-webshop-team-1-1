@@ -6,6 +6,7 @@ import "./../scss/hamburger.scss"
 
 import { createHtmlForLandingpage } from "./createHtml";
 import { createHtmlForVaxterPage } from './createHtml';
+import { searchbarFunctionality } from "./createHtml";
 
 document.addEventListener("DOMContentLoaded", () => { //Don't touch or we will see bugs
     createHtmlForVaxterPage();
@@ -14,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => { //Don't touch or we will s
 createHtmlForLandingpage(); //Calling function OOP from createHtml for landing page
 
 
-
+searchbarFunctionality();
 
 //Function to open hamburger menu
 const menuToggle = document.getElementById('menuToggle') as HTMLElement;
