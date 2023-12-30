@@ -91,6 +91,7 @@ export function createHtmlForLandingpage() {
 }
   
   //Function & Loop for product page
+
 // export function createHtmlForProductPage(){
 //     const plantName = document.getElementById("plantName") as HTMLHeadElement;
 //     const productPlantImg = document.getElementById("productPlantImg") as HTMLImageElement;
@@ -142,3 +143,6 @@ export function createHtmlForLandingpage() {
 //         window.location.replace("/productPage.html");
 //       })
 //       // Append the wrapper div to the main container
+
+// Hejhej
+
