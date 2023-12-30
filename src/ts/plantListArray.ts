@@ -7,6 +7,22 @@ const zamiakallaURL = "https://www.blomsterlandet.se/globalassets/catalog-images
 
 const fredskallaURL = "https://www.blomsterlandet.se/globalassets/catalog-images/7/3091/4e03b21911773ddca48832df1ed0bb73.jpg?format=webp&quality=85&width=2560&height=2560&rmode=pad&rcolor=FFFFFFFF";
 
+const julstjarnaURL = "https://www.blomsterlandet.se/globalassets/catalog-images/7/49966/220c4e98d992c6e4a5f3c28f2936ed90.jpg?format=webp&quality=85&width=750&height=750&rmode=pad&rcolor=FFFFFFFF";
+
+const alaskastjarnaURL = "https://www.blomsterlandet.se/globalassets/catalog-images/7/51164/56566cc740dc03894e5692f0ac150c42.jpg?format=webp&quality=85&width=600&height=600&rmode=pad&rcolor=FFFFFFFF";
+
+const hostbegoniaURL = "https://www.blomsterlandet.se/globalassets/catalog-images/7/136181/a1caf89b1784b45cd1049469f0d05362.jpg?format=webp&quality=85&width=600&height=600&rmode=pad&rcolor=FFFFFFFF";
+
+const brudorkideURL = "https://www.blomsterlandet.se/globalassets/catalog-images/7/175238/b6792da4ee8aceb2030fc4edbc10dd7f.jpg?format=webp&quality=85&width=600&height=600&rmode=pad&rcolor=FFFFFFFF";
+
+const julstjarnaURL = "https://www.blomsterlandet.se/globalassets/catalog-images/7/49966/220c4e98d992c6e4a5f3c28f2936ed90.jpg?format=webp&quality=85&width=750&height=750&rmode=pad&rcolor=FFFFFFFF";
+
+const alaskastjarnaURL = "https://www.blomsterlandet.se/globalassets/catalog-images/7/51164/56566cc740dc03894e5692f0ac150c42.jpg?format=webp&quality=85&width=600&height=600&rmode=pad&rcolor=FFFFFFFF";
+
+const hostbegoniaURL = "https://www.blomsterlandet.se/globalassets/catalog-images/7/136181/a1caf89b1784b45cd1049469f0d05362.jpg?format=webp&quality=85&width=600&height=600&rmode=pad&rcolor=FFFFFFFF";
+
+const brudorkideURL = "https://www.blomsterlandet.se/globalassets/catalog-images/7/175238/b6792da4ee8aceb2030fc4edbc10dd7f.jpg?format=webp&quality=85&width=600&height=600&rmode=pad&rcolor=FFFFFFFF";
+
 export let plantList:Array <Plant> = [new Plant (monsteraURL,"Monstera deliciosa", "Monstera", 159, 
     "Härlig grönväxt med glänsande, stora, hjärtformade blad. Större blad får karakteristiska hål. Trivs bäst i ljusa till lätt skuggiga lägen. Håll jorden lätt fuktig och låt torka lätt mellan vattningarna", 
     1,
@@ -37,6 +53,34 @@ export let plantList:Array <Plant> = [new Plant (monsteraURL,"Monstera deliciosa
     "Vattna regelbundet och se till att jorden hålls lätt fuktig hela tiden",
     "Sol till halvskugga",
     "Fredskalla, eller Spathiphyllum, är en elegant inomhusväxt med sina karakteristiska vita blommor och blanka gröna blad. Trivs i skuggigt till måttligt ljus och kräver regelbunden vattning. Jorden bör hållas jämnt fuktig. Fredskallan är känd för sina luftrenande egenskaper och är lämplig för olika inomhusmiljöer.",
-    "Placera i skuggigt till måttligt ljus. Håll jorden jämnt fuktig och undvik övervattning. Trivs i rumstemperatur. Gödsla sparsamt under tillväxtsäsongen. Ta bort vissna blommor och trimma vid behov. En underhålls-vänlig växt som passar både nybörjare och erfarna trädgårdsmästare. Fredskalla ger en fräsch och harmonisk atmosfär till ditt hem.")
+    "Placera i skuggigt till måttligt ljus. Håll jorden jämnt fuktig och undvik övervattning. Trivs i rumstemperatur. Gödsla sparsamt under tillväxtsäsongen. Ta bort vissna blommor och trimma vid behov. En underhålls-vänlig växt som passar både nybörjare och erfarna trädgårdsmästare. Fredskalla ger en fräsch och harmonisk atmosfär till ditt hem."),
+
+    new Plant (julstjarnaURL,"", "Julstjärna", 
+    299, 
+    "Trivs på ljus plats, men skuggas i söder. Känslig för kyla och drag, kan tappa bladen om det är för kallt. Optimal temperatur är mellan 15-22 grader. Jämn vattning, inte för blött och inte för torrt. Grenad planta. Växtsaften kan ge hudretning.", 
+    5, 
+    "Vattna med jämna mellanrum och undvik direkt solljus", "Undvik direktsol",
+     "", ""),
+
+     new Plant (alaskastjarnaURL,"", "Alaskastjärna", 
+     349, 
+     "Trivs på ljus plats, men skuggas i söder. Känslig för kyla och drag, kan tappa bladen om det är för kallt. Optimal temperatur är mellan 15-22 grader. Jämn vattning, inte för blött och inte för torrt. Grenad planta. Växtsaften kan ge hudretning.", 
+     6, 
+     "Vattna med jämna mellanrum och undvik direkt solljus", "Undvik direktsol",
+      "", ""),
+
+      new Plant (hostbegoniaURL,"", "Höstbegonia", 
+      349, 
+      "Trivs på ljus plats, men skuggas i söder. Känslig för kyla och drag, kan tappa bladen om det är för kallt. Optimal temperatur är mellan 15-22 grader. Jämn vattning, inte för blött och inte för torrt. Grenad planta. Växtsaften kan ge hudretning.", 
+      7, 
+      "Vattna med jämna mellanrum och undvik direkt solljus", "Undvik direktsol",
+       "", ""),
+
+       new Plant (brudorkideURL,"", "Brudorkidé", 
+       349, 
+       "Trivs på ljus plats, men skuggas i söder. Känslig för kyla och drag, kan tappa bladen om det är för kallt. Optimal temperatur är mellan 15-22 grader. Jämn vattning, inte för blött och inte för torrt. Grenad planta. Växtsaften kan ge hudretning.", 
+       7, 
+       "Vattna med jämna mellanrum och undvik direkt solljus", "Undvik direktsol",
+        "", "")
 
     ]
