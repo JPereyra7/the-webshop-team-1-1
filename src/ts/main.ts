@@ -1,17 +1,33 @@
 import "./../scss/style.scss";
 import "./../scss/productPage.scss";
-import { createHtmlForLandingpage } from "./createHtml";
+import "./../scss/vaxter.scss";
+import "./../scss/cart.scss"
+import "./../scss/hamburger.scss"
 
-createHtmlForLandingpage() //We call this imported function here
+import { createHtmlForLandingpage } from "./createHtml";
+import { createHtmlForVaxterPage } from './createHtml';
+
+document.addEventListener("DOMContentLoaded", () => { //Don't touch or we will see bugs
+    createHtmlForVaxterPage();
+});
+
+createHtmlForLandingpage(); //Calling function OOP from createHtml for landing page
+
+
+
 
 //Function to open hamburger menu
-const hamburgerMenu = document.querySelector('.hamburger-menu') as HTMLElement;
+const menuToggle = document.getElementById('menuToggle') as HTMLElement;
+// const hamburgerMenu = document.querySelector('.hamburger-menu') as HTMLElement;
 const navigationMenu = document.querySelector('.navigation-menu') as HTMLElement;
 const closeButton = document.querySelector('.close-button') as HTMLButtonElement;
 
-hamburgerMenu.addEventListener('click', () => {
-  navigationMenu.classList.toggle('show');
-});
+menuToggle.addEventListener('click', () => {
+    setTimeout(() => {
+        navigationMenu.classList.toggle('show');  
+    }, 100);
+
+  });
 
 closeButton.addEventListener('click', () => {
     navigationMenu.classList.remove('show');
@@ -45,3 +61,4 @@ removeButton.addEventListener("click", ()=>{
     return false;
     }
 })
+
