@@ -15,13 +15,6 @@ const hostbegoniaURL = "https://www.blomsterlandet.se/globalassets/catalog-image
 
 const brudorkideURL = "https://www.blomsterlandet.se/globalassets/catalog-images/7/175238/b6792da4ee8aceb2030fc4edbc10dd7f.jpg?format=webp&quality=85&width=600&height=600&rmode=pad&rcolor=FFFFFFFF";
 
-const julstjarnaURL = "https://www.blomsterlandet.se/globalassets/catalog-images/7/49966/220c4e98d992c6e4a5f3c28f2936ed90.jpg?format=webp&quality=85&width=750&height=750&rmode=pad&rcolor=FFFFFFFF";
-
-const alaskastjarnaURL = "https://www.blomsterlandet.se/globalassets/catalog-images/7/51164/56566cc740dc03894e5692f0ac150c42.jpg?format=webp&quality=85&width=600&height=600&rmode=pad&rcolor=FFFFFFFF";
-
-const hostbegoniaURL = "https://www.blomsterlandet.se/globalassets/catalog-images/7/136181/a1caf89b1784b45cd1049469f0d05362.jpg?format=webp&quality=85&width=600&height=600&rmode=pad&rcolor=FFFFFFFF";
-
-const brudorkideURL = "https://www.blomsterlandet.se/globalassets/catalog-images/7/175238/b6792da4ee8aceb2030fc4edbc10dd7f.jpg?format=webp&quality=85&width=600&height=600&rmode=pad&rcolor=FFFFFFFF";
 
 export let plantList:Array <Plant> = [new Plant (monsteraURL,"Monstera deliciosa", "Monstera", 159, 
     "Härlig grönväxt med glänsande, stora, hjärtformade blad. Större blad får karakteristiska hål. Trivs bäst i ljusa till lätt skuggiga lägen. Håll jorden lätt fuktig och låt torka lätt mellan vattningarna", 
