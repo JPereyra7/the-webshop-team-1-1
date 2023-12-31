@@ -28,9 +28,10 @@
       <!--Second Container-->
       <div class="navTwocontainer">
         <div class="searchDiv">
-        <img class="searchIcon" src="/src/img/searchicon.png" alt="">
-        <input class="inputSearchbar" type="text" placeholder="Hej! Sök efter tips, råd och produkter">
-      </div>
+          <img class="searchIcon" src="/src/img/searchicon.png" alt="">
+          <input class="inputSearchbar" type="text" placeholder="Hej! Sök efter tips, råd och produkter">
+          <ul class="searchSuggestions" id="plantList"></ul>
+        </div>
       </div>
 
         <!-- Hamburger Menu -->
@@ -49,15 +50,12 @@
       </ul>
     </nav>
 
-                <!-- Cart Section -->
-                <div class="cartContainer">
-                  <h1>Kundvagn</h1>
-                  <button class="gotoCheckoutbtn">Gå till kassan - </button>
-                <div class="productCard">
-                        <!-- Javascript code -->
-                    </div>
-                  </div>
-              </div>
+        <!-- Cart Section -->
+        <div class="cartContainer">
+          <h1>Kundvagn</h1>
+          <button class="gotoCheckoutbtn">Gå till kassan - </button>
+          <div class="productCard"></div>
+        </div>
 
 
     <!-- Produkt sidan -->
@@ -86,7 +84,7 @@
         <div id="numberOfPlant">1</div>
         <button id="increment" class="numberBtn">+</button>
       </div>
-      <button id="addToCart">Lägg till i varukorgen</button>
+      <button class="addToCartBtn" id="addToCart">Lägg till i varukorgen</button>
       </div>
       
       <div id="infoContainer">
@@ -119,8 +117,8 @@
         <img class="monthdealImage" src="/src/img/monthDealicon.png" alt="">
       </section>
 
+      <script type="module" src="/src/ts/main.ts"></script>
     <script type="module" src="/src/ts/productPage.ts"></script>
-    <script type="module" src="/src/ts/main.ts"></script>
     <!-- <script type="module" src="/src/ts/main.ts"></script> -->
     
   </body>

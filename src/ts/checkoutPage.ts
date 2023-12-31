@@ -1,79 +1,126 @@
+import "./../scss/style.scss";
 import "./../scss/style-checkout.scss";
+import { plantList } from "./plantListArray";
 
-// Table for Order Details
-const table: HTMLElement | null = document.getElementById("checkout-products");
-const caption: HTMLTableCaptionElement = document.createElement("caption");
+// function idProductAmount() {
 
-const thead: HTMLTableSectionElement = document.createElement("thead");
-const theadRow1: HTMLTableRowElement = document.createElement("tr");
-const theadHeaderCell1: HTMLTableCellElement = document.createElement("th");
-const theadHeaderCell2: HTMLTableCellElement = document.createElement("th");
-const theadHeaderCell3: HTMLTableCellElement = document.createElement("th");
-const theadHeaderCell4: HTMLTableCellElement = document.createElement("th");
+// }
 
-const tbody: HTMLElement = document.createElement("tbody");
-const tbodyRow1: HTMLTableRowElement = document.createElement("tr");
-const tbodyHeaderCell1: HTMLTableCellElement = document.createElement("th");
-const tbodyDataCell1: HTMLTableCellElement = document.createElement("td");
-const tbodyDataCell2: HTMLTableCellElement = document.createElement("td");
-const tbodyDataCell3: HTMLTableCellElement = document.createElement("td");
+function calcTotalPrice() {
+    let costOfProducts: number = 0;
+    let costOfShipping = 98;
+    let costOfTotal: number = 0;
+    let freeShippingFloor = 500;
+    for (let i = 0; i < plantList.length; i++) {
+        costOfProducts += plantList[i].price;
+    }
+    if (costOfProducts < freeShippingFloor) {
+        costOfTotal = costOfProducts + costOfShipping;
+    } else {
+        costOfTotal = costOfProducts;
+    }
+    console.log("Products cost:",costOfProducts);
+    console.log("Shipping cost:",costOfShipping);
+    console.log("Total cost:",costOfTotal);
+}
+calcTotalPrice();
 
-const tfoot: HTMLTableSectionElement = document.createElement("tfoot");
-const tfootRow1: HTMLTableRowElement = document.createElement("tr");
-const tfootRow2: HTMLTableRowElement = document.createElement("tr");
-const tfootHeaderCell1: HTMLTableCellElement = document.createElement("th");
-const tfootHeaderCell2: HTMLTableCellElement = document.createElement("th");
-const tfootDataCell1: HTMLTableCellElement = document.createElement("td");
-const tfootDataCell2: HTMLTableCellElement = document.createElement("td");
+function createOrderDetails() {
+    const orderDetails = document.getElementById("order-details");
+    if (plantList.length > 0) {
+        const table = document.createElement("table");
+        const caption = document.createElement("caption");
+        const thead = document.createElement("thead");
+        const theadtr = document.createElement("tr");
+        const theadth1 = document.createElement("th");
+        const theadth2 = document.createElement("th");
+        const theadth3 = document.createElement("th");
+        const theadth4 = document.createElement("th");
+        const tbody = document.createElement("tbody");
+      
+        caption.innerHTML = "Din order";
+        theadth1.scope = "col";
+        theadth2.scope = "col";
+        theadth3.scope = "col";
+        theadth4.scope = "col";
+        theadth1.innerText = "Produkt";
+        theadth2.innerText = "Pris";
+        theadth3.innerText = "Antal";
+        theadth4.innerText = "Belopp";
 
-caption.innerText = "Din order";
-theadHeaderCell1.scope = "col";
-theadHeaderCell2.scope = "col";
-theadHeaderCell3.scope = "col";
-theadHeaderCell4.scope = "col";
-theadHeaderCell1.innerText = "Produkt";
-theadHeaderCell2.innerText = "Pris";
-theadHeaderCell3.innerText = "Antal";
-theadHeaderCell4.innerText = "Belopp";
+        table.appendChild(caption);
+        table.appendChild(thead);
+        thead.appendChild(theadtr);
+        theadtr.appendChild(theadth1);
+        theadtr.appendChild(theadth2);
+        theadtr.appendChild(theadth3);
+        theadtr.appendChild(theadth4);
+        table.appendChild(tbody);
 
-tbodyHeaderCell1.scope = "row";
-tbodyHeaderCell1.innerText = "Fredskalla";
-tbodyDataCell1.innerText = "79,00";
-tbodyDataCell2.innerHTML = '<input type="number" value="1" min="0" max="10" required>';
-tbodyDataCell3.innerText = "79,00";
+        for (let i = 0; i < plantList.length; i++) {
+            const product = plantList[i];
+            const tbodytr = document.createElement("tr");
+            const tbodyth = document.createElement("th");
+            const tbodytd1 = document.createElement("td");
+            const tbodytd2 = document.createElement("td");
+            const tbodytd3 = document.createElement("td");
 
-tfootHeaderCell1.scope = "row";
-tfootHeaderCell1.colSpan = 3;
-tfootHeaderCell2.scope = "row";
-tfootHeaderCell2.colSpan = 3;
-tfootDataCell1.colSpan = 1;
-tfootDataCell2.colSpan = 1;
+            tbodyth.scope = "row";
+            tbodyth.innerHTML = product.plantName;
+            tbodytd1.innerHTML = `${product.price}`;
+            tbodytd2.innerHTML = `${2}`;
+            tbodytd3.innerHTML = "";
 
-tfootHeaderCell1.innerText = "Fraktkostnad";
-tfootDataCell1.innerText = "59,00";
-tfootHeaderCell2.innerText = "Totalbelopp";
-tfootDataCell2.innerText = "138,00";
+            tbody.appendChild(tbodytr);
+            tbodytr.appendChild(tbodyth);
+            tbodytr.appendChild(tbodytd1);
+            tbodytr.appendChild(tbodytd2);
+            tbodytr.appendChild(tbodytd3);
+        }
 
-table?.appendChild(caption);
-table?.appendChild(thead);
-thead.appendChild(theadRow1);
-theadRow1.appendChild(theadHeaderCell1);
-theadRow1.appendChild(theadHeaderCell2);
-theadRow1.appendChild(theadHeaderCell3);
-theadRow1.appendChild(theadHeaderCell4);
-table?.appendChild(tbody);
-tbody.appendChild(tbodyRow1);
-tbodyRow1.appendChild(tbodyHeaderCell1);
-tbodyRow1.appendChild(tbodyDataCell1);
-tbodyRow1.appendChild(tbodyDataCell2);
-tbodyRow1.appendChild(tbodyDataCell3);
-table?.appendChild(tfoot);
-tfoot.appendChild(tfootRow1);
-tfoot.appendChild(tfootRow2);
-tfootRow1.appendChild(tfootHeaderCell1);
-tfootRow1.appendChild(tfootDataCell1);
-tfootRow2.appendChild(tfootHeaderCell2);
-tfootRow2.appendChild(tfootDataCell2);
+        const tfoot = document.createElement("tfoot");
+        const tfoottr1 = document.createElement("tr");
+        const tfoottr2 = document.createElement("tr");
+        const tfootth1 = document.createElement("th");
+        const tfootth2 = document.createElement("th");
+        const tfoottd1 = document.createElement("td");
+        const tfoottd2 = document.createElement("td");
+        const tfoottd3 = document.createElement("td");
+        const tfoottd4 = document.createElement("td");
+        
+        tfootth1.scope = "row";
+        tfootth1.innerText = "Frakt";
+        tfoottd1.innerText = "400";
+        tfoottd2.innerText = "x";
+        tfoottd3.innerText = "x";
+
+        tfootth2.scope = "row";
+        tfootth2.innerText = "Totalt";
+        tfootth2.colSpan = 3;
+        tfoottd4.innerText = "x";
+
+        tfoottr1.appendChild(tfootth1);
+        tfoottr1.appendChild(tfoottd1);
+        tfoottr1.appendChild(tfoottd2);
+        tfoottr1.appendChild(tfoottd3);
+        tfoot.appendChild(tfoottr1);
+
+
+        tfoottr2.appendChild(tfootth2);
+        tfoottr2.appendChild(tfoottd4);
+        tfoot.appendChild(tfoottr2);
+
+        table.appendChild(tbody);
+        table.appendChild(tfoot);
+
+        orderDetails?.appendChild(table);
+    } else {
+        const p = document.createElement("p");
+        p.innerText = "Din varukorg är tom!";
+        orderDetails?.appendChild(p);
+    }
+}
+createOrderDetails();
 
 // Form for personal and contact details
 const form: HTMLElement | null = document.getElementById("customer-details");

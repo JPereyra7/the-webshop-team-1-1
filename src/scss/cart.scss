@@ -1,15 +1,15 @@
 .cartContainer {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    top: 20%;
-    right: 20px;
-    width: 300px;
-    z-index: 1000; 
-    display: none; /* Initially hide the cart */
-  }
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 20%;
+  right: 20px;
+  width: 300px;
+  z-index: 1000;
+  display: none; /* Initially hide the cart */
+}
 
   .cartContainer.show {
     display: block;
@@ -19,7 +19,7 @@
     font-size: 1em;
     margin-bottom: 10px;
   }
-
+  
   .gotoCheckoutbtn {
     background-color: #000000;
     color: #fff;
