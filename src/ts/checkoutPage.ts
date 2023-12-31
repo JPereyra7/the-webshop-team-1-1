@@ -1,5 +1,10 @@
+import "./../scss/style.scss";
 import "./../scss/style-checkout.scss";
 import { plantList } from "./plantListArray";
+
+// function idProductAmount() {
+
+// }
 
 function calcTotalPrice() {
     let costOfProducts: number = 0;
@@ -74,29 +79,41 @@ function createOrderDetails() {
         }
 
         const tfoot = document.createElement("tfoot");
-        const tfoottr = document.createElement("tr");
-        const tfootth = document.createElement("th");
+        const tfoottr1 = document.createElement("tr");
+        const tfoottr2 = document.createElement("tr");
+        const tfootth1 = document.createElement("th");
+        const tfootth2 = document.createElement("th");
         const tfoottd1 = document.createElement("td");
         const tfoottd2 = document.createElement("td");
         const tfoottd3 = document.createElement("td");
+        const tfoottd4 = document.createElement("td");
         
-        tfootth.scope = "row";
-        tfootth.innerText = "Frakt";
+        tfootth1.scope = "row";
+        tfootth1.innerText = "Frakt";
         tfoottd1.innerText = "400";
-        tfoottd2.innerText = "1";
-        tfoottd3.innerText = "";
+        tfoottd2.innerText = "x";
+        tfoottd3.innerText = "x";
 
-        tfoot.appendChild(tfoottr);
-        tfoottr.appendChild(tfootth);
-        tfoottr.appendChild(tfoottd1);
-        tfoottr.appendChild(tfoottd2);
-        tfoottr.appendChild(tfoottd3);
+        tfootth2.scope = "row";
+        tfootth2.innerText = "Totalt";
+        tfootth2.colSpan = 3;
+        tfoottd4.innerText = "x";
+
+        tfoottr1.appendChild(tfootth1);
+        tfoottr1.appendChild(tfoottd1);
+        tfoottr1.appendChild(tfoottd2);
+        tfoottr1.appendChild(tfoottd3);
+        tfoot.appendChild(tfoottr1);
+
+
+        tfoottr2.appendChild(tfootth2);
+        tfoottr2.appendChild(tfoottd4);
+        tfoot.appendChild(tfoottr2);
+
         table.appendChild(tbody);
         table.appendChild(tfoot);
 
         orderDetails?.appendChild(table);
-
-        
     } else {
         const p = document.createElement("p");
         p.innerText = "Din varukorg är tom!";
