@@ -8,12 +8,12 @@ import { createHtmlForLandingpage } from "./createHtml";
 import { createHtmlForVaxterPage } from './createHtml';
 import { searchbarFunctionality } from "./createHtml";
 
+
 document.addEventListener("DOMContentLoaded", () => { //Don't touch or we will see bugs
     createHtmlForVaxterPage();
 });
 
 createHtmlForLandingpage(); //Calling function OOP from createHtml for landing page
-
 
 searchbarFunctionality();
 

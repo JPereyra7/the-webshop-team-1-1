@@ -72,7 +72,9 @@ body {
   outline: none;
   border-radius: 20px;
 }
+
 //-----------------
+
 //Main
 
 .heroContainer {
@@ -87,7 +89,6 @@ body {
   width: 560px;
   margin-top: 15px;
   max-width: 100%;
-  // border: 1px solid black;
   border-radius: 20%;
 }
 
@@ -137,7 +138,6 @@ body {
   width: 560px;
   margin-top: 15px;
   max-width: 100%;
-  // border: 1px solid black;
   border-radius: 3%;
 }
 
@@ -202,12 +202,6 @@ body {
     cursor: pointer;
   }
 }
-
-// #showPlant {
-//   display: flex;
-//   flex-direction: row;
-//   flex-wrap: nowrap;
-// }
 
 .bestSellerHeader {
   font-family: 'Cabin', sans-serif;
