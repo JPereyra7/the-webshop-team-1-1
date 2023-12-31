@@ -96,7 +96,23 @@ export function searchbarFunctionality() {
         // Function to make suggestions clickable
         function createSuggestionItem(plant: Plant): HTMLLIElement {
             const listItem = document.createElement('li');
-            listItem.textContent = plant.plantName;
+            listItem.classList.add('suggestion-item'); // Add a class for styling
+
+            const contentContainer = document.createElement('div');
+            contentContainer.classList.add('suggestion-content-container');
+
+            const imgItem = document.createElement('img');
+            imgItem.src = plant.image;
+            imgItem.alt = plant.plantName;
+            imgItem.classList.add('suggestion-image');
+
+            const plantName = document.createElement('span');
+            plantName.textContent = plant.plantName;
+            plantName.classList.add('suggestion-text');
+
+            listItem.appendChild(contentContainer);
+            contentContainer.appendChild(plantName); // Swap the order
+            contentContainer.appendChild(imgItem); // Swap the order
 
             listItem.addEventListener('click', () => {
                 if (plant.plantId !== undefined) {

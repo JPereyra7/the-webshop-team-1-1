@@ -123,8 +123,6 @@ body {
   }
 }
 
-//Carousel Slider
-
 
 //Month Container
 .monthContainer {
@@ -236,6 +234,8 @@ img {
   max-width: 70%; /* Ensure images don't exceed their container */
 }
 
+//Search field
+
 .navTwocontainer {
   display: flex;
   flex-direction: row;
@@ -275,24 +275,53 @@ img {
       width: 100%;
       background-color: #fff;
       border: 1px solid #ccc;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      box-shadow: 5px 2px 4px rgba(0, 0, 0, 0.1);
       list-style: none;
       padding: 0;
       display: none;
-      z-index: 1; 
-
+      z-index: 1;
+      border-radius: 15px;
+    
       li {
         padding: 8px;
         cursor: pointer;
-
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Cabin', sans-serif;
+    
         &:hover {
-          background-color: #f5f5f5;
+          background-color: #f9f1dc55;
+          border-radius: 15px;
+        }
+    
+        &.suggestion-item {
+          border-bottom: 1px solid #ccc;
         }
       }
     }
-
+    
+    .suggestion-content-container {
+      display: flex;
+      align-items: center;
+      flex-direction: row-reverse;
+      gap: 2em;
+      margin-right: 5em;
+    }
+    
+    .suggestion-image {
+      width: 5em;
+    }
+    
+    .suggestion-text {
+      font-family: 'Cabin', sans-serif;
+      font-size: 1.3em;
+      margin-top: 1rem;
+    }
+    
     .inputSearchbar:focus + .searchSuggestions {
       display: block;
     }
+    
   }
 }
