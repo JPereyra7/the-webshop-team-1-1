@@ -2,6 +2,7 @@
 
 @import url(/src/scss/cart.scss);
 @import url(/src/scss/hamburger.scss);
+@import url(/src/scss/skotselrad.scss);
 
 * {
   margin: 0;
@@ -285,7 +286,7 @@ img {
         font-family: 'Cabin', sans-serif;
     
         &:hover {
-          background-color: #f9f1dc55;
+          background-color: #f8f0db55;
           border-radius: 15px;
         }
     
