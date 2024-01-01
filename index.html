@@ -33,29 +33,65 @@
             <ul class="searchSuggestions" id="plantList"></ul>
           </div>
         </div>
- 
- 
-        <!-- Navigation Menu -->
-        <nav class="navigation-menu">
-          <div class="close-button" id="closeButton">&times;</div>
-          <ul class="navList">
-            <li><a href="/vaxter.html">Växter</a></li>
-            <li><a href="#">Skötselråd</a></li>
-            <li><a href="#">Om oss</a></li>
-            <li><a href="#">Kontakt</a></li>
-          </ul>
-        </nav>
- 
-            <!-- Cart Section -->
-        <div class="cartContainer">
-          <h1>Kundvagn</h1>
-          <button class="gotoCheckoutbtn">Gå till kassan - </button>
-        <div class="productCard">
-              <!-- Javascript code -->
+
+          <!-- Hamburger Menu -->
+  <!-- <div class="hamburger-menu">
+    <div class="hamburger-icon"></div>
+  </div> -->
+
+<!-- Navigation Menu -->
+<nav class="navigation-menu">
+  <div class="close-button" id="closeButton">&times;</div>
+  <ul class="navList">
+    <li><a href="/vaxter.html">Växter</a></li>
+    <li><a href="#">Skötselråd</a></li>
+    <li><a href="#">Om oss</a></li>
+    <li><a href="#">Kontakt</a></li>
+  </ul>
+</nav>
+
+    <!-- Cart Section -->
+    <div class="cartContainer">
+      <!-- <h1>Kundvagn</h1>
+      <button class="gotoCheckoutbtn">Gå till kassan - </button> -->
+      <!-- <div class="productCard"> -->
+        <!-- Javascript code -->
+      </div>
+    </div>
+  </div>
+
+  <div id="cart">
+    <h3 id="cartH3">Varukorg</h3>
+    <div id="cartItems">
+      <div id="cartContent">
+        <img id="cartImg" src="" alt="">
+        <div id="productContent">
+          <div>
+          <p id="itemName">Produkt Namn</p>
+          <div id="itemPrice">123kr</div>
+          </div>
+          <div id="itemQuantity">
+            <button class="cartBtnQuantity">-</button>
+            <span id="quantityValue">1</span>
+            <button class="cartBtnQuantity">+</button>
           </div>
         </div>
+      </div>
     </div>
- 
+    <div id="amount">
+      <p id="amountP">
+      Totala summa:
+      </p>
+      <div id="totalAmount">123kr</div>
+    </div>
+
+    <div id="goToCheckoutBtn">
+      <button class="cartButtons">Gå till kassan</button>
+      <button class="cartButtons" id="btnClose">Stäng</button>
+    </div>
+    
+  </div>
+
       <main>
       <!--The header container-->  
         <section class="heroContainer">
