@@ -30,8 +30,10 @@
   display: grid;
   grid-template-rows: 50px 1fr 50px 50px;
   border-left: solid 2px rgb(108, 68, 28);
-  display: none; /* Initially hide the cart */
-  #cartH3{
+  display: none;
+
+  /* Initially hide the cart */
+  #cartH3 {
     margin: 10px;
   }
 
@@ -67,10 +69,11 @@
   }
 
 }
-#amount{
+
+#amount {
   display: flex;
   justify-content: space-between;
-  border-top: solid 1px rgb(108, 68, 28) ;
+  border-top: solid 1px rgb(108, 68, 28);
   margin: 10px;
 }
 
@@ -83,7 +86,7 @@
   }
 }
 
-#cart.show{
+#cart.show {
   display: grid;
 }
 
