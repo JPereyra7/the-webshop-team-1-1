@@ -5,7 +5,7 @@ import { plantList } from "./plantListArray";
 // function idProductAmount() {
 
 // }
-
+console.log(plantList);
 function calcTotalPrice() {
     let costOfProducts: number = 0;
     let costOfShipping = 98;
