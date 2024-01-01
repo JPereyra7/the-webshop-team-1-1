@@ -36,12 +36,17 @@ closeButton.addEventListener('click', () => {
 
 //Function to open up cart in landingpage
 const cartButton = document.getElementById("cartBtn");
-const cartContainer = document.querySelector(".cartContainer") as HTMLElement;
+const cartContainer = document.getElementById("cart") as HTMLElement;
 
 cartButton?.addEventListener("click", () =>{
+
     cartContainer.classList.toggle("show");
 });
+document.getElementById("btnClose")?.addEventListener("click",()=>{
+    cartContainer.classList.remove("show");
+})
 
+// function for + - buttons
 const addButton = document.getElementById("increment") as HTMLButtonElement;
 const removeButton = document.getElementById("decrement") as HTMLButtonElement;
 const numberOfPlant = document.getElementById("numberOfPlant") as HTMLDivElement;

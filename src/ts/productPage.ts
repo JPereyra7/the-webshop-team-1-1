@@ -4,18 +4,18 @@ import { Plant } from "./products";
 
 const addButton = document.getElementById("increment") as HTMLButtonElement;
 const removeButton = document.getElementById("decrement") as HTMLButtonElement;
-const numberOfPlant = document.getElementById("numberOfPlant") as HTMLDivElement;
+const valueOfPlant = document.getElementById("valueOfPlant") as HTMLDivElement;
 let plantNumber = 1;
 
 addButton.addEventListener("click", () => {
     plantNumber += 1;
-    numberOfPlant.innerHTML = plantNumber.toString();
+    valueOfPlant.innerHTML = plantNumber.toString();
 })
 
 removeButton.addEventListener("click", () => {
     if (plantNumber > 1) {
         plantNumber -= 1;
-        numberOfPlant.innerHTML = plantNumber.toString();
+        valueOfPlant.innerHTML = plantNumber.toString();
     }
     else {
         return false;
@@ -71,17 +71,4 @@ plantSpecifications.innerHTML = selectedPlant!.plantSpecifications;
 priceOfPlant.innerHTML = selectedPlant!.price +"kr inkl. moms";
 nameInLatin.innerHTML= selectedPlant!.nameInLatin;
 }
-
-document.getElementById("addToCart")?.addEventListener("click",()=>{
-const productCard = document.getElementById("productCard") as HTMLDivElement;
-    const cartDiv = document.createElement("div");
-    const cartItemName = document.createElement("h3");
-    cartItemName.innerHTML = selectedPlant!.plantName;
-    console.log(selectedPlant!.plantName);
-
-    
-
-    cartDiv.appendChild(cartItemName);
-    productCard?.appendChild(cartDiv);
-})
 
