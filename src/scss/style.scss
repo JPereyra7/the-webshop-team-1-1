@@ -385,14 +385,26 @@ img {
 
 .instaLogo {
   width: 25px;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .xLogo {
   width: 38px;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .metaLogo {
   width: 23px;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 //Footer Membership Form
