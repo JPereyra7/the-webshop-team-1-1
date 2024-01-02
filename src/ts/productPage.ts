@@ -1,11 +1,11 @@
 import "./../scss/style.scss";
 import "./../scss/product.scss"
-
+import "./../scss/cart.scss"
+import { Plant } from "./products";
 
 const addButton = document.getElementById("increment") as HTMLButtonElement;
 const removeButton = document.getElementById("decrement") as HTMLButtonElement;
-const numberOfPlant = document.getElementById("numberOfPlant") as HTMLDivElement;
-const addToCartButton = document.getElementById("addToCart") as HTMLButtonElement;
+const valueOfPlant = document.getElementById("valueOfPlant") as HTMLDivElement;
 let plantNumber = 1;
 
 // may need later
@@ -14,53 +14,48 @@ let plantNumber = 1;
 
 addButton.addEventListener("click", () => {
     plantNumber += 1;
-    numberOfPlant.innerHTML = plantNumber.toString();
-    return plantNumber;
+    valueOfPlant.innerHTML = plantNumber.toString();
 })
 
 removeButton.addEventListener("click", () => {
     if (plantNumber > 1) {
         plantNumber -= 1;
-        numberOfPlant.innerHTML = plantNumber.toString();
+        valueOfPlant.innerHTML = plantNumber.toString();
     }
     else {
         return false;
     }
 })
 
-let selectedPlantData = window.sessionStorage.getItem("selectedPlant");
-let selectedPlant = null;
+// let selectedPlantData = window.sessionStorage.getItem("selectedPlant");
+// let selectedPlant = null;
+// if (selectedPlantData !== null) {
+//     selectedPlant = JSON.parse(selectedPlantData) as Plant;
+// }
+// else {
+//     console.log("did not find selected plant in sessionStorage");
+// }
+// console.log(selectedPlant.plantName);
+
+let selectedPlantData = sessionStorage.getItem("selectedPlant");
+let selectedPlant: Plant | null = null;
+
 if (selectedPlantData !== null) {
-    selectedPlant = JSON.parse(selectedPlantData);
+    selectedPlant = JSON.parse(selectedPlantData) as Plant;
 }
 else {
     console.log("did not find selected plant in sessionStorage");
 }
 
-addToCartButton.addEventListener("click", () => {
-    Array.from({length:plantNumber}, () => addProduct(selectedPlant));
-})
-
-function addProduct(product) {
-    let exisingEntries = JSON.parse(localStorage.getItem("storedProducts") || '[]');
-    if (!exisingEntries.includes(product)) {
-      exisingEntries.push(product);
-      localStorage.setItem("storedProducts", JSON.stringify(exisingEntries));
-    } else {
-      console.log(product + "Product already in local storage");
-    }
+if (selectedPlant !== null) {
+    console.log(selectedPlant.plantName);
+    clickedPlantInformation()
+}
+else {
+    console.log("selectedPlant is null");
 }
 
-// may need later
-// function removeProduct(product) {
-//     let exisingEntries = JSON.parse(localStorage.getItem("storedProducts") || '[]');
-//     exisingEntries.pop();
-//     localStorage.setItem("storedProducts", JSON.stringify(exisingEntries));
-// }
-
-// function updateProduct(product) {
-// }
-
+function clickedPlantInformation (){
 const plantName = document.getElementById("plantName") as HTMLHeadElement;
 const productPlantImg = document.getElementById("productPlantImg") as HTMLImageElement;
 const plantDescription = document.getElementById("plantDescription") as HTMLParagraphElement;
@@ -71,12 +66,13 @@ const plantCareSpecifications = document.getElementById("plantCareSpecifications
 const priceOfPlant = document.getElementById("priceOfPlant") as HTMLParagraphElement;
 const nameInLatin = document.getElementById("nameInLatin") as HTMLParagraphElement;
 
-plantName.innerHTML = selectedPlant.plantName;
-productPlantImg.src = selectedPlant.image;
-plantDescription.innerHTML = selectedPlant.productInfo;
-plantCareSunlight.innerHTML = selectedPlant.needOfSunlight;
-plantCareWatering.innerHTML = selectedPlant.watering;
-plantCareSpecifications.innerHTML = selectedPlant.plantCareSpecifications;
-plantSpecifications.innerHTML = selectedPlant.plantSpecifications;
-priceOfPlant.innerHTML = selectedPlant.price +"kr inkl. moms";
-nameInLatin.innerHTML= selectedPlant.nameInLatin;
+plantName.innerHTML = selectedPlant!.plantName;
+productPlantImg.src = selectedPlant!.image;
+plantDescription.innerHTML = selectedPlant!.productInfo;
+plantCareSunlight.innerHTML = selectedPlant!.needOfSunlight;
+plantCareWatering.innerHTML = selectedPlant!.watering;
+plantCareSpecifications.innerHTML = selectedPlant!.plantCareSpecifications;
+plantSpecifications.innerHTML = selectedPlant!.plantSpecifications;
+priceOfPlant.innerHTML = selectedPlant!.price +"kr inkl. moms";
+nameInLatin.innerHTML= selectedPlant!.nameInLatin;
+}
