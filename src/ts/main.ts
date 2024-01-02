@@ -1,5 +1,5 @@
 import "./../scss/style.scss";
-import "./../scss/productPage.scss";
+import "./../scss/product.scss";
 import "./../scss/vaxter.scss";
 import "./../scss/cart.scss";
 import "./../scss/hamburger.scss";
