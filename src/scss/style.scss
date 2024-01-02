@@ -22,7 +22,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: #c2af7a;
+  background-color: #d5caaa;
 }
 
 .logo {
@@ -42,14 +42,14 @@ body {
   width: 70px;
 }
 
-.navTwocontainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding: 20px;
-  border-bottom: 1px solid black;
-  background-color: #c2af7a;
-}
+// .navTwocontainer {
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: center;
+//   padding: 20px;
+//   border-bottom: 1px solid black;
+//   background-color: #d5caaa;
+// }
 
 .searchIcon {
   width: 35px;
@@ -237,7 +237,7 @@ img {
   justify-content: center;
   padding: 20px;
   border-bottom: 1px solid black;
-  background-color: #c2af7a;
+  background-color: #d5caaa;
 
   .searchIcon {
     width: 35px;
