@@ -1,9 +1,40 @@
 import { plantList } from "./plantListArray";
 import { Plant } from "./products";
+import { skotselList } from "./skotselradArray.ts";
+import { Skotsel } from "./skotselrad.ts";
+
+//Function for Skötselråd.html
+export function createHtmlForSkotselrad() {
+    const skotselradDiv = document.getElementById('skotselCardContainers') as HTMLDivElement;
+
+    for (let i = 0; i < skotselList.length; i++) {
+        const skotsel = skotselList[i];
+
+        const skotselDiv = document.createElement('div');
+        skotselDiv.classList.add("skotselcardDiv");
+
+        const skotselImg = document.createElement('img');
+        skotselImg.src = skotsel.image;
+        skotselImg.classList.add("skotselcardImg");
+
+        const skotselHead = document.createElement('h2');
+        skotselHead.innerHTML = skotsel.header;
+
+        const descriptionElement = document.createElement('p');
+        descriptionElement.innerHTML = skotsel.description;
+
+
+        skotselDiv.appendChild(skotselImg);
+        skotselDiv.appendChild(skotselHead);
+        skotselDiv.appendChild(descriptionElement);
+
+        skotselradDiv.appendChild(skotselDiv);
+    }
+}
 
 // Function for Växter.html page
 export function createHtmlForVaxterPage() {
-    const vaxterPageDiv = document.getElementById("app") as HTMLDivElement;
+    const vaxterPageDiv = document.getElementById("productParent") as HTMLDivElement;
 
     // Parent container for all plant containers
     const plantContainerParent = document.createElement("div");

@@ -1,12 +1,14 @@
 import "./../scss/style.scss";
 import "./../scss/productPage.scss";
 import "./../scss/vaxter.scss";
-import "./../scss/cart.scss"
-import "./../scss/hamburger.scss"
+import "./../scss/cart.scss";
+import "./../scss/hamburger.scss";
+import "./../scss/skotselrad.scss";
 
 import { createHtmlForLandingpage } from "./createHtml";
 import { createHtmlForVaxterPage } from './createHtml';
 import { searchbarFunctionality } from "./createHtml";
+import { createHtmlForSkotselrad } from "./createHtml";
 
 
 document.addEventListener("DOMContentLoaded", () => { //Don't touch or we will see bugs
@@ -14,8 +16,11 @@ document.addEventListener("DOMContentLoaded", () => { //Don't touch or we will s
 });
 
 createHtmlForLandingpage(); //Calling function OOP from createHtml for landing page
-
 searchbarFunctionality();
+
+document.addEventListener("DOMContentLoaded", () => {
+    createHtmlForSkotselrad();
+});
 
 //Function to open hamburger menu
 const menuToggle = document.getElementById('menuToggle') as HTMLElement;
@@ -67,5 +72,7 @@ removeButton.addEventListener("click", ()=>{
     return false;
     }
 })
+
+
 
 
