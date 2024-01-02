@@ -320,3 +320,267 @@ img {
     
   }
 }
+
+// //Footer Section
+// .footerInitializer {
+//   padding-top: 30px;
+// }
+
+
+  .waveOne {
+    width: 100%;
+    height: 61vw;
+    max-width: none;
+    margin-bottom: 0;
+    display: block;
+  }
+
+.theFooter {
+  background-color: #c8bfa4;
+  margin-top: 0;
+}
+
+.footerTermContainer {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.footerParagraph {
+  margin-top: 25px;
+  padding: 0px;
+    font-family: Spectral, "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 1.5;
+    display: flex;
+    color: rgb(25, 81, 62);
+    align-items: center;
+    align-self: center;
+    margin-top: 4.5rem;
+    max-width: 60%;
+}
+
+.klarnaLogo {
+  margin-top: 25px;
+  max-width: 30%;
+  overflow-clip-margin: content-box;
+  overflow: clip;
+  margin-top: 2.5rem;
+}
+
+//Footer Social Media
+.socialContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 2.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.629);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.629);
+  padding: 10px;
+}
+
+.instaLogo {
+  width: 25px;
+}
+
+.xLogo {
+  width: 38px;
+}
+
+.metaLogo {
+  width: 23px;
+}
+
+//Footer Membership Form
+.memberContainer {
+  margin-top: 4.5rem;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+}
+
+.memberHeader {
+  font-family: "Larish Neue Semibold", Georgia, Times, serif;
+    font-size: 24px;
+    font-style: normal;
+    text-transform: none;
+    line-height: 1.2;
+    color: rgb(81, 75, 25);
+    margin: 0px 0px 0.5rem;
+    text-align: center;
+    max-width: 80%;
+}
+
+.memberParagraph {
+  font-family: Spectral, "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 1.5;
+    color: rgb(39, 39, 39);
+    margin: 0px 0px 1.5rem;
+    text-align: center;
+}
+
+.memberButton {
+  position: relative;
+    appearance: none;
+    background: rgb(0, 0, 0);
+    border: none;
+    margin: 0px;
+    font-family: "Libre Franklin", Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    min-height: 48px;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    flex: 0 1 auto;
+    color: rgb(255, 255, 255);
+    line-height: 1.5;
+    min-width: 48px;
+    padding: 0px 2rem;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 150ms linear 0s;
+    border-radius: 100px;
+    text-transform: none;
+
+    &:hover {
+      background-color: #c8bfa4;
+      border: 1px solid black;
+      color: black;
+      transition: 0.8s;
+    }
+}
+
+//Customer Service
+.footerTwo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.waveSupport {
+  width: 100%;
+  height: 61vw;
+  max-width: 100% !important;
+  margin-bottom: 0;
+  display: block;
+}
+
+.secondFooter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #191919;
+  color: #ccc;
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+.supportContainer {
+  margin-top: 4.5rem;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.supportHeader {
+  background-color: #191919;
+  font-family: "Messina Sans Condensed", Impact, Charcoal, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    text-transform: uppercase;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    color: rgb(151, 151, 151);
+    margin: 0px 0px 0.5rem;
+}
+
+.supportParagraph {
+  font-family: "Libre Franklin", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1.5;
+    margin: 0px 0px 1.5rem;
+    padding: 0px 1.5rem;
+}
+
+.supportButton {
+  appearance: none;
+  background: #c8bfa4;
+  margin: 0px;
+  font-family: "Libre Franklin", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  min-height: 48px;
+  display: inline-flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  flex: 0 1 auto;
+  color: rgb(0, 0, 0);
+  line-height: 1.5;
+  min-width: 48px;
+  padding: 0px 2rem;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 150ms linear 0s;
+  border-radius: 100px;
+  text-transform: none;
+  border: 1px solid rgb(0, 0, 0);
+  white-space: nowrap;
+
+  &:hover {
+    color: white;
+    background-color: black;
+    border: 1px solid white;
+    transition: 0.8s;
+  }
+}
+
+//Information Links
+.infoLinksContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4.5rem;
+  background-color: #191919;
+  gap: 15px;
+}
+
+.infoahref {
+  list-style: none;
+  color: #fff;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.footerLogo {
+  width: 180px;
+  margin-left: 20px;
+  margin-top: 4.5rem;
+}
+
+.footerCopyright {
+  margin-bottom: 2.5rem;
+}

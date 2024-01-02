@@ -34,7 +34,7 @@ export function createHtmlForSkotselrad() {
 
 // Function for Växter.html page
 export function createHtmlForVaxterPage() {
-    const vaxterPageDiv = document.getElementById("app") as HTMLDivElement;
+    const vaxterPageDiv = document.getElementById("productParent") as HTMLDivElement;
 
     // Parent container for all plant containers
     const plantContainerParent = document.createElement("div");
