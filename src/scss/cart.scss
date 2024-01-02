@@ -31,6 +31,7 @@
   grid-template-rows: 50px 1fr 50px 50px;
   border-left: solid 2px rgb(108, 68, 28);
   display: none;
+  z-index: 2;
 
   /* Initially hide the cart */
   #cartH3 {
