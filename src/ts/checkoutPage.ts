@@ -2,10 +2,27 @@ import "./../scss/style.scss";
 import "./../scss/style-checkout.scss";
 import { plantList } from "./plantListArray";
 
-// function idProductAmount() {
+const order = document.getElementById("order-details");
+const p1 = document.createElement("p");
+const p2 = document.createElement("p");
+const p3 = document.createElement("p");
+const p4 = document.createElement("p");
+const p5 = document.createElement("p");
+order?.appendChild(p1);
+order?.appendChild(p2);
+order?.appendChild(p3);
+order?.appendChild(p4);
+order?.appendChild(p5);
 
-// }
-console.log(plantList);
+const addButton: HTMLButtonElement = document.createElement("button");
+addButton?.setAttribute("type","button");
+addButton.innerText = "Lägg till";
+order?.appendChild(addButton);
+
+addButton.addEventListener("click", () =>{
+    createOrderDetails();
+})
+
 function calcTotalPrice() {
     let costOfProducts: number = 0;
     let costOfShipping = 98;
@@ -19,15 +36,21 @@ function calcTotalPrice() {
     } else {
         costOfTotal = costOfProducts;
     }
-    console.log("Products cost:",costOfProducts);
-    console.log("Shipping cost:",costOfShipping);
-    console.log("Total cost:",costOfTotal);
 }
 calcTotalPrice();
 
+let localStorageData = window.localStorage.getItem("storedProducts");
+let localStorageObject = null;
+if (localStorageData !== null) {
+    localStorageObject = JSON.parse(localStorageData);
+}
+else {
+    console.log("did not find selected plant in localStorage");
+}
+
 function createOrderDetails() {
     const orderDetails = document.getElementById("order-details");
-    if (plantList.length > 0) {
+    if (localStorageObject.length > 0) {
         const table = document.createElement("table");
         const caption = document.createElement("caption");
         const thead = document.createElement("thead");
@@ -57,8 +80,8 @@ function createOrderDetails() {
         theadtr.appendChild(theadth4);
         table.appendChild(tbody);
 
-        for (let i = 0; i < plantList.length; i++) {
-            const product = plantList[i];
+        for (let i = 0; i < localStorageObject.length; i++) {
+            const product = localStorageObject[i];
             const tbodytr = document.createElement("tr");
             const tbodyth = document.createElement("th");
             const tbodytd1 = document.createElement("td");
@@ -120,7 +143,7 @@ function createOrderDetails() {
         orderDetails?.appendChild(p);
     }
 }
-createOrderDetails();
+
 
 // Form for personal and contact details
 const form: HTMLElement | null = document.getElementById("customer-details");
