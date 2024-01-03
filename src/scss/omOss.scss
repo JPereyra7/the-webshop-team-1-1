@@ -1,0 +1,37 @@
+#imgContainer {
+    display: flex;
+    justify-content: center;
+
+    #plantImgOmOss {
+        margin-top: 10px;
+        height: 350px;
+        border-radius: 39% 61% 63% 37% / 41% 33% 67% 59%;
+        border: double 2px #b39a7b;
+        padding-left: 10px;
+    }
+
+    h2 {
+        color: rgb(99, 76, 25);
+        align-self: end;
+        margin-right: 10px;
+        font-size: 1.7em;
+        border-bottom: double 2px #b39a7b;
+    }
+}
+
+#omOssTextContainer p {
+    text-align: left;
+    padding: 20px;
+    line-height: 1.7;
+}
+
+#omOss {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    #greenPlantImg {
+        border-radius: 80px;
+
+    }
+}

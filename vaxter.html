@@ -43,22 +43,55 @@
       <nav class="navigation-menu">
         <div class="close-button">&times;</div>
         <ul class="navList">
+          <li><a href="/index.html">Hem</a></li>
           <li><a href="/vaxter.html">Växter</a></li>
-          <li><a href="/index.html">Skötselråd</a></li>
-          <li><a href="/index.html">Om oss</a></li>
-          <li><a href="/index.html">Kontakt</a></li>
+          <li><a href="/skotselrad.html">Skötselråd</a></li>
+          <li><a href="/omOss.html">Om oss</a></li>
+          <li><a href="/kontaktaOss.html">Kontakt</a></li>
         </ul>
       </nav>
 
-            <!-- Cart Section -->
-      <div class="cartContainer">
-        <h1>Kundvagn</h1>
-        <button class="gotoCheckoutbtn">Gå till kassan - </button>
-      <div class="productCard">
-              <!-- Javascript code -->
+          <!-- Cart Section -->
+    <div class="cartContainer">
+      <!-- <h1>Kundvagn</h1>
+      <button class="gotoCheckoutbtn">Gå till kassan - </button> -->
+      <!-- <div class="productCard"> -->
+        <!-- Javascript code -->
+      </div>
+    </div>
+  </div>
+
+  <div id="cart">
+    <h3 id="cartH3">Varukorg</h3>
+    <div id="cartItems">
+      <div id="cartContent">
+        <img id="cartImg" src="" alt="">
+        <div id="productContent">
+          <div>
+          <p id="itemName">Produkt Namn</p>
+          <div id="itemPrice">123kr</div>
+          </div>
+          <div id="itemQuantity">
+            <button class="cartBtnQuantity">-</button>
+            <span id="quantityValue">1</span>
+            <button class="cartBtnQuantity">+</button>
           </div>
         </div>
-      </nav>
+      </div>
+    </div>
+    <div id="amount">
+      <p id="amountP">
+      Totala summa:
+      </p>
+      <div id="totalAmount">123kr</div>
+    </div>
+
+    <div id="goToCheckoutBtn">
+      <button class="cartButtons">Gå till kassan</button>
+      <button class="cartButtons" id="btnClose">Stäng</button>
+    </div>
+  </div>
+  
     <main>
         <section class="vaxterContainer">
             <img class="vaxterImage" src="/src/img/bouquet-142876_1280.jpg" alt="">
@@ -70,5 +103,59 @@
         <div id="productParent"></div>
 
     </main>
+
+    <!-- Footer Section -->
+    <div class="footerInitializer">
+      <img class="waveOne" src="/src/img/NormalColor.png" alt="">
+    </div>
+    <footer class="theFooter">
+      <div class="footerTermContainer">
+        <p class="footerParagraph">Vi har öppet köp på alla buketter. Alla kunder täcks av växtgarantin i 12 månader efter köp.</p>
+
+      <img src="https://wikinggruppen.se/innehall/uploads/2014/07/klarna-smoooth-payments-400-400x159.png" alt="" class="klarnaLogo">
+    </div>
+
+      <div class="socialContainer">
+        <img class="instaLogo" src="/src/img/Instagram-icon-with-flat-design-on-transparent-background-PNG.png" alt="">
+        <img class="xLogo" src="/src/img/twitterX vector.png" alt="">
+        <img class="metaLogo" src="/src/img/facebook-vector.svg" alt="">
+      </div>
+
+      <div class="memberContainer">
+      <h2 class="memberHeader">Bli en del av Växthusets familj</h2>
+      <p class="memberParagraph">Bli medlem för exklusiva rabatter, senaste släpp och förmåner!</p>
+
+      <button class="memberButton">Bli medlem</button>
+    </div>
+ 
+
+      <img class="waveSupport" src="/src/img/BLack.png" alt="">
+    
+      </footer>
+      <div class="secondFooter">
+        <section class="supportContainer"></section>
+        <h2 class="supportHeader">Kundservice</h2>
+        <p class="supportParagraph">Vi svarar mer än gärna på frågor eller funderingar</p>
+        <button id="contactButton" class="supportButton">Kontakta oss</button>
+      </section>
+    
+      <section class="infoLinksContainer">
+        <h2 class="infoHeader">Information</h2>
+        <a class="infoahref" href="">Om Växthuset</a>
+        <a class="infoahref" href="">Köp och leveransvillkor</a>
+        <a class="infoahref" href="">Presentkort</a>
+        <a class="infoahref" href="">Press & Media</a>
+        <a class="infoahref" href="">Handla tryggt - Covid19 information</a>
+        <a class="infoahref" href="">Vårt hållbarhetsarbete</a>
+        <a class="infoahref" href="">Karriär</a>
+        <a class="infoahref" href="">Växthus-guiden</a>
+      
+    
+      <img src="/src/img/vaxthusetlogowhite.png" alt="" class="footerLogo">
+      <p class="footerCopyright">© Copyright Växthuset 2023</p>
+      </div>
+    </div>
+  </div>
+</section>
         <script type="module" src="/src/ts/main.ts"></script>
     </body>

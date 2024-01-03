@@ -12,6 +12,9 @@ body{
     flex-direction: column;
     line-height: 1.4;
 }
+#plantCare p{
+  text-align: left;
+}
 
 #productPlantImg{
     margin: 20px 0 20px 0;
@@ -30,6 +33,7 @@ body{
         color: rgb(202, 165, 126);
     }
 }
+
 #plantCare{
     display: flex;
     flex-direction: column;
@@ -47,7 +51,7 @@ body{
       padding:0 5px;
       font-size: 1.1rem;
     }
-    #numberOfPlant{
+    #valueOfPlant{
       padding: 10px;
       -moz-box-shadow: inset 0px 0px 6px -3px rgba(0,0,0,0.75);
       box-shadow: inset 0px 0px 6px -3px rgba(0,0,0,0.75);
@@ -56,12 +60,23 @@ body{
   }
   #addToCart{
     padding: 10px 25px;
-    background-color: rgb(11, 86, 11);
+    margin-top: 5px;
+    background-color: #b39a7b;
     color: white;
     border-radius: 10px;
     border: none;
     font-size: 1.1rem;
+    box-shadow: 4px 6px 0px 0px rgba(0,0,0,0.75);
+    // för desktop!
+    // &:hover{
+    //   letter-spacing: 2px;
+    // }
+    &:active{
+      box-shadow:2px 4px 0px 0px rgba(0, 0, 0, 0.443);
+      transform: translateY(4px);
+    }
   }
+
   #addToCartContainer{
     display: flex;
     flex-direction: column;
