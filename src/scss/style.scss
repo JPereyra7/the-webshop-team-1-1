@@ -1,10 +1,11 @@
+@use "mixins" as m;
 @import url('https://fonts.googleapis.com/css2?family=Cabin&family=Inter:wght@300&display=swap');
-
 @import url(/src/scss/cart.scss);
 @import url(/src/scss/hamburger.scss);
 @import url(/src/scss/skotselrad.scss);
 @import url(/src/scss/omOss.scss);
 @import url(/src/scss/contactUs.scss);
+
 
 * {
   margin: 0;
@@ -68,7 +69,8 @@ body {
   background-color: white;
 }
 
-.inputSearchbar { //The actual searchbar input
+.inputSearchbar {
+  //The actual searchbar input
   width: 300px;
   padding: 10px;
   border-style: none;
@@ -191,6 +193,9 @@ body {
   font-family: 'Cabin', sans-serif;
   text-align: left;
   margin-left: 15px;
+  @include m.desktop{
+    text-align: center;
+  }
 }
 
 .monthdealImage {
@@ -211,24 +216,51 @@ body {
   text-align: left;
   margin-top: 25px;
   margin-left: 15px;
+
+  @include m.desktop {
+    text-align: center;
+  }
 }
 
 #productsLandingPage {
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row; 
-  justify-content: space-around; 
+  flex-direction: column;
+  align-items: center;
+
+  #showPlant {
+    width: 100vw;
+
+    @include m.tablet {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+
+    }
+  }
+
 }
 
 .plant {
-  border: 1px solid #ccc;
-  margin: 10px;
+  border: 4px double #b39a7b;
+  margin: 20px;
   padding: 10px;
   text-align: center;
+  border-radius: 50px;
+  box-shadow: 0px 0px 6px 1px #b39a7b;
+
+  @include m.tablet {
+    width: 40vw;
+  }
+
+  @include m.desktop {
+    width: 20vw;
+  }
 }
 
 img {
-  max-width: 70%; /* Ensure images don't exceed their container */
+  max-width: 70%;
+  /* Ensure images don't exceed their container */
 }
 
 //Search field
@@ -256,13 +288,13 @@ img {
     border-radius: 20px;
     background-color: white;
 
-    .inputSearchbar { 
+    .inputSearchbar {
       width: 300px;
       padding: 10px;
       border-style: none;
       outline: none;
       border-radius: 20px;
-      z-index: 2; 
+      z-index: 2;
     }
 
     .searchSuggestions {
@@ -278,7 +310,7 @@ img {
       display: none;
       z-index: 1;
       border-radius: 15px;
-    
+
       li {
         padding: 8px;
         cursor: pointer;
@@ -286,18 +318,18 @@ img {
         justify-content: center;
         align-items: center;
         font-family: 'Cabin', sans-serif;
-    
+
         &:hover {
           background-color: #f8f0db55;
           border-radius: 15px;
         }
-    
+
         &.suggestion-item {
           border-bottom: 1px solid #ccc;
         }
       }
     }
-    
+
     .suggestion-content-container {
       display: flex;
       align-items: center;
@@ -305,21 +337,21 @@ img {
       gap: 2em;
       margin-right: 5em;
     }
-    
+
     .suggestion-image {
       width: 5em;
     }
-    
+
     .suggestion-text {
       font-family: 'Cabin', sans-serif;
       font-size: 1.3em;
       margin-top: 1rem;
     }
-    
-    .inputSearchbar:focus + .searchSuggestions {
+
+    .inputSearchbar:focus+.searchSuggestions {
       display: block;
     }
-    
+
   }
 }
 
@@ -329,13 +361,13 @@ img {
 // }
 
 
-  .waveOne {
-    width: 100%;
-    height: 61vw;
-    max-width: none;
-    margin-bottom: 0;
-    display: block;
-  }
+.waveOne {
+  width: 100%;
+  height: 61vw;
+  max-width: none;
+  margin-bottom: 0;
+  display: block;
+}
 
 .theFooter {
   background-color: #c8bfa4;
@@ -353,16 +385,16 @@ img {
 .footerParagraph {
   margin-top: 25px;
   padding: 0px;
-    font-family: Spectral, "Palatino Linotype", "Book Antiqua", Palatino, serif;
-    font-size: 15px;
-    font-weight: normal;
-    line-height: 1.5;
-    display: flex;
-    color: rgb(95, 87, 68);
-    align-items: center;
-    align-self: center;
-    margin-top: 4.5rem;
-    max-width: 60%;
+  font-family: Spectral, "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-size: 15px;
+  font-weight: normal;
+  line-height: 1.5;
+  display: flex;
+  color: rgb(95, 87, 68);
+  align-items: center;
+  align-self: center;
+  margin-top: 4.5rem;
+  max-width: 60%;
 }
 
 .klarnaLogo {
@@ -414,31 +446,32 @@ img {
 }
 
 @keyframes socialAnimation {
-	0%,
-	100% {
-		transform: translateX(0%);
-		transform-origin: 50% 50%;
-	}
 
-	15% {
-		transform: translateX(-30px) rotate(-6deg);
-	}
+  0%,
+  100% {
+    transform: translateX(0%);
+    transform-origin: 50% 50%;
+  }
 
-	30% {
-		transform: translateX(15px) rotate(6deg);
-	}
+  15% {
+    transform: translateX(-30px) rotate(-6deg);
+  }
 
-	45% {
-		transform: translateX(-15px) rotate(-3.6deg);
-	}
+  30% {
+    transform: translateX(15px) rotate(6deg);
+  }
 
-	60% {
-		transform: translateX(9px) rotate(2.4deg);
-	}
+  45% {
+    transform: translateX(-15px) rotate(-3.6deg);
+  }
 
-	75% {
-		transform: translateX(-6px) rotate(-1.2deg);
-	}
+  60% {
+    transform: translateX(9px) rotate(2.4deg);
+  }
+
+  75% {
+    transform: translateX(-6px) rotate(-1.2deg);
+  }
 }
 
 //Footer Membership Form
@@ -452,60 +485,60 @@ img {
 
 .memberHeader {
   font-family: "Larish Neue Semibold", Georgia, Times, serif;
-    font-size: 24px;
-    font-style: normal;
-    text-transform: none;
-    line-height: 1.2;
-    color: rgb(81, 75, 25);
-    margin: 0px 0px 0.5rem;
-    text-align: center;
-    max-width: 80%;
+  font-size: 24px;
+  font-style: normal;
+  text-transform: none;
+  line-height: 1.2;
+  color: rgb(81, 75, 25);
+  margin: 0px 0px 0.5rem;
+  text-align: center;
+  max-width: 80%;
 }
 
 .memberParagraph {
   font-family: Spectral, "Palatino Linotype", "Book Antiqua", Palatino, serif;
-    font-size: 18px;
-    font-weight: normal;
-    line-height: 1.5;
-    color: rgb(39, 39, 39);
-    margin: 0px 0px 1.5rem;
-    text-align: center;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 1.5;
+  color: rgb(39, 39, 39);
+  margin: 0px 0px 1.5rem;
+  text-align: center;
 }
 
 .memberButton {
   position: relative;
-    appearance: none;
-    background: rgb(0, 0, 0);
-    border: none;
-    margin: 0px;
-    font-family: "Libre Franklin", Arial, Helvetica, sans-serif;
-    font-size: 14px;
-    font-weight: normal;
-    font-style: normal;
-    min-height: 48px;
-    display: inline-flex;
-    -webkit-box-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    justify-content: center;
-    flex: 0 1 auto;
-    color: rgb(255, 255, 255);
-    line-height: 1.5;
-    min-width: 48px;
-    padding: 0px 2rem;
-    text-decoration: none;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color 150ms linear 0s;
-    border-radius: 100px;
-    text-transform: none;
+  appearance: none;
+  background: rgb(0, 0, 0);
+  border: none;
+  margin: 0px;
+  font-family: "Libre Franklin", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  min-height: 48px;
+  display: inline-flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  flex: 0 1 auto;
+  color: rgb(255, 255, 255);
+  line-height: 1.5;
+  min-width: 48px;
+  padding: 0px 2rem;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 150ms linear 0s;
+  border-radius: 100px;
+  text-transform: none;
 
-    &:hover {
-      background-color: #c8bfa4;
-      border: 1px solid black;
-      color: black;
-      transition: 0.8s;
-    }
+  &:hover {
+    background-color: #c8bfa4;
+    border: 1px solid black;
+    color: black;
+    transition: 0.8s;
+  }
 }
 
 //Customer Service
@@ -545,23 +578,23 @@ img {
 .supportHeader {
   background-color: #191919;
   font-family: "Messina Sans Condensed", Impact, Charcoal, sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    text-transform: uppercase;
-    line-height: 1.5;
-    letter-spacing: 1px;
-    color: #ccc;
-    margin: 0px 0px 0.5rem;
+  font-size: 16px;
+  font-style: normal;
+  text-transform: uppercase;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  color: #ccc;
+  margin: 0px 0px 0.5rem;
 }
 
 .supportParagraph {
   font-family: "Libre Franklin", Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    font-weight: normal;
-    font-style: normal;
-    line-height: 1.5;
-    margin: 0px 0px 1.5rem;
-    padding: 0px 1.5rem;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.5;
+  margin: 0px 0px 1.5rem;
+  padding: 0px 1.5rem;
 }
 
 .supportButton {

@@ -1,4 +1,4 @@
-
+@use "mixins" as m;
 .cartImg {
   background-color: green;
   width: 50px;
@@ -21,6 +21,12 @@
   border-left: solid 2px #c2af7a;
   display: none;
   z-index: 2;
+  @include m.tablet{
+    width: 50vw;
+  }
+  @include m.desktop{
+    width: 30vw;
+  }
 
   /* Initially hide the cart */
   .cartH3 {

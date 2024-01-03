@@ -1,3 +1,4 @@
+@use "mixins" as m;
 .hamburger-menu {
     cursor: pointer;
     padding: 10px;
@@ -24,10 +25,16 @@
 .navigation-menu ul {
   list-style: none;
   padding: 0;
-  margin: 50%;
+  margin: 40%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  @include m.tablet{
+    margin-top: 20%;
+  }
+  @include m.desktop{
+    margin-top: 10%;
+  }
 }
 
 .navigation-menu li {
@@ -46,8 +53,6 @@
     text-decoration: underline;
   }
 }
-
-
 
 .close-button {
   position: absolute;
@@ -75,6 +80,12 @@
   opacity: 95%;
   transform: translateX(-100%);
   transition: transform 0.5s ease;
+  @include m.desktop{
+    width: 30vw;
+    height: 80vh;
+    border-radius: 10px;
+    border: double 3px #575035;
+  }
 }
 
 .navList {
@@ -110,12 +121,12 @@
   transform: translateX(0);
 }
 
-@media (max-width: 768px) {
-  .navigation-menu {
-    padding-top: 0;
-  }
+// @media (max-width: 768px) {
+//   .navigation-menu {
+//     padding-top: 0;
+//   }
 
-  .show {
-    display: block;
-  }
-}
+//   .show {
+//     display: block;
+//   }
+// }
