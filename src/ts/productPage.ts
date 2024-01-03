@@ -39,13 +39,13 @@ else {
     console.log("did not find selected plant in sessionStorage");
 }
 
-// if (selectedPlant !== null) {
-//     console.log(selectedPlant.plantName);
-//     clickedPlantInformation()
-// }
-// else {
-//     console.log("selectedPlant is null");
-// }
+if (selectedPlant !== null) {
+    console.log(selectedPlant.plantName);
+    clickedPlantInformation()
+}
+else {
+    console.log("selectedPlant is null");
+}
 
 function clickedPlantInformation (){
 const plantName = document.getElementById("plantName") as HTMLHeadElement;
