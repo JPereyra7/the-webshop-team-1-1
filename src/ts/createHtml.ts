@@ -1,7 +1,7 @@
 import { plantList } from "./plantListArray";
 import { Plant } from "./products";
-import { skotselList } from "./skotselradArray.ts";
-import { Skotsel } from "./skotselrad.ts";
+import { skotselList } from "./skotselradArray";
+import { Skotsel } from "./skotselrad";
 
 //Function for Skötselråd.html
 export function createHtmlForSkotselrad() {
