@@ -2,7 +2,16 @@ import { plantList } from "./plantListArray";
 import { Plant } from "./products";
 import { skotselList } from "./skotselradArray.ts";
 import { Skotsel } from "./skotselrad.ts";
- 
+
+let localStorageData = window.localStorage.getItem("storedProducts");
+let localStorageObject: any = null;
+if (localStorageData !== null) {
+    localStorageObject = JSON.parse(localStorageData);
+}
+else {
+    console.log("did not find selected plant in localStorage");
+}
+
 //Function for Skötselråd.html
 export function createHtmlForSkotselrad() {
     const skotselradDiv = document.getElementById('skotselCardContainers') as HTMLDivElement;
@@ -120,6 +129,14 @@ export function createHtmlForLandingpage() {
         }
     }
 }
+
+export function createHtmlForCart() {
+    const cartItemName = document.getElementById("itemName");
+    for (let i = 0; i < localStorageObject.length; i++) {
+        const cartItem = localStorageObject[i];
+        console.log(cartItem.nameInLatin);
+    }
+}
  
 // Function for searchbar
 export function searchbarFunctionality() {
@@ -224,4 +241,3 @@ export function searchbarFunctionality() {
         renderPlants(plantList);
     });
 }
- 

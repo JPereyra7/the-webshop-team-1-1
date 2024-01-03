@@ -10,7 +10,7 @@
 //     z-index: 1000; 
 //     display: none; /* Initially hide the cart */
 //   }
-#cartImg {
+.cartImg {
   background-color: green;
   width: 50px;
   height: 50px;
@@ -34,7 +34,7 @@
   z-index: 2;
 
   /* Initially hide the cart */
-  #cartH3 {
+  .cartH3 {
     margin: 10px;
     font-size: 1.3em;
   }
@@ -86,7 +86,7 @@
   margin: 10px;
 }
 
-#itemQuantity {
+.itemQuantity {
   padding: 10px;
 
   .cartBtnQuantity {

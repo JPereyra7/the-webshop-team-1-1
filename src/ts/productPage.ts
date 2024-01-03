@@ -6,6 +6,7 @@ import { Plant } from "./products";
 const addButton = document.getElementById("increment") as HTMLButtonElement;
 const removeButton = document.getElementById("decrement") as HTMLButtonElement;
 const valueOfPlant = document.getElementById("valueOfPlant") as HTMLDivElement;
+const addToCartButton = document.getElementById("addToCart") as HTMLButtonElement;
 let plantNumber = 1;
 
 // may need later
@@ -15,7 +16,7 @@ let plantNumber = 1;
 addButton.addEventListener("click", () => {
     plantNumber += 1;
     valueOfPlant.innerHTML = plantNumber.toString();
-
+    return plantNumber;
 })
 
 removeButton.addEventListener("click", () => {
@@ -30,8 +31,6 @@ removeButton.addEventListener("click", () => {
 
 let selectedPlantData = sessionStorage.getItem("selectedPlant");
 let selectedPlant: Plant | null = null;
-
-
 if (selectedPlantData !== null) {
     selectedPlant = JSON.parse(selectedPlantData) as Plant;
 }
@@ -46,6 +45,30 @@ if (selectedPlant !== null) {
 else {
     console.log("selectedPlant is null");
 }
+
+addToCartButton.addEventListener("click", () => {
+    Array.from({length:plantNumber}, () => addProduct(selectedPlant));
+})
+
+function addProduct(product: any) {
+    let exisingEntries = JSON.parse(localStorage.getItem("storedProducts") || '[]');
+    if (!exisingEntries.includes(product)) {
+      exisingEntries.push(product);
+      localStorage.setItem("storedProducts", JSON.stringify(exisingEntries));
+    } else {
+      console.log(product + "Product already in local storage");
+    }
+}
+
+// may need later
+// function removeProduct(product) {
+//     let exisingEntries = JSON.parse(localStorage.getItem("storedProducts") || '[]');
+//     exisingEntries.pop();
+//     localStorage.setItem("storedProducts", JSON.stringify(exisingEntries));
+// }
+
+// function updateProduct(product) {
+// }
 
 function clickedPlantInformation (){
 const plantName = document.getElementById("plantName") as HTMLHeadElement;

@@ -40,7 +40,7 @@ function calcTotalPrice() {
 calcTotalPrice();
 
 let localStorageData = window.localStorage.getItem("storedProducts");
-let localStorageObject = null;
+let localStorageObject: any = null;
 if (localStorageData !== null) {
     localStorageObject = JSON.parse(localStorageData);
 }
