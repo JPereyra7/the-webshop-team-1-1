@@ -1,104 +1,161 @@
+@use "mixins" as m;
 @import url(/src/scss/style.scss);
 @import url(/src/scss/hamburger.scss);
 @import url(/src/scss/cart.scss);
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body{
-    display: flex;
-    flex-direction: column;
-    line-height: 1.4;
+
+body {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.4;
 }
-#plantCare p{
+
+#plantCare p {
   text-align: left;
 }
 
-#productPlantImg{
-    margin: 20px 0 20px 0;
-    background-color: aquamarine;
-    width: 90vw;
- 
-}
-.centerContainer{
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-}
-#plantNameAndPrice{
-    text-align: center;
-    .italicText{
-        color: rgb(202, 165, 126);
-    }
+#productPlantImg {
+  margin: 20px 0 20px 0;
+  background-color: aquamarine;
+  width: 90vw;
+
+  @include m.desktop {
+    width: 40vw;
+
+  }
+
 }
 
-#plantCare{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 20px;
+.centerContainer {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-#counter{
-    display: flex;
-    gap: 5px;
-    .numberBtn{
-      width: 30px;
-      border-radius: 100px;
-      border-color: black;
-      background-color: white;
-      padding:0 5px;
-      font-size: 1.1rem;
-    }
-    #valueOfPlant{
-      padding: 10px;
-      -moz-box-shadow: inset 0px 0px 6px -3px rgba(0,0,0,0.75);
-      box-shadow: inset 0px 0px 6px -3px rgba(0,0,0,0.75);
-      border-radius: 5px;
-    }
+
+#plantNameAndPrice {
+  text-align: center;
+
+  .italicText {
+    color: rgb(202, 165, 126);
   }
-  #addToCart{
-    padding: 10px 25px;
-    margin-top: 5px;
-    background-color: #b39a7b;
-    color: white;
-    border-radius: 10px;
-    border: none;
+
+  @include m.tablet {
+    margin-top: -20px;
+    margin-bottom: 20px;
+  }
+}
+
+#plantCare {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+}
+
+#counter {
+  display: flex;
+  gap: 5px;
+
+  .numberBtn {
+    width: 30px;
+    border-radius: 100px;
+    border-color: black;
+    background-color: white;
+    padding: 0 5px;
     font-size: 1.1rem;
-    box-shadow: 4px 6px 0px 0px rgba(0,0,0,0.75);
-    // för desktop!
-    // &:hover{
-    //   letter-spacing: 2px;
-    // }
-    &:active{
-      box-shadow:2px 4px 0px 0px rgba(0, 0, 0, 0.443);
-      transform: translateY(4px);
-    }
   }
 
-  #addToCartContainer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+  #valueOfPlant {
+    padding: 10px;
+    -moz-box-shadow: inset 0px 0px 6px -3px rgba(0, 0, 0, 0.75);
+    box-shadow: inset 0px 0px 6px -3px rgba(0, 0, 0, 0.75);
+    border-radius: 5px;
   }
-  .borderBottom{
-    border-bottom: solid 1px rgb(202, 165, 126);
-    padding-bottom: 10px;
-  }
-  #infoContainer{
-    display: flex;
-    flex-direction: column;
-    padding:25px;
-    margin-bottom: 50px;
 
-    .marginTop{
-        margin-top: 10px;
-    }
-   
-   #listInfoDelivery{
+}
+
+#addToCart {
+  padding: 10px 25px;
+  margin-top: 5px;
+  background-color: #b39a7b;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  font-size: 1.1rem;
+  box-shadow: 4px 6px 0px 0px rgba(0, 0, 0, 0.75);
+
+  &:active {
+    box-shadow: 2px 4px 0px 0px rgba(0, 0, 0, 0.443);
+    transform: translateY(4px);
+
+  }
+
+  @include m.desktop {
+    margin-bottom: 9px;
+    margin-left: 10px;
+  }
+
+}
+
+#addToCartContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  @include m.desktop {
+    width: 87vw;
+    flex-direction: row;
+    margin-top: -100px;
+    justify-content: end;
+
+  }
+}
+
+.borderBottom {
+  border-bottom: solid 1px rgb(202, 165, 126);
+  padding-bottom: 10px;
+}
+
+#infoContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  margin-bottom: 50px;
+
+  .marginTop {
+    margin-top: 10px;
+  }
+
+  #listInfoDelivery {
     list-style-type: circle;
     margin-bottom: 20px;
-   }
   }
+
+  @include m.tablet {
+    width: 50vw;
+  }
+}
+
+@include m.desktop {
+  #productPage {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+  }
+
+  .centerContainer {
+    width: 50vw;
+  }
+
+  #plantName {
+    font-size: 2em;
+  }
+}

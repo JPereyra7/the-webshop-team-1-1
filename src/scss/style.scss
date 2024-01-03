@@ -1,11 +1,11 @@
+@use "mixins" as m;
 @import url('https://fonts.googleapis.com/css2?family=Cabin&family=Inter:wght@300&display=swap');
-
 @import url(/src/scss/cart.scss);
 @import url(/src/scss/hamburger.scss);
 @import url(/src/scss/skotselrad.scss);
 @import url(/src/scss/omOss.scss);
 @import url(/src/scss/contactUs.scss);
-@import "../scss/variables.scss";
+
 
 * {
   margin: 0;
@@ -60,7 +60,8 @@ body {
   background-color: $search-bgcolor;
 }
 
-.inputSearchbar { //The actual searchbar input
+.inputSearchbar {
+  //The actual searchbar input
   width: 300px;
   padding: 10px;
   border-style: none;
@@ -185,7 +186,9 @@ body {
   font-family: 'Cabin', sans-serif;
   text-align: left;
   margin-left: 15px;
-  color: $header-color;
+  @include m.desktop{
+    text-align: center;
+  }
 }
 
 .monthdealImage {
@@ -206,24 +209,51 @@ body {
   text-align: left;
   margin-top: 25px;
   margin-left: 15px;
+
+  @include m.desktop {
+    text-align: center;
+  }
 }
 
 #productsLandingPage {
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row; 
-  justify-content: space-around; 
+  flex-direction: column;
+  align-items: center;
+
+  #showPlant {
+    width: 100vw;
+
+    @include m.tablet {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+
+    }
+  }
+
 }
 
 .plant {
-  border: $white-border-color;
-  margin: 10px;
+  border: 4px double #b39a7b;
+  margin: 20px;
   padding: 10px;
   text-align: center;
+  border-radius: 50px;
+  box-shadow: 0px 0px 6px 1px #b39a7b;
+
+  @include m.tablet {
+    width: 40vw;
+  }
+
+  @include m.desktop {
+    width: 20vw;
+  }
 }
 
 img {
-  max-width: 70%; /* Ensure images don't exceed their container */
+  max-width: 70%;
+  /* Ensure images don't exceed their container */
 }
 
 //Search field
@@ -251,13 +281,13 @@ img {
     border-radius: 20px;
     background-color: $search-bgcolor;
 
-    .inputSearchbar { 
+    .inputSearchbar {
       width: 300px;
       padding: 10px;
       border-style: none;
       outline: none;
       border-radius: 20px;
-      z-index: 2; 
+      z-index: 2;
     }
 
     .searchSuggestions {
@@ -273,7 +303,7 @@ img {
       display: none;
       z-index: 1;
       border-radius: 15px;
-    
+
       li {
         padding: 8px;
         cursor: pointer;
@@ -281,18 +311,18 @@ img {
         justify-content: center;
         align-items: center;
         font-family: 'Cabin', sans-serif;
-    
+
         &:hover {
           background-color: $search-hover-color;
           border-radius: 15px;
         }
-    
+
         &.suggestion-item {
           border-bottom: $white-border-color;
         }
       }
     }
-    
+
     .suggestion-content-container {
       display: flex;
       align-items: center;
@@ -300,21 +330,21 @@ img {
       gap: 2em;
       margin-right: 5em;
     }
-    
+
     .suggestion-image {
       width: 5em;
     }
-    
+
     .suggestion-text {
       font-family: 'Cabin', sans-serif;
       font-size: 1.3em;
       margin-top: 1rem;
     }
-    
-    .inputSearchbar:focus + .searchSuggestions {
+
+    .inputSearchbar:focus+.searchSuggestions {
       display: block;
     }
-    
+
   }
 }
 
@@ -324,13 +354,13 @@ img {
 // }
 
 
-  .waveOne {
-    width: 100%;
-    height: 61vw;
-    max-width: none;
-    margin-bottom: 0;
-    display: block;
-  }
+.waveOne {
+  width: 100%;
+  height: 61vw;
+  max-width: none;
+  margin-bottom: 0;
+  display: block;
+}
 
 .theFooter {
   background-color: $footer-primary-bgcolor;
@@ -409,31 +439,32 @@ img {
 }
 
 @keyframes socialAnimation {
-	0%,
-	100% {
-		transform: translateX(0%);
-		transform-origin: 50% 50%;
-	}
 
-	15% {
-		transform: translateX(-30px) rotate(-6deg);
-	}
+  0%,
+  100% {
+    transform: translateX(0%);
+    transform-origin: 50% 50%;
+  }
 
-	30% {
-		transform: translateX(15px) rotate(6deg);
-	}
+  15% {
+    transform: translateX(-30px) rotate(-6deg);
+  }
 
-	45% {
-		transform: translateX(-15px) rotate(-3.6deg);
-	}
+  30% {
+    transform: translateX(15px) rotate(6deg);
+  }
 
-	60% {
-		transform: translateX(9px) rotate(2.4deg);
-	}
+  45% {
+    transform: translateX(-15px) rotate(-3.6deg);
+  }
 
-	75% {
-		transform: translateX(-6px) rotate(-1.2deg);
-	}
+  60% {
+    transform: translateX(9px) rotate(2.4deg);
+  }
+
+  75% {
+    transform: translateX(-6px) rotate(-1.2deg);
+  }
 }
 
 //Footer Membership Form

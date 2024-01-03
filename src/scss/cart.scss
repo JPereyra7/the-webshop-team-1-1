@@ -1,15 +1,4 @@
-// .cartContainer {
-//     background-color: #fff;
-//     border: 1px solid #ddd;
-//     padding: 20px;
-//     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-//     position: fixed;
-//     top: 20%;
-//     right: 20px;
-//     width: 300px;
-//     z-index: 1000; 
-//     display: none; /* Initially hide the cart */
-//   }
+@use "mixins" as m;
 .cartImg {
   background-color: green;
   width: 50px;
@@ -32,6 +21,12 @@
   border-left: solid 2px #c2af7a;
   display: none;
   z-index: 2;
+  @include m.tablet{
+    width: 50vw;
+  }
+  @include m.desktop{
+    width: 30vw;
+  }
 
   /* Initially hide the cart */
   .cartH3 {
