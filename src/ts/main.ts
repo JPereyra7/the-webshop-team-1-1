@@ -22,6 +22,14 @@ document.addEventListener("DOMContentLoaded", () => {
     createHtmlForSkotselrad();
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+const contactButton = document.getElementById('contactButton') as HTMLButtonElement;
+
+contactButton.addEventListener('click', function () {
+    window.location.href = 'kontaktaOss.html';
+})
+});
+
 //Function to open hamburger menu
 const menuToggle = document.getElementById('menuToggle') as HTMLElement;
 // const hamburgerMenu = document.querySelector('.hamburger-menu') as HTMLElement;
@@ -72,7 +80,5 @@ removeButton.addEventListener("click", ()=>{
     return false;
     }
 })
-
-
 
 

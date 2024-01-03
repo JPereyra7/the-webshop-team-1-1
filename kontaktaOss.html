@@ -94,7 +94,31 @@
 
     </div>
 
-    <main>
+    <main class="contactContainer">
+
+        <!-- Contact form -->
+        <section class="keepTouchContainer">
+            <h1 class="keepTouchHeader">Keep in touch</h1>
+            <p class="keepTouchParagraph">Tveka inte på att höra av er till oss via detta formulär om ni har några funderingar kring vårt sortiment</p>
+            <form class="contact-form row">
+               <div class="form-field col x-50">
+                  <input id="name" class="input-text js-input" type="text" required>
+                  <label class="label" for="name">Namn</label>
+               </div>
+               <div class="form-field col x-50">
+                  <input id="email" class="input-text js-input" type="email" required>
+                  <label class="label" for="email">E-mail</label>
+               </div>
+               <div class="form-field col x-100">
+                  <input id="message" class="input-text js-input" type="text" required>
+                  <label class="label" for="message">Meddelande</label>
+               </div>
+               <div class="form-field col x-100 align-center">
+                  <input class="submit-btn" type="submit" value="Skicka">
+               </div>
+            </form>
+         </section>
+
     </main>
 
     <!-- The Footer -->
@@ -133,7 +157,7 @@
         <section class="supportContainer"></section>
         <h2 class="supportHeader">Kundservice</h2>
         <p class="supportParagraph">Vi svarar mer än gärna på frågor eller funderingar</p>
-        <button class="supportButton">Kontakta oss</button>
+        <button id="contactButton" class="supportButton">Kontakta oss</button>
         </section>
 
         <section class="infoLinksContainer">
