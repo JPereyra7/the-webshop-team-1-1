@@ -1,11 +1,12 @@
 @use "mixins" as m;
+
 @import url('https://fonts.googleapis.com/css2?family=Cabin&family=Inter:wght@300&display=swap');
 @import url(/src/scss/cart.scss);
 @import url(/src/scss/hamburger.scss);
 @import url(/src/scss/skotselrad.scss);
 @import url(/src/scss/omOss.scss);
 @import url(/src/scss/contactUs.scss);
-
+@import "../scss/variables";
 
 * {
   margin: 0;
