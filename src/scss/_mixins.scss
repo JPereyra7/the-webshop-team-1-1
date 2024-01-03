@@ -1,0 +1,13 @@
+@use "variabless" as v;
+
+@mixin desktop {
+    @media screen and (min-width:v.$desktop){
+      @content
+    }
+  }
+
+@mixin tablet {
+    @media screen and (min-width:v.$tablets){
+      @content
+    }
+  }
