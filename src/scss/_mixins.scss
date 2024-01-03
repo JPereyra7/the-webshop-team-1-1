@@ -1,4 +1,4 @@
-@use "variabless" as v;
+@use "variables" as v;
 
 @mixin desktop {
     @media screen and (min-width:v.$desktop){
