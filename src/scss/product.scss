@@ -2,6 +2,7 @@
 @import url(/src/scss/style.scss);
 @import url(/src/scss/hamburger.scss);
 @import url(/src/scss/cart.scss);
+@import "./variables";
 
 * {
   margin: 0;
@@ -66,16 +67,17 @@ body {
   .numberBtn {
     width: 30px;
     border-radius: 100px;
-    border-color: black;
-    background-color: white;
+    border-color: $black-bg;
+    background-color: $search-bgcolor;
     padding: 0 5px;
     font-size: 1.1rem;
+    
   }
 
   #valueOfPlant {
     padding: 10px;
-    -moz-box-shadow: inset 0px 0px 6px -3px rgba(0, 0, 0, 0.75);
-    box-shadow: inset 0px 0px 6px -3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: $plant-value-mozShadow;
+    box-shadow: $plant-value-shadow;
     border-radius: 5px;
   }
 
@@ -84,15 +86,23 @@ body {
 #addToCart {
   padding: 10px 25px;
   margin-top: 5px;
-  background-color: #b39a7b;
-  color: white;
-  border-radius: 10px;
+  background-color: $footer-primary-bgcolor;
+  color: $link-color;
+  border-radius: 7px;
   border: none;
   font-size: 1.1rem;
-  box-shadow: 4px 6px 0px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: $container-shadow;
+
+  &:hover {
+    transition: 0.7s;
+    color: $footer-primary-bgcolor;
+    background-color: $black-bg;
+    border: $third-border-color;
+    box-shadow: $container-shadow;
+  }
 
   &:active {
-    box-shadow: 2px 4px 0px 0px rgba(0, 0, 0, 0.443);
+    box-shadow: $container-shadow;
     transform: translateY(4px);
 
   }
@@ -120,7 +130,7 @@ body {
 }
 
 .borderBottom {
-  border-bottom: solid 1px rgb(202, 165, 126);
+  border-bottom: $third-border-color;
   padding-bottom: 10px;
 }
 

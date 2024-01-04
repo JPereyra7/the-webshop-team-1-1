@@ -1,4 +1,5 @@
 @use "mixins" as m;
+@import "../scss/variables";
 
 #imgContainer {
     display: flex;
@@ -11,7 +12,7 @@
         margin-top: 10px;
         height: 350px;
         border-radius: 39% 61% 63% 37% / 41% 33% 67% 59%;
-        border: double 2px #b39a7b;
+        border: $third-border-color;
         padding-left: 10px;
         @include m.desktop{
             width: 400px;
@@ -20,11 +21,11 @@
     }
 
     h2 {
-        color: rgb(99, 76, 25);
+        color: $primary-footer-header;
         align-self: end;
         margin-right: 10px;
         font-size: 1.7em;
-        border-bottom: double 2px #b39a7b;
+        border-bottom: $third-border-color;
         @include m.desktop{
             align-self: flex-start;
             font-size: 2.1em;

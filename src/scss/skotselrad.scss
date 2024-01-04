@@ -1,3 +1,5 @@
+@import "../scss/variables";
+
 * {
     margin: 0;
     padding: 0;
@@ -37,7 +39,7 @@
     text-align: center;
     width: 100%;
     max-width: 95%;
-    color: rgb(123, 123, 123);
+    color: $fifth-paragraph-color;
 }
 
 .skotselSecondHeader {
@@ -47,7 +49,7 @@
     text-transform: none;
     line-height: 1.2;
     margin: 0px;
-    color: rgb(99, 76, 25);
+    color: $primary-footer-header;
     text-align: inherit;
 }
 
@@ -89,7 +91,7 @@
         font-style: normal;
         text-transform: none;
         line-height: 1.5;
-        color:  rgb(99, 76, 25);
+        color:  $primary-footer-header;
         display: block;
         margin: 0px 0px 1rem;
         text-decoration: none;
@@ -102,7 +104,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #d8d2ba82;
+    background-color: $container-bg-color;
     padding-top: 25px;
     margin-top: 25px;
     margin-bottom: 50px;
@@ -119,7 +121,7 @@
     text-transform: uppercase;
     line-height: 1.2;
     margin: 0px 0px 1rem;
-    color: rgb(96, 88, 66);
+    color: $secondary-paragraph-color;
     letter-spacing: 1px;
     text-align: center;
 }
@@ -136,7 +138,7 @@
 
 button.expertButton {
     appearance: none;
-    background: rgb(0, 0, 0);
+    background: $black-bg;
     border: none;
     margin: 1.5rem 0px 25px;
     font-family: "Libre Franklin", Arial, Helvetica, sans-serif;
@@ -148,7 +150,7 @@ button.expertButton {
     align-items: center;
     justify-content: center;
     flex: 0 1 auto;
-    color: rgb(255, 255, 255);
+    color: $link-color;
     line-height: 1.5;
     min-width: 48px;
     padding: 0px 2rem;
@@ -158,22 +160,22 @@ button.expertButton {
     transition: background-color 150ms linear 0s;
     border-radius: 40px;
     text-transform: none;
-    box-shadow: rgb(50, 50, 93) 2px 2px 5px -12px, rgba(0, 0, 0, 0.847) 0px 3px 7px -3px;
+    box-shadow: $expert-button-shadow;
 
     &:hover {
-        background-color: #f1f1f1;
-        color: black;
+        background-color: $expert-button-hover-bg;
+        color: $header-color;
         transition: 1s;
-        border: 1px solid rgb(99, 76, 25);
-        box-shadow: rgba(50, 50, 93, 0.777) 0px 6px 12px -2px, rgba(0, 0, 0, 0.852) 0px 3px 7px -3px;
+        border: $sixth-border-color;
+        box-shadow: $expert-button-hover-shadow;
     }
 
     &:active {
-        background-color: #f1f1f1;
-        color: black;
+        background-color: $expert-button-hover-bg;
+        color: $header-color;
         transition: 1s;
-        border: 1px solid rgb(99, 76, 25);
-        box-shadow: rgba(50, 50, 93, 0.777) 0px 6px 12px -2px, rgba(0, 0, 0, 0.852) 0px 3px 7px -3px;
+        border: $sixth-border-color;
+        box-shadow: $expert-button-hover-shadow;
     }
 }
 
@@ -181,13 +183,13 @@ button.expertButton {
 @media screen and (max-width: 768px) {
     .skotselcardDiv {
         margin-top: 15px;
-        width: 80%; // Full width on smaller screens
-        margin-right: 0; // No right margin
-        margin-left: 0; // No left margin
-        border: 1px solid gray;
-        border: 1px solid #f1f1f1;
+        width: 80%;
+        margin-right: 0; 
+        margin-left: 0; 
+        border: $seventh-border-color;
+        border: $fifth-border-color;
         padding: 5px;
-        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        box-shadow: $card-container-shadow;
         display: flex;
         flex-direction: column;
         justify-content: center;

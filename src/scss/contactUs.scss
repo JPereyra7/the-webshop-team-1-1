@@ -1,3 +1,5 @@
+@import "../scss/variables";
+
 .contactContainer {
    display: flex;
    flex-direction: column;
@@ -31,7 +33,6 @@
     margin-top: 35px;
     position: relative;
     top: 50%;
-    // transform: translateY(-50%);
    
    .keepTouchHeader {
       text-align: center;
@@ -49,11 +50,11 @@
     font-size: 18px;
     font-weight: normal;
     line-height: 1.5;
-    color: rgb(39, 39, 39);
+    color: $third-paragraph-color;
     margin: 0px 0px 1.5rem;
     text-align: center;
     padding-bottom: 48px;
-    border-bottom: 1px solid rgba(39, 39, 39, 0.464);
+    border-bottom: $contactForm-border-color;
  }
  
  .contact-form {
@@ -66,7 +67,7 @@
        width: 100%;
        height: 36px;
        border-width: 0 0 2px 0;
-       border-color: #000;
+       border-color: $black-bg;
        font-family: Lusitana, serif;
        font-size: 18px;
        line-height: 26px;
@@ -91,26 +92,33 @@
        font-size: 18px;
        line-height: 26px;
        font-weight: 400;
-       color: #888;
+       color: $label-color;
        cursor: text;
        transition: transform .2s ease-in-out;
     }
     
     .submit-btn {
        display: inline-block;
-       background-color: #000;
-       color: #fff;
-       font-family: Raleway, sans-serif;
-       text-transform: uppercase;
+       background-color: $search-bgcolor;
+       color: $header-color;
+       font-family: "Libre Franklin", Arial, Helvetica, sans-serif;
+       text-transform: none;
        letter-spacing: 2px;
-       font-size: 16px;
+       font-size: 14px;
        line-height: 24px;
        padding: 8px 16px;
-       border: none;
-       border-radius: 5px;
+       border: $secondary-black-border;
+       border-radius: 7px;
        cursor: pointer;
+    
+    &:hover {
+      transition: 0.7s;
+      background-color: $black-bg;
+      color: $footer-primary-bgcolor;
+      border: $container-bg-color;
     }
  }
+}
  
  .note {
     position: absolute;
@@ -123,7 +131,7 @@
     line-height: 21px;
     
     .link {
-       color: #888;
+       color: $label-color;
        text-decoration: none;
        &:hover {
           text-decoration: underline;
