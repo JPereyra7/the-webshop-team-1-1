@@ -667,7 +667,7 @@ img {
   color: $fourth-paragraph-color;
 }
 
-@media (min-width: 768px) {
+@include m.tablet {
   .heroImage {
     width: 80%;
     border-radius: 0px;
