@@ -1,5 +1,7 @@
 export class Plant {
     constructor(
+        public quantity: number,
+        public isAdded: boolean,
         public image: string,
         public nameInLatin: string,
         public plantName: string,

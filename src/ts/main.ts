@@ -4,13 +4,14 @@ import "./../scss/vaxter.scss";
 import "./../scss/cart.scss";
 import "./../scss/hamburger.scss";
 import "./../scss/skotselrad.scss";
+
  
 import { createHtmlForCart, createHtmlForLandingpage } from "./createHtml";
 import { createHtmlForVaxterPage } from './createHtml';
 import { searchbarFunctionality } from "./createHtml";
 import { createHtmlForSkotselrad } from "./createHtml";
- 
- 
+import { htmlForCartArray } from "./productPage";
+
 document.addEventListener("DOMContentLoaded", () => { //Don't touch or we will see bugs
     createHtmlForVaxterPage();
 });
@@ -18,12 +19,17 @@ document.addEventListener("DOMContentLoaded", () => { //Don't touch or we will s
 createHtmlForLandingpage(); //Calling function OOP from createHtml for landing page
 searchbarFunctionality();
 
+
 document.addEventListener("DOMContentLoaded", () => {
     createHtmlForCart();
 });
+
 document.addEventListener("DOMContentLoaded", () => {
     createHtmlForSkotselrad();
 });
+
+
+
  
 document.addEventListener("DOMContentLoaded", () => {
 const contactButton = document.getElementById('contactButton') as HTMLButtonElement;
@@ -32,6 +38,8 @@ contactButton.addEventListener('click', function () {
     window.location.href = 'kontaktaOss.html';
 })
 });
+
+
  
 //Function to open hamburger menu
 const menuToggle = document.getElementById('menuToggle') as HTMLElement;
@@ -54,7 +62,6 @@ closeButton.addEventListener('click', () => {
 //Function to open up cart in landingpage
 const cartButton = document.getElementById("cartBtn");
 const cartContainer = document.getElementById("cart") as HTMLElement;
- 
 cartButton?.addEventListener("click", () =>{
  
     cartContainer.classList.toggle("show");
@@ -62,6 +69,10 @@ cartButton?.addEventListener("click", () =>{
 document.getElementById("btnClose")?.addEventListener("click",()=>{
     cartContainer.classList.remove("show");
 })
+
+document.getElementById("checkoutButton")?.addEventListener('click', function () {
+    window.location.href = 'checkoutPage.html';
+});
  
 // function for + - buttons
 const addButton = document.getElementById("increment") as HTMLButtonElement;
@@ -83,3 +94,4 @@ removeButton.addEventListener("click", ()=>{
     return false;
     }
 })
+
