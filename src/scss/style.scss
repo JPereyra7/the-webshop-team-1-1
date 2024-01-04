@@ -89,6 +89,7 @@ body {
   border-radius: 20%;
 }
 
+
 .heroHeader {
   margin-top: 10px;
   font-family: 'Cabin', sans-serif;
@@ -236,12 +237,18 @@ body {
 }
 
 .plant {
-  border: 0.5px double #b39a7b;
+  border: $black-bg;
   margin: 20px;
   padding: 10px;
   text-align: center;
   border-radius: 50px;
-  box-shadow: 0px 0px 6px 1px #b39a7b;
+  box-shadow: $card-container-shadow;
+
+  &:hover {
+    transition: 1.5s;
+    cursor: pointer;
+    box-shadow: $expert-button-hover-shadow;
+  }
 
   @include m.tablet {
     width: 40vw;
@@ -658,4 +665,107 @@ img {
 .footerCopyright {
   margin-bottom: 2.5rem;
   color: $fourth-paragraph-color;
+}
+
+@media (min-width: 768px) {
+  .heroImage {
+    width: 80%;
+    border-radius: 0px;
+  }
+  .heroHeader {
+    font-size: 34px;
+  }
+
+  .heroParagraph {
+    font-size: 1.3em;
+  }
+  .heroButton {
+    font-size: 1.2em;
+  }
+  .monthImage {
+    width: 80%;
+    border-radius: 0px;
+  }
+  h3 {
+    font-size: 2em;
+    text-align: left;
+    margin-left: 25px;
+  }
+  .monthHeader {
+    font-size: 34px;
+  }
+  .monthParagraph {
+    font-size: 1.3em;
+  }
+  .monthButton {
+    font-size: 1.2em;
+  }
+  .monthDealHeader {
+    font-size: 2em;
+    text-align: left;
+    margin-left: 25px;
+  }
+  .monthdealImage {
+    width: 50%;
+  }
+  .waveOne {
+    display: none;
+  }
+  .monthDeal {
+    margin-bottom: 50px;
+  }
+  .footerParagraph {
+    font-size: 1.3em;
+  }
+  .klarnaLogo {
+    width: 180px;
+  }
+  .instaLogo {
+    width: 30px;
+  }
+  .xLogo {
+    width: 40px;
+  }
+  .metaLogo {
+    width: 23px;
+  }
+  .socialContainer {
+    justify-content: center;
+    gap: 3em;
+  }
+  .memberHeader {
+    font-size: 38px;
+  }
+  .memberParagraph {
+    font-size: 1.3em;
+  }
+  .memberButton {
+    font-size: 1.1em;
+    margin-bottom: 50px;
+  }
+  .waveSupport {
+    display: none;
+  }
+  .secondFooter {
+    padding-top: 50px;
+  }
+  .supportHeader {
+    font-size: 38px;
+  }
+  .supportParagraph {
+    font-size: 1.3em;
+  }
+  .supportButton {
+    font-size: 1.1em;
+  }
+  .infoHeader {
+    font-size: 38px;
+    border-bottom: $fifth-border-color;
+  }
+  .infoahref {
+    font-size: 24px;
+  }
+  .footerLogo {
+    width: 250px;
+  }
 }

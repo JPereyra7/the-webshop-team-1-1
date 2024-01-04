@@ -64,14 +64,14 @@ h1:hover {
     color: $item-hover;
 }
 
-// .directionContainer {
-//     flex: 0 0 calc(40% - 20px); 
-//     margin: 20px; 
-// }
-
-// #productParent {
-//     display: flex;
-//     flex-direction: row;
-//     flex-flow: row;
-//     justify-content: end;
-// }
+@media (min-width: 768px) {
+    .vaxterImage {
+        width: 80%;
+    }
+    .vaxterHeader {
+        font-size: 38px;
+    }
+    .vaxterParagraph {
+        font-size: 1.4em;    
+    }
+}
