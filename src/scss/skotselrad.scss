@@ -64,16 +64,15 @@
 
 .skotselcardImg {
     margin-top: 15px;
-    max-width: 350px;
 }
 
 .skotselcardDiv {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-bottom: 20px;
     margin-top: 20px;
-    width: 48%; // Adjusted width
+    width: 40%; // Adjusted width
 
     p {
         text-align: left;
