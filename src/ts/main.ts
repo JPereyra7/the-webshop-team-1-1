@@ -33,6 +33,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+//Var försiktig med allt ovanför detta. Rörs dem störs arbetet!
+//---------------------------------------------------------------
+//---------------------------------------------------------------
+
+//nav - hamburgaremeny - varukorg
+//----------------------------------------------------------------
+
+
+//rendering av produkter till startsidan
+//----------------------------------------------------------------
+
+//rendering av produkter till växter sidan
+//-----------------------------------------------------------------
+
+//rendering av skötselråd ts till skötselråd sidan
+
+
 const menuToggle = document.getElementById('menuToggle') as HTMLElement;
 const navigationMenu = document.querySelector('.navigation-menu') as HTMLElement;
 const closeButton = document.querySelector('.close-button') as HTMLButtonElement;
@@ -65,22 +82,5 @@ for (const button of checkoutButtons) {
     });
 }
 
-const addButton = document.getElementById("increment") as HTMLButtonElement;
-const removeButton = document.getElementById("decrement") as HTMLButtonElement;
-const numberOfPlant = document.getElementById("numberOfPlant") as HTMLDivElement;
-let plantNumber = 1;
 
-addButton.addEventListener("click", () => {
-    plantNumber += 1;
-    numberOfPlant.innerHTML = plantNumber.toString();
-});
-
-removeButton.addEventListener("click", () => {
-    if (plantNumber > 1) {
-        plantNumber -= 1;
-        numberOfPlant.innerHTML = plantNumber.toString();
-    } else {
-        return false;
-    }
-});
 

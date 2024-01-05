@@ -4,6 +4,7 @@ import "./../scss/cart.scss";
 import { Plant } from "./products";
 
 // Get HTML elements
+//----------------------------------------------------------------
 const addButton = document.getElementById("increment") as HTMLButtonElement;
 const removeButton = document.getElementById("decrement") as HTMLButtonElement;
 const valueOfPlant = document.getElementById("valueOfPlant") as HTMLDivElement;
@@ -12,7 +13,8 @@ const productPlantImg = document.getElementById("productPlantImg") as HTMLImageE
 
 let plantNumber = 1;
 
-// Increase or decrease quantity in cart
+// Increase or decrease quantity in product page "add to cart button"
+//----------------------------------------------------------------
 addButton.addEventListener("click", () => {
     plantNumber += 1;
     valueOfPlant.innerHTML = plantNumber.toString();
@@ -27,7 +29,9 @@ removeButton.addEventListener("click", () => {
     }
 });
 
+
 // Show information in the product page
+//----------------------------------------------------------------
 let selectedPlantData = sessionStorage.getItem("selectedPlant");
 let selectedPlant: Plant | null = null;
 if (selectedPlantData !== null) {
@@ -64,6 +68,8 @@ function clickedPlantInformation() {
     nameInLatin.innerHTML = selectedPlant!.nameInLatin;
 }
 
+// Add to cart function
+//----------------------------------------------------------------
 // Create array
 export let cartArray: Plant[] = JSON.parse(
     localStorage.getItem("storedProducts") ?? "[]"
