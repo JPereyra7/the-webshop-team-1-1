@@ -3,6 +3,10 @@
 // import "./../scss/cart.scss";
 // import { Plant } from "./products";
 
+
+
+
+
 // Get HTML elements
 //----------------------------------------------------------------
 // const addButton = document.getElementById("increment") as HTMLButtonElement;

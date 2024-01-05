@@ -6,7 +6,7 @@ import "./../scss/hamburger.scss";
 import "./../scss/skotselrad.scss";
 
 import { plantList } from "./plantListArray";
-import { skotselList } from "./skotselradArray.ts";
+// import { skotselList } from "./skotselradArray.ts";
 import { Plant } from "./products";
 
 // document.addEventListener("DOMContentLoaded", () => {
@@ -164,201 +164,168 @@ function createHtmlForVaxterPage() {
 }
 createHtmlForVaxterPage();
 
-// Show information in the product page
-//----------------------------------------------------------------
-
-let selectedPlant = JSON.parse(
-  sessionStorage.getItem("selectedPlant") ?? "[]"
-);
-if (selectedPlant) {
-  clickedPlantInformation();
-} else {
-  console.log("selectedPlant is null or not found in sessionStorage");
-}
-
-function clickedPlantInformation() {
-  const plantName = document.getElementById("plantName") as HTMLHeadElement;
-  const plantDescription = document.getElementById("plantDescription") as HTMLParagraphElement;
-  const plantCareWatering = document.getElementById("plantCareWatering") as HTMLParagraphElement;
-  const plantCareSunlight = document.getElementById("plantCareSunlight") as HTMLParagraphElement;
-  const plantSpecifications = document.getElementById("plantSpecifications") as HTMLDivElement;
-  const plantCareSpecifications = document.getElementById("plantCareSpecifications") as HTMLDivElement;
-  const priceOfPlant = document.getElementById("priceOfPlant") as HTMLParagraphElement;
-  const nameInLatin = document.getElementById("nameInLatin") as HTMLParagraphElement;
-
-  plantName.innerHTML = selectedPlant.plantName;
-  productPlantImg.src = selectedPlant.image;
-  plantDescription.innerHTML = selectedPlant.productInfo;
-  plantCareSunlight.innerHTML = selectedPlant.needOfSunlight;
-  plantCareWatering.innerHTML = selectedPlant.watering;
-  plantCareSpecifications.innerHTML = selectedPlant.plantCareSpecifications;
-  plantSpecifications.innerHTML = selectedPlant.plantSpecifications;
-  priceOfPlant.innerHTML = selectedPlant.price + "kr inkl. moms";
-  nameInLatin.innerHTML = selectedPlant.nameInLatin;
-}
-
 // Create HTML for cart
 //------------------------------------------------------------------
 // htmlForCartArray(); //---------------------KAOS!!!!!!!!!!!! ----------------
 
 //rendering av skötselråd ts till skötselråd sidan
 //-----------------------------------------------------------------
-function createHtmlForSkotselrad() {
-  const skotselradDiv = document.getElementById(
-    "skotselCardContainers"
-  ) as HTMLDivElement;
+// function createHtmlForSkotselrad() {
+//   const skotselradDiv = document.getElementById(
+//     "skotselCardContainers"
+//   ) as HTMLDivElement;
 
-  for (let i = 0; i < skotselList.length; i++) {
-    const skotsel = skotselList[i];
+//   for (let i = 0; i < skotselList.length; i++) {
+//     const skotsel = skotselList[i];
 
-    const skotselDiv = document.createElement("div");
-    skotselDiv.classList.add("skotselcardDiv");
+//     const skotselDiv = document.createElement("div");
+//     skotselDiv.classList.add("skotselcardDiv");
 
-    const skotselImg = document.createElement("img");
-    skotselImg.src = skotsel.image;
-    skotselImg.classList.add("skotselcardImg");
+//     const skotselImg = document.createElement("img");
+//     skotselImg.src = skotsel.image;
+//     skotselImg.classList.add("skotselcardImg");
 
-    const skotselHead = document.createElement("h2");
-    skotselHead.innerHTML = skotsel.header;
+//     const skotselHead = document.createElement("h2");
+//     skotselHead.innerHTML = skotsel.header;
 
-    const descriptionElement = document.createElement("p");
-    descriptionElement.innerHTML = skotsel.description;
+//     const descriptionElement = document.createElement("p");
+//     descriptionElement.innerHTML = skotsel.description;
 
-    skotselDiv.appendChild(skotselImg);
-    skotselDiv.appendChild(skotselHead);
-    skotselDiv.appendChild(descriptionElement);
+//     skotselDiv.appendChild(skotselImg);
+//     skotselDiv.appendChild(skotselHead);
+//     skotselDiv.appendChild(descriptionElement);
 
-    skotselradDiv?.appendChild(skotselDiv);
-  }
-}
-createHtmlForSkotselrad();
+//     skotselradDiv?.appendChild(skotselDiv);
+//   }
+// }
+// createHtmlForSkotselrad();
 
 //Search function
 //-----------------------------------------------------------
 // Function for searchbar
-// searchbarFunctionality();
-// function searchbarFunctionality() {
-//   document.addEventListener("DOMContentLoaded", () => {
-//     // Function to make suggestions clickable
-//     function createSuggestionItem(plant: Plant): HTMLLIElement {
-//       const listItem = document.createElement("li");
-//       listItem.classList.add("suggestion-item"); // Add a class for styling
+searchbarFunctionality();
+function searchbarFunctionality() {
+  document.addEventListener("DOMContentLoaded", () => {
+    // Function to make suggestions clickable
+    function createSuggestionItem(plant: Plant): HTMLLIElement {
+      const listItem = document.createElement("li");
+      listItem.classList.add("suggestion-item"); // Add a class for styling
 
-//       const contentContainer = document.createElement("div");
-//       contentContainer.classList.add("suggestion-content-container");
+      const contentContainer = document.createElement("div");
+      contentContainer.classList.add("suggestion-content-container");
 
-//       const imgItem = document.createElement("img");
-//       imgItem.src = plant.image;
-//       imgItem.alt = plant.plantName;
-//       imgItem.classList.add("suggestion-image");
+      const imgItem = document.createElement("img");
+      imgItem.src = plant.image;
+      imgItem.alt = plant.plantName;
+      imgItem.classList.add("suggestion-image");
 
-//       const plantName = document.createElement("span");
-//       plantName.textContent = plant.plantName;
-//       plantName.classList.add("suggestion-text");
+      const plantName = document.createElement("span");
+      plantName.textContent = plant.plantName;
+      plantName.classList.add("suggestion-text");
 
-//       listItem.appendChild(contentContainer);
-//       contentContainer.appendChild(plantName); // Swap the order
-//       contentContainer.appendChild(imgItem); // Swap the order
+      listItem.appendChild(contentContainer);
+      contentContainer.appendChild(plantName); // Swap the order
+      contentContainer.appendChild(imgItem); // Swap the order
 
-//       listItem.addEventListener("click", () => {
-//         if (plant.plantId !== undefined) {
-//           // Navigate to productPage.html if plantId is available
-//           window.location.replace(`/productPage.html?plantId=${plant.plantId}`);
-//         } else {
-//           // Fallback to default behavior for other pages
-//           window.location.replace(
-//             `/productPage.html?plantIndex=${plantList.indexOf(plant)}`
-//           );
-//         }
-//         window.sessionStorage.setItem("selectedPlant", JSON.stringify(plant));
-//       });
-//       return listItem;
-//     }
+      listItem.addEventListener("click", () => {
+        if (plant.plantId !== undefined) {
+          // Navigate to productPage.html if plantId is available
+          window.location.replace(`/productPage.html?plantId=${plant.plantId}`);
+        } else {
+          // Fallback to default behavior for other pages
+          window.location.replace(
+            `/productPage.html?plantIndex=${plantList.indexOf(plant)}`
+          );
+        }
+        window.sessionStorage.setItem("selectedPlant", JSON.stringify(plant));
+      });
+      return listItem;
+    }
 
-//     function renderPlants(plants?: Plant[]) {
-//       const plantListElement = document.getElementById("plantList");
+    function renderPlants(plants?: Plant[]) {
+      const plantListElement = document.getElementById("plantList");
 
-//       if (plantListElement) {
-//         plantListElement.innerHTML = "";
+      if (plantListElement) {
+        plantListElement.innerHTML = "";
 
-//         if (plants) {
-//           plants.forEach((plant) => {
-//             const listItem = createSuggestionItem(plant);
-//             plantListElement.appendChild(listItem);
-//             plantListElement.appendChild(listItem);
-//           });
-//         }
-//       }
-//     }
+        if (plants) {
+          plants.forEach((plant) => {
+            const listItem = createSuggestionItem(plant);
+            plantListElement.appendChild(listItem);
+            plantListElement.appendChild(listItem);
+          });
+        }
+      }
+    }
 
-//     // Search logic
-//     function handleSearch() {
-//       const searchInput = document.querySelector(
-//         ".inputSearchbar"
-//       ) as HTMLInputElement;
-//       const searchSuggestions = document.getElementById(
-//         "plantList"
-//       ) as HTMLUListElement;
+    // Search logic
+    function handleSearch() {
+      const searchInput = document.querySelector(
+        ".inputSearchbar"
+      ) as HTMLInputElement;
+      const searchSuggestions = document.getElementById(
+        "plantList"
+      ) as HTMLUListElement;
 
-//       if (searchInput && searchSuggestions) {
-//         const searchTerm = searchInput.value.toLowerCase();
+      if (searchInput && searchSuggestions) {
+        const searchTerm = searchInput.value.toLowerCase();
 
-//         if (searchTerm.trim() === "") {
-//           searchSuggestions.style.display = "none";
-//           return;
-//         }
+        if (searchTerm.trim() === "") {
+          searchSuggestions.style.display = "none";
+          return;
+        }
 
-//         const filteredPlants = plantList.filter((plant) =>
-//           plant.plantName.toLowerCase().includes(searchTerm)
-//         );
+        const filteredPlants = plantList.filter((plant) =>
+          plant.plantName.toLowerCase().includes(searchTerm)
+        );
 
-//         renderPlants(filteredPlants);
+        renderPlants(filteredPlants);
 
-//         if (filteredPlants.length > 0) {
-//           searchSuggestions.style.display = "block";
-//         } else {
-//           searchSuggestions.style.display = "none";
-//         }
-//       }
-//     }
+        if (filteredPlants.length > 0) {
+          searchSuggestions.style.display = "block";
+        } else {
+          searchSuggestions.style.display = "none";
+        }
+      }
+    }
 
-//     document.addEventListener("click", (event) => {
-//       const searchInput = document.querySelector(
-//         ".inputSearchbar"
-//       ) as HTMLInputElement;
-//       const searchSuggestions = document.getElementById(
-//         "plantList"
-//       ) as HTMLUListElement;
+    document.addEventListener("click", (event) => {
+      const searchInput = document.querySelector(
+        ".inputSearchbar"
+      ) as HTMLInputElement;
+      const searchSuggestions = document.getElementById(
+        "plantList"
+      ) as HTMLUListElement;
 
-//       if (searchInput && searchSuggestions) {
-//         if (
-//           !searchInput.contains(event.target as Node) &&
-//           !searchSuggestions.contains(event.target as Node)
-//         ) {
-//           searchSuggestions.style.display = "none";
-//         }
-//       }
-//     });
+      if (searchInput && searchSuggestions) {
+        if (
+          !searchInput.contains(event.target as Node) &&
+          !searchSuggestions.contains(event.target as Node)
+        ) {
+          searchSuggestions.style.display = "none";
+        }
+      }
+    });
 
-//     document.querySelector(".inputSearchbar")?.addEventListener("focus", () => {
-//       const searchSuggestions = document.getElementById(
-//         "plantList"
-//       ) as HTMLUListElement;
-//       if (searchSuggestions) {
-//         searchSuggestions.style.display = "none";
-//       }
-//     });
+    document.querySelector(".inputSearchbar")?.addEventListener("focus", () => {
+      const searchSuggestions = document.getElementById(
+        "plantList"
+      ) as HTMLUListElement;
+      if (searchSuggestions) {
+        searchSuggestions.style.display = "none";
+      }
+    });
 
-//     document
-//       .querySelector(".inputSearchbar")
-//       ?.addEventListener("input", handleSearch);
+    document
+      .querySelector(".inputSearchbar")
+      ?.addEventListener("input", handleSearch);
 
-//     renderPlants(plantList);
-//   });
-// }
+    renderPlants(plantList);
+  });
+}
 
 // //Button to checkout page
-// const checkoutButtons = document.getElementsByClassName("checkoutBtn");
+// let checkoutButtons = document.getElementsByClassName("checkoutBtn");
 
 // for (const button of checkoutButtons) {
 //   button.addEventListener("click", function () {
@@ -393,6 +360,38 @@ removeButton.addEventListener("click", () => {
 } else {
   console.log("Error: valueOfPlant element not found.");
 }
+
+// Show information in the product page
+//----------------------------------------------------------------
+let selectedPlant = JSON.parse(
+  sessionStorage.getItem("selectedPlant") ?? "[]"
+);
+if (selectedPlant) {
+  clickedPlantInformation();
+} else {
+  console.log("selectedPlant is null or not found in sessionStorage");
+}
+
+function clickedPlantInformation() {
+    const plantName = document.getElementById("plantName") as HTMLHeadElement;
+    const plantDescription = document.getElementById("plantDescription") as HTMLParagraphElement;
+    const plantCareWatering = document.getElementById("plantCareWatering") as HTMLParagraphElement;
+    const plantCareSunlight = document.getElementById("plantCareSunlight") as HTMLParagraphElement;
+    const plantSpecifications = document.getElementById("plantSpecifications") as HTMLDivElement;
+    const plantCareSpecifications = document.getElementById("plantCareSpecifications") as HTMLDivElement;
+    const priceOfPlant = document.getElementById("priceOfPlant") as HTMLParagraphElement;
+    const nameInLatin = document.getElementById("nameInLatin") as HTMLParagraphElement;
+  
+    plantName.innerHTML = selectedPlant.plantName;
+    productPlantImg.src = selectedPlant.image;
+    plantDescription.innerHTML = selectedPlant.productInfo;
+    plantCareSunlight.innerHTML = selectedPlant.needOfSunlight;
+    plantCareWatering.innerHTML = selectedPlant.watering;
+    plantCareSpecifications.innerHTML = selectedPlant.plantCareSpecifications;
+    plantSpecifications.innerHTML = selectedPlant.plantSpecifications;
+    priceOfPlant.innerHTML = selectedPlant.price + "kr inkl. moms";
+    nameInLatin.innerHTML = selectedPlant.nameInLatin;
+  }
 
 // Add to cart function
 //----------------------------------------------------------------
@@ -432,6 +431,9 @@ export function htmlForCartArray() {
   for (let i = 0; i < cartArray.length; i++) {
     const productContent = document.createElement("div");
     const itemContent = document.createElement("div");
+    const imageNameContainer = document.createElement("div");
+    const quantityPriceContainer = document.createElement("div");
+    const quantityButtonsContainer = document.createElement("div");
     const itemImage = document.createElement("img");
     const itemName = document.createElement("p");
     const itemQuantity = document.createElement("span");
@@ -449,6 +451,12 @@ export function htmlForCartArray() {
     itemQuantity.classList.add("itemQuantity");
     itemPrice.setAttribute("id", "itemPrice");
     itemPrice.classList.add("itemPrice");
+
+    imageNameContainer.classList.add("imageNameContainer");
+    quantityPriceContainer.classList.add("quantityPriceContainer");
+    quantityButtonsContainer.classList.add("quantityButtonsContainer");
+    incrementButton.classList.add("incrementButton");
+    decrementButton.classList.add("decrementButton");
 
     itemImage.src = cartArray[i].image;
     itemImage.alt = cartArray[i].plantName;
@@ -473,20 +481,29 @@ export function htmlForCartArray() {
     });
 
     decrementButton.addEventListener("click", () => {
-      if (cartArray[i].quantity && cartArray[i].quantity > 1) {
-        cartArray[i].quantity -= 1;
-
+        if (cartArray[i].quantity && cartArray[i].quantity > 1) {
+          cartArray[i].quantity -= 1;
+        } else {
+          // Remove the product from the cart if the quantity is 0
+          cartArray.splice(i, 1);
+        }
+      
         updateShoppingCart();
         htmlForCartArray();
-      }
-    });
+      });
+    
+    imageNameContainer.appendChild(itemImage);
+    imageNameContainer.appendChild(itemName);
 
-    itemContent.appendChild(itemImage);
-    itemContent.appendChild(itemName);
-    itemContent.appendChild(itemQuantity);
-    itemContent.appendChild(itemPrice);
-    itemContent.appendChild(incrementButton);
-    itemContent.appendChild(decrementButton);
+    quantityButtonsContainer.appendChild(incrementButton);
+    quantityButtonsContainer.appendChild(decrementButton);
+
+    quantityPriceContainer.appendChild(itemQuantity);
+    quantityPriceContainer.appendChild(itemPrice);
+  
+    itemContent.appendChild(imageNameContainer);
+    itemContent.appendChild(quantityPriceContainer);
+    itemContent.appendChild(quantityButtonsContainer);
     productContent.appendChild(itemContent);
 
     cartItems?.appendChild(productContent);

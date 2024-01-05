@@ -23,6 +23,9 @@
   border-left: $secondary-black-border;
   display: none;
   z-index: 2;
+    #cartItems{
+      overflow: scroll;
+    }
   @include m.tablet{
     width: 50vw;
   }
@@ -90,8 +93,18 @@
   margin: 10px;
 }
 
+.itemPrice {
+  padding: 10px;
+  margin-left: auto;
+  font-weight: bold;
+}
+
 .itemQuantity {
   padding: 10px;
+  margin-left: auto;
+  font-size: smaller;
+  font-weight: bold;
+  // border-bottom: $black-border;
 
   .cartBtnQuantity {
     width: 20px;
@@ -113,35 +126,57 @@
   display: grid;
 }
 
+.itemContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  border-bottom: $seventh-border-color;
+}
 
-// .cartContainer.show {
-//   display: block;
-// }
+.itemName {
+  font-size: 1.3em;
+}
 
-// .cartContainer h1 {
-//   font-size: 1em;
-//   margin-bottom: 10px;
-// }
+//Container for image & name in cart
+.imageNameContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2.5em;
+}
 
-// .gotoCheckoutbtn {
-//   background-color: #000000;
-//   color: #fff;
-//   padding: 10px;
-//   border: none;
-//   cursor: pointer;
-//   width: 100%;
-//   margin-bottom: 10px;
-//   font-size: 1em;
-// }
+//Container for quantity & price in cart
+.quantityPriceContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
 
-// .productCard {
-//   //Style this later
-// }
+.quantityButtonsContainer {
+  display: flex;
+  gap: 0.5em;
+  margin-right: 10px;
+}
 
-// .productCard .product {
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   border-bottom: 1px solid #ddd;
-//   padding: 10px 0;
-// }
+.incrementButton, .decrementButton {
+  padding: 0.7px;
+  border-radius: 5px;
+  width: 25px;
+  color: $link-color;
+  background-color: $black-bg;
+  box-shadow: $expert-button-shadow;
+  margin-bottom: 25px;
+
+  &:hover {
+    transition: 0.5s;
+    background-color: $link-color;
+    border: $black-border;
+    color: $black-bg;
+  }
+}
+
+#totalAmount {
+  font-weight: 900;
+}
+

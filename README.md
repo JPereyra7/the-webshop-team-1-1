@@ -1,5 +1,13 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/LfEK5zyW)
+
 # The Webshop - En inlämningsuppgift
+
+//Note from Developers:
+We have implemented all of the functions listed below. The only thing left is bug fixes when it comes to making the cart content avaliable on all .html pages. It is currently working from the product page.
+
+Other than that the only thing left is cleaning up some code & organizing.
+
+//------------------------------------------------------------------------------------------------
 
 Denna uppgift går ut på att ni skall bygga en webbshop baserat på kraven här under.
 
@@ -26,10 +34,10 @@ Detta projekt är ett vite-projekt där ni har en färdig struktur att arbeta vi
 - Koden skall vara mycket väl strukturerad, väl formaterad samt innehålla god namngivning
 
   **Agila arbetssätt:**
+
 - använda agil metod
 - genomföra agila aktiviteter
 - tillämpa verktyg som underlättar ett agilt arbetssätt
-
 
 ## Arbetssätt
 
@@ -44,5 +52,4 @@ Ni bör ha mer en än iteration, välj om ni vill ha sprintar eller köra Kanban
 
 ## Styling
 
-Försök att arbeta med så mycket styling ni hinner. Det är en rolig uppgift att ha med i ett portfolio framöver. Se till att era animationer är subtila. Arbeta med hero-images, kanske med lite video/ljud. Och skapa en bra struktur mer er scss redan från början. 
-
+Försök att arbeta med så mycket styling ni hinner. Det är en rolig uppgift att ha med i ett portfolio framöver. Se till att era animationer är subtila. Arbeta med hero-images, kanske med lite video/ljud. Och skapa en bra struktur mer er scss redan från början.
