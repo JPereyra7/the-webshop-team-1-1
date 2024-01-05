@@ -1,20 +1,21 @@
 import "./../scss/style.scss";
-import "./../scss/product.scss"
-import "./../scss/cart.scss"
+import "./../scss/product.scss";
+import "./../scss/cart.scss";
 import { Plant } from "./products";
 
+// Get HTML elements
 const addButton = document.getElementById("increment") as HTMLButtonElement;
 const removeButton = document.getElementById("decrement") as HTMLButtonElement;
 const valueOfPlant = document.getElementById("valueOfPlant") as HTMLDivElement;
 const addToCartButton = document.getElementById("addToCart") as HTMLButtonElement;
+const productPlantImg = document.getElementById("productPlantImg") as HTMLImageElement;
 
 let plantNumber = 1;
 
-//Increase or decrease quantity in cart
+// Increase or decrease quantity in cart
 addButton.addEventListener("click", () => {
     plantNumber += 1;
     valueOfPlant.innerHTML = plantNumber.toString();
-    return plantNumber;
 });
 
 removeButton.addEventListener("click", () => {
@@ -26,7 +27,7 @@ removeButton.addEventListener("click", () => {
     }
 });
 
-// visar information in the product page
+// Show information in the product page
 let selectedPlantData = sessionStorage.getItem("selectedPlant");
 let selectedPlant: Plant | null = null;
 if (selectedPlantData !== null) {
@@ -44,7 +45,6 @@ if (selectedPlant !== null) {
 
 function clickedPlantInformation() {
     const plantName = document.getElementById("plantName") as HTMLHeadElement;
-    const productPlantImg = document.getElementById("productPlantImg") as HTMLImageElement;
     const plantDescription = document.getElementById("plantDescription") as HTMLParagraphElement;
     const plantCareWatering = document.getElementById("plantCareWatering") as HTMLParagraphElement;
     const plantCareSunlight = document.getElementById("plantCareSunlight") as HTMLParagraphElement;
@@ -64,30 +64,43 @@ function clickedPlantInformation() {
     nameInLatin.innerHTML = selectedPlant!.nameInLatin;
 }
 
-// create array
-let cartArray: Plant[] = JSON.parse(
+// Create array
+export let cartArray: Plant[] = JSON.parse(
     localStorage.getItem("storedProducts") ?? "[]"
 );
 
 addToCartButton.addEventListener("click", () => {
-    // Update shopping cart before regenerating HTML
-    updateShoppingCart();
-    htmlForCartArray();
     if (selectedPlant) {
-        cartArray.push(selectedPlant);
+        const existingPlant = cartArray.find((plant) => plant.plantId === selectedPlant!.plantId);
+
+        if (existingPlant) {
+            existingPlant.quantity = plantNumber;
+        } else {
+            selectedPlant.quantity = plantNumber;
+            cartArray.push(selectedPlant);
+        }
+
+        updateShoppingCartAndRender();
     }
 });
 
-// create html for cart
-
- export function htmlForCartArray() {
+// Create HTML for cart
+export function htmlForCartArray() {
     const cartItems = document.getElementById("cartItems") as HTMLDivElement;
+    const totalAmountElement = document.getElementById("totalAmount") as HTMLDivElement;
+
     cartItems.innerHTML = "";
+    let totalAmount = 0;
+
     for (let i = 0; i < cartArray.length; i++) {
         const productContent = document.createElement("div");
         const itemContent = document.createElement("div");
+        const itemImage = document.createElement("img");
         const itemName = document.createElement("p");
+        const itemQuantity = document.createElement("span");
         const itemPrice = document.createElement("div");
+        const incrementButton = document.createElement("button");
+        const decrementButton = document.createElement("button");
 
         productContent.setAttribute("id", "productContent");
 
@@ -95,39 +108,66 @@ addToCartButton.addEventListener("click", () => {
         itemContent.setAttribute("id", "itemContent");
         itemName.setAttribute("id", "itemName");
         itemName.classList.add("itemName");
+        itemQuantity.setAttribute("id", "itemQuantity");
+        itemQuantity.classList.add("itemQuantity");
         itemPrice.setAttribute("id", "itemPrice");
         itemPrice.classList.add("itemPrice");
 
-        itemName.innerText = cartArray[i].plantName;
-        itemPrice.innerText = `${cartArray[i].price} kr`;
+        itemImage.src = cartArray[i].image;
+        itemImage.alt = cartArray[i].plantName;
+        itemImage.classList.add("cart-plant-image");
 
+        itemName.innerText = cartArray[i].plantName;
+        const quantity = cartArray[i].quantity || 1;
+        itemQuantity.innerText = `Antal: ${quantity}`;
+        const price = cartArray[i].price * quantity;
+        itemPrice.innerText = `${price} kr`;
+
+        totalAmount += price;
+
+        incrementButton.innerText = "+";
+        decrementButton.innerText = "-";
+
+        incrementButton.addEventListener("click", () => {
+            cartArray[i].quantity = (cartArray[i].quantity || 1) + 1;
+            updateShoppingCartAndRender();
+        });
+
+        decrementButton.addEventListener("click", () => {
+            if (cartArray[i].quantity && cartArray[i].quantity > 1) {
+                cartArray[i].quantity -= 1;
+                updateShoppingCartAndRender();
+            }
+        });
+
+        itemContent.appendChild(itemImage);
         itemContent.appendChild(itemName);
+        itemContent.appendChild(itemQuantity);
         itemContent.appendChild(itemPrice);
+        itemContent.appendChild(incrementButton);
+        itemContent.appendChild(decrementButton);
         productContent.appendChild(itemContent);
 
         cartItems.appendChild(productContent);
     }
+
+    totalAmountElement.innerText = `Summa: ${totalAmount} kr`;
 }
 
-// Funktion för klickhändelse inne i varukorgen
+// Function for click event inside the shopping cart
 export function addtoClicked(product: Plant) {
-    if (cartArray.length === 0) {
-        // cartArray.push(product);
-    } else {
-        let indexLookup = cartArray.findIndex((prod) => prod.plantId === product.plantId);
+    // ... (your existing code)
+    updateShoppingCartAndRender();
+}
 
-        if (indexLookup === -1) {
-            cartArray.push(selectedPlant!);
-        } else {
-            cartArray[indexLookup].quantity = cartArray[indexLookup].quantity + 1;
-        }
-    }
-    updateShoppingCart()
+function updateShoppingCartAndRender() {
+    updateShoppingCart();
+    htmlForCartArray();
 }
 
 function updateShoppingCart() {
     localStorage.setItem("storedProducts", JSON.stringify(cartArray));
 }
 
-
-htmlForCartArray()
+// Initial call to update the cart when the page loads
+htmlForCartArray();

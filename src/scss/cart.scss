@@ -38,12 +38,16 @@
 
 }
 
+.cart-plant-image {
+  width: 20%;
+}
+
 #cartContent {
   display: grid;
   grid-template-columns: 60px 1fr;
   align-items: center;
-  border-bottom: $secondary-black-border;
-  border-top: $secondary-black-border;
+  // border-bottom: $secondary-black-border;
+  // border-top: $secondary-black-border;
   padding: 10px 5px;
 }
 
