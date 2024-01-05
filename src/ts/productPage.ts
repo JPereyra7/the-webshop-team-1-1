@@ -156,7 +156,6 @@ export function htmlForCartArray() {
 
 // Function for click event inside the shopping cart
 export function addtoClicked(product: Plant) {
-    // ... (your existing code)
     updateShoppingCartAndRender();
 }
 

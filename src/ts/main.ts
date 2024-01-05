@@ -9,7 +9,6 @@ import { createHtmlForCart, createHtmlForLandingpage } from "./createHtml";
 import { createHtmlForVaxterPage } from './createHtml';
 import { searchbarFunctionality } from "./createHtml";
 import { createHtmlForSkotselrad } from "./createHtml";
-// Importing types and functions from productPage.ts is not needed here
 
 document.addEventListener("DOMContentLoaded", () => {
     createHtmlForVaxterPage();
