@@ -3,10 +3,9 @@
 # The Webshop - En inlämningsuppgift
 
 //Note from Developers:
-We have implemented all of the functions listed below. The only thing left is bug fixes when it comes to making the cart content avaliable on all .html pages. It is currently working from the product page.
+We have implemented all of the functions listed below!
 
-Other than that the only thing left is cleaning up some code & organizing.
-
+For future reference this code could be more cleaned up. Due to the timeframe we focused on implementing all the functions and making sure everything was deployed and presented.
 //------------------------------------------------------------------------------------------------
 
 Denna uppgift går ut på att ni skall bygga en webbshop baserat på kraven här under.
