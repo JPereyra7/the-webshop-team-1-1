@@ -6,19 +6,9 @@ import "./../scss/hamburger.scss";
 import "./../scss/skotselrad.scss";
 
 import { plantList } from "./plantListArray";
-// import { skotselList } from "./skotselradArray.ts";
+import { skotselList } from "./skotselradArray.ts";
 import { Plant } from "./products";
 
-// document.addEventListener("DOMContentLoaded", () => {
-//    
-// });
-
-// createHtmlForLandingpage();
-// searchbarFunctionality();
-
-// document.addEventListener("DOMContentLoaded", () => {
-    
-// });
 
 document.addEventListener("DOMContentLoaded", () => {
     const contactButton = document.getElementById(
@@ -30,14 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
     
-    
-//Var försiktig med allt ovanför detta. Rörs dem störs arbetet!
-//---------------------------------------------------------------
-//---------------------------------------------------------------
-
-//nav - hamburgaremeny - varukorg
-//----------------------------------------------------------------
-//hamburger
+//Hamburger Menu
 const menuToggle = document.getElementById("menuToggle") as HTMLElement;
 const navigationMenu = document.querySelector(
   ".navigation-menu"
@@ -55,7 +38,7 @@ closeButton.addEventListener("click", () => {
   navigationMenu.classList.remove("show");
 });
 
-//varukorg
+//Add To Cart Icon when clicked
 const cartButton = document.getElementById("cartBtn");
 const cartContainer = document.getElementById("cart") as HTMLElement;
 cartButton?.addEventListener("click", () => {
@@ -66,10 +49,7 @@ document.getElementById("btnClose")?.addEventListener("click", () => {
   cartContainer.classList.remove("show");
 });
 
-//rendering av produkter till startsidan
-//----------------------------------------------------------------
-
-// For Loop for Landing page
+// For Loop (Rendering OOP Products) for Landing page
 function createHtmlForLandingpage() {
   const productpageDiv = document.getElementById("showPlant") as HTMLDivElement;
 
@@ -100,15 +80,13 @@ function createHtmlForLandingpage() {
     });
 
     if (productpageDiv) {
-      // Append the wrapper div to the main container within the <main> section
+
       productpageDiv.appendChild(plantItemDiv);
     }
   }
 }
 createHtmlForLandingpage();
 
-//rendering av produkter till växter sidan
-//-----------------------------------------------------------------
 // Function for Växter.html page
 function createHtmlForVaxterPage() {
   const vaxterPageDiv = document.getElementById("productParent") as HTMLDivElement;
@@ -164,44 +142,37 @@ function createHtmlForVaxterPage() {
 }
 createHtmlForVaxterPage();
 
-// Create HTML for cart
-//------------------------------------------------------------------
-// htmlForCartArray(); //---------------------KAOS!!!!!!!!!!!! ----------------
+//Rendering the class Skötselråd items in html
+function createHtmlForSkotselrad() {
+  const skotselradDiv = document.getElementById(
+    "skotselCardContainers"
+  ) as HTMLDivElement;
 
-//rendering av skötselråd ts till skötselråd sidan
-//-----------------------------------------------------------------
-// function createHtmlForSkotselrad() {
-//   const skotselradDiv = document.getElementById(
-//     "skotselCardContainers"
-//   ) as HTMLDivElement;
+  for (let i = 0; i < skotselList.length; i++) {
+    const skotsel = skotselList[i];
 
-//   for (let i = 0; i < skotselList.length; i++) {
-//     const skotsel = skotselList[i];
+    const skotselDiv = document.createElement("div");
+    skotselDiv.classList.add("skotselcardDiv");
 
-//     const skotselDiv = document.createElement("div");
-//     skotselDiv.classList.add("skotselcardDiv");
+    const skotselImg = document.createElement("img");
+    skotselImg.src = skotsel.image;
+    skotselImg.classList.add("skotselcardImg");
 
-//     const skotselImg = document.createElement("img");
-//     skotselImg.src = skotsel.image;
-//     skotselImg.classList.add("skotselcardImg");
+    const skotselHead = document.createElement("h2");
+    skotselHead.innerHTML = skotsel.header;
 
-//     const skotselHead = document.createElement("h2");
-//     skotselHead.innerHTML = skotsel.header;
+    const descriptionElement = document.createElement("p");
+    descriptionElement.innerHTML = skotsel.description;
 
-//     const descriptionElement = document.createElement("p");
-//     descriptionElement.innerHTML = skotsel.description;
+    skotselDiv.appendChild(skotselImg);
+    skotselDiv.appendChild(skotselHead);
+    skotselDiv.appendChild(descriptionElement);
 
-//     skotselDiv.appendChild(skotselImg);
-//     skotselDiv.appendChild(skotselHead);
-//     skotselDiv.appendChild(descriptionElement);
+    skotselradDiv?.appendChild(skotselDiv);
+  }
+}
+createHtmlForSkotselrad();
 
-//     skotselradDiv?.appendChild(skotselDiv);
-//   }
-// }
-// createHtmlForSkotselrad();
-
-//Search function
-//-----------------------------------------------------------
 // Function for searchbar
 searchbarFunctionality();
 function searchbarFunctionality() {
@@ -209,7 +180,7 @@ function searchbarFunctionality() {
     // Function to make suggestions clickable
     function createSuggestionItem(plant: Plant): HTMLLIElement {
       const listItem = document.createElement("li");
-      listItem.classList.add("suggestion-item"); // Add a class for styling
+      listItem.classList.add("suggestion-item");
 
       const contentContainer = document.createElement("div");
       contentContainer.classList.add("suggestion-content-container");
@@ -224,14 +195,16 @@ function searchbarFunctionality() {
       plantName.classList.add("suggestion-text");
 
       listItem.appendChild(contentContainer);
-      contentContainer.appendChild(plantName); // Swap the order
-      contentContainer.appendChild(imgItem); // Swap the order
+      contentContainer.appendChild(plantName);
+      contentContainer.appendChild(imgItem);
 
       listItem.addEventListener("click", () => {
         if (plant.plantId !== undefined) {
+
           // Navigate to productPage.html if plantId is available
           window.location.replace(`/productPage.html?plantId=${plant.plantId}`);
         } else {
+
           // Fallback to default behavior for other pages
           window.location.replace(
             `/productPage.html?plantIndex=${plantList.indexOf(plant)}`
@@ -324,16 +297,8 @@ function searchbarFunctionality() {
   });
 }
 
-// //Button to checkout page
-// let checkoutButtons = document.getElementsByClassName("checkoutBtn");
 
-// for (const button of checkoutButtons) {
-//   button.addEventListener("click", function () {
-//     window.location.href = "checkoutPage.html";
-//   });
-// }
-
-// Add to cart
+// Extracting ID's from html 
 const addButton = document.getElementById("increment") as HTMLButtonElement;
 const removeButton = document.getElementById("decrement") as HTMLButtonElement;
 const valueOfPlant = document.getElementById("valueOfPlant") as HTMLDivElement;
@@ -342,7 +307,6 @@ const productPlantImg = document.getElementById("productPlantImg") as HTMLImageE
 let plantNumber = 1;
 
 // Increase or decrease quantity in product page "add to cart button"
-//----------------------------------------------------------------
 if (valueOfPlant) {
 addButton.addEventListener("click", () => {
   plantNumber += 1;
@@ -362,44 +326,50 @@ removeButton.addEventListener("click", () => {
 }
 
 // Show information in the product page
-//----------------------------------------------------------------
 let selectedPlant = JSON.parse(
-  sessionStorage.getItem("selectedPlant") ?? "[]"
+  sessionStorage.getItem("selectedPlant") ?? "{}"
 );
+
 if (selectedPlant) {
-  clickedPlantInformation();
+  clickedPlantInformation(selectedPlant);
 } else {
   console.log("selectedPlant is null or not found in sessionStorage");
 }
 
-function clickedPlantInformation() {
-    const plantName = document.getElementById("plantName") as HTMLHeadElement;
-    const plantDescription = document.getElementById("plantDescription") as HTMLParagraphElement;
-    const plantCareWatering = document.getElementById("plantCareWatering") as HTMLParagraphElement;
-    const plantCareSunlight = document.getElementById("plantCareSunlight") as HTMLParagraphElement;
-    const plantSpecifications = document.getElementById("plantSpecifications") as HTMLDivElement;
-    const plantCareSpecifications = document.getElementById("plantCareSpecifications") as HTMLDivElement;
-    const priceOfPlant = document.getElementById("priceOfPlant") as HTMLParagraphElement;
-    const nameInLatin = document.getElementById("nameInLatin") as HTMLParagraphElement;
-  
-    plantName.innerHTML = selectedPlant.plantName;
-    productPlantImg.src = selectedPlant.image;
-    plantDescription.innerHTML = selectedPlant.productInfo;
-    plantCareSunlight.innerHTML = selectedPlant.needOfSunlight;
-    plantCareWatering.innerHTML = selectedPlant.watering;
-    plantCareSpecifications.innerHTML = selectedPlant.plantCareSpecifications;
-    plantSpecifications.innerHTML = selectedPlant.plantSpecifications;
-    priceOfPlant.innerHTML = selectedPlant.price + "kr inkl. moms";
-    nameInLatin.innerHTML = selectedPlant.nameInLatin;
+function clickedPlantInformation(selectedPlant: Plant) {
+  if (!selectedPlant) {
+    console.error("selectedPlant is null or undefined");
+    return;
   }
 
-// Add to cart function
-//----------------------------------------------------------------
-// Create array
+  const plantName = document.getElementById("plantName") as HTMLHeadElement;
+  const plantDescription = document.getElementById("plantDescription") as HTMLParagraphElement;
+  const plantCareSunlight = document.getElementById("plantCareSunlight") as HTMLParagraphElement;
+  const plantSpecifications = document.getElementById("plantSpecifications") as HTMLDivElement;
+  const plantCareSpecifications = document.getElementById("plantCareSpecifications") as HTMLDivElement;
+  const priceOfPlant = document.getElementById("priceOfPlant") as HTMLParagraphElement;
+  const nameInLatin = document.getElementById("nameInLatin") as HTMLParagraphElement;
+
+  if (!plantName || !plantDescription || !plantCareSunlight || !plantSpecifications || !plantCareSpecifications || !priceOfPlant || !nameInLatin) {
+    console.error("One or more elements not found in the DOM");
+    return;
+  }
+
+  plantName.innerHTML = selectedPlant.plantName;
+  productPlantImg.src = selectedPlant.image;
+  plantDescription.innerHTML = selectedPlant.productInfo;
+  plantCareSunlight.innerHTML = selectedPlant.needOfSunlight;
+  plantCareSpecifications.innerHTML = selectedPlant.plantCareSpecifications;
+  plantSpecifications.innerHTML = selectedPlant.plantSpecifications;
+  priceOfPlant.innerHTML = selectedPlant.price + "kr inkl. moms";
+  nameInLatin.innerHTML = selectedPlant.nameInLatin;
+}
+
 let cartArray: Plant[] = JSON.parse(
   localStorage.getItem("storedProducts") ?? "[]"
 );
 
+document.addEventListener("DOMContentLoaded", function () {
 addToCartButton.addEventListener("click", () => {
   if (selectedPlant) {
     const existingPlant = cartArray.find(
@@ -416,6 +386,7 @@ addToCartButton.addEventListener("click", () => {
     htmlForCartArray();
 
   }
+});
 });
 
 // Create HTML for cart
@@ -484,7 +455,7 @@ export function htmlForCartArray() {
         if (cartArray[i].quantity && cartArray[i].quantity > 1) {
           cartArray[i].quantity -= 1;
         } else {
-          // Remove the product from the cart if the quantity is 0
+
           cartArray.splice(i, 1);
         }
       
@@ -511,11 +482,6 @@ export function htmlForCartArray() {
 
   totalAmountElement.innerText = `Summa: ${totalAmount} kr`;
 }
-
-// Function for click event inside the shopping cart
-// export function addtoClicked(product: Plant) {
-//     updateShoppingCartAndRender();
-// }
 
 function updateShoppingCart() {
   localStorage.setItem("storedProducts", JSON.stringify(cartArray));

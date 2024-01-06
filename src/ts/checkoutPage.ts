@@ -1,5 +1,25 @@
 import "./../scss/style.scss";
+import "./../scss/hamburger.scss";
 import { Plant } from "./products";
+
+//Hamburger Menu
+const menuToggle = document.getElementById("menuToggle") as HTMLElement;
+const navigationMenu = document.querySelector(
+  ".navigation-menu"
+) as HTMLElement;
+const closeButton = document.querySelector(
+  ".close-button"
+) as HTMLButtonElement;
+menuToggle.addEventListener("click", () => {
+  setTimeout(() => {
+    navigationMenu.classList.toggle("show");
+  }, 100);
+});
+
+closeButton.addEventListener("click", () => {
+  navigationMenu.classList.remove("show");
+});
+
 
 document.addEventListener("DOMContentLoaded", function () {
   const toPayCartDiv = document.getElementById("toPayCart") as HTMLDivElement;
