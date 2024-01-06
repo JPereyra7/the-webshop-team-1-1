@@ -121,3 +121,21 @@ h2 {
     width: 10%;
 }
 
+.quantity-button {
+  padding: 1px;
+  margin: 2px;
+  border-radius: 5px;
+  width: 25px;
+  color: $link-color;
+  background-color: $black-bg;
+  box-shadow: $expert-button-shadow;
+  margin-bottom: 25px;
+
+  &:hover {
+    transition: 0.5s;
+    background-color: $link-color;
+    border: $black-border;
+    color: $black-bg;
+  }
+}
+

@@ -91,7 +91,7 @@ createHtmlForLandingpage();
 function createHtmlForVaxterPage() {
   const vaxterPageDiv = document.getElementById("productParent") as HTMLDivElement;
 
-  // Parent container for all plant containers
+  // Create a parent container for all plant containers
   const plantContainerParent = document.createElement("div");
   plantContainerParent.classList.add("plantContainerParent");
 
@@ -133,14 +133,15 @@ function createHtmlForVaxterPage() {
     plantContainerParent.appendChild(plantItemDiv);
   }
 
-  const productParent = document.getElementById(
-    "productParent"
-  ) as HTMLDivElement;
-  productParent?.appendChild(plantContainerParent);
-
-  vaxterPageDiv?.appendChild(productParent);
+  // Clear existing content in vaxterPageDiv before appending
+  vaxterPageDiv.innerHTML = "";
+  
+  vaxterPageDiv.appendChild(plantContainerParent);
 }
-createHtmlForVaxterPage();
+document.addEventListener("DOMContentLoaded", () => {
+  createHtmlForVaxterPage();
+});
+
 
 //Rendering the class Skötselråd items in html
 function createHtmlForSkotselrad() {
