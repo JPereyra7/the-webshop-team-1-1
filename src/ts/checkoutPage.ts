@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
         totalAmount += price;
       }
 
-      toPayCartDiv.innerHTML += `<h2>Total Amount: ${totalAmount} kr</h2>`;
+      toPayCartDiv.innerHTML += `<h2>Summa: ${totalAmount} kr</h2>`;
     }
 
     // Event delegation for increment and decrement buttons
