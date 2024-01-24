@@ -501,3 +501,11 @@ for (const button of checkoutButtons) {
     window.location.href = "checkoutPage.html";
   });
 }
+
+const vaxterID = document.getElementById("vaxterID") as HTMLDivElement | null;
+
+if (vaxterID) {
+  vaxterID.addEventListener('click', () => {
+    window.location.href = 'index.html';
+  });
+}
