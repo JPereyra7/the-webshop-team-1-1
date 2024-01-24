@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin&family=Inter:wght@300&display=swap");
+@import url(/src/scss/cart.scss);
+@import url(/src/scss/hamburger.scss);
+@import url(/src/scss/skotselrad.scss);
+@import url(/src/scss/omOss.scss);
+@import url(/src/scss/contactUs.scss);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333; /* Dark gray color */
+}
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.checkoutBtn {
+  padding: 10px;
+  background-color: #000000;
+  color: #fff; /* White color */
+  border: 0.5px solid rgba(0, 0, 0, 0.192);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.checkoutBtn:hover {
+  transition: 0.5s;
+  background-color: rgba(216, 210, 186, 0.5098039216);
+  color: #000000;
+  border: 0.5px solid rgba(0, 0, 0, 0.192);
+}
+
+.checkout-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.checkout-container h1 {
+  color: #514B19;
+  margin-bottom: 10px;
+}
+
+.product-details {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+#checkout-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cart-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+#toPayCart {
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #333;
+}
+
+.checkout-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.checkoutBtn {
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.checkoutBtn:hover {
+  transition: 0.5s;
+  background-color: #555;
+}
+
+.plant-image {
+  width: 10%;
+}
+
+.quantity-button {
+  padding: 1px;
+  margin: 2px;
+  border-radius: 5px;
+  width: 25px;
+  color: #fff;
+  background-color: #000000;
+  box-shadow: #32325d 2px 2px 5px -12px, rgba(0, 0, 0, 0.8470588235) 0px 3px 7px -3px;
+  margin-bottom: 25px;
+}
+.quantity-button:hover {
+  transition: 0.5s;
+  background-color: #fff;
+  border: 0.5px solid rgba(0, 0, 0, 0.192);
+  color: #000000;
+}/*# sourceMappingURL=checkoutPage.css.map */

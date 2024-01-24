@@ -1,0 +1,124 @@
+.hamburger-menu {
+  cursor: pointer;
+  padding: 10px;
+  background-color: #d5caaa;
+  color: white;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hamburger-icon {
+  width: 40px;
+  height: 3px;
+  background-color: white;
+  margin: 6px 0;
+}
+
+.hamburgerIcon {
+  max-width: 200%;
+  margin-left: 15px;
+}
+
+.navigation-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .navigation-menu ul {
+    margin-top: 20%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .navigation-menu ul {
+    margin-top: 10%;
+  }
+}
+
+.navigation-menu li {
+  margin: 5px 0;
+  font-family: "Cabin", sans-serif;
+}
+
+.navigation-menu a {
+  color: #272727;
+  font-size: 28px;
+  border-bottom: 1px solid #575035;
+  text-decoration: none;
+}
+.navigation-menu a:hover {
+  color: #3d3d3d;
+  text-decoration: underline;
+}
+
+.close-button {
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 54px;
+  color: #3d3d3d;
+}
+
+.close-button:hover {
+  color: #e2e2e2;
+}
+
+.navigation-menu {
+  width: 100%;
+  height: 100vh;
+  background-color: #e2e2e2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  padding-top: 50px;
+  opacity: 95%;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+@media screen and (min-width: 1200px) {
+  .navigation-menu {
+    width: 30vw;
+    height: 80vh;
+    border-radius: 10px;
+    border: 1px solid #575035;
+  }
+}
+
+.navList {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.navList li {
+  margin: 5px 0;
+  font-family: "Cabin", sans-serif;
+}
+
+.navList a {
+  color: #141414;
+  font-size: 24px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 23px;
+  white-space: nowrap;
+}
+.navList a:hover {
+  color: #3d3d3d;
+  text-decoration: underline;
+}
+
+.show {
+  display: block;
+  transform: translateX(0);
+}/*# sourceMappingURL=hamburger.css.map */

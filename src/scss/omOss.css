@@ -1,0 +1,66 @@
+#imgContainer {
+  display: flex;
+  justify-content: center;
+}
+@media screen and (min-width: 1200px) {
+  #imgContainer {
+    flex-direction: column;
+  }
+}
+#imgContainer #plantImgOmOss {
+  margin-top: 10px;
+  height: 350px;
+  border-radius: 39% 61% 63% 37%/41% 33% 67% 59%;
+  border: 1px solid #575035;
+  padding-left: 10px;
+}
+@media screen and (min-width: 1200px) {
+  #imgContainer #plantImgOmOss {
+    width: 400px;
+    display: flex;
+  }
+}
+#imgContainer h2 {
+  color: #514B19;
+  align-self: end;
+  margin-right: 10px;
+  font-size: 1.7em;
+  border-bottom: 1px solid #575035;
+}
+@media screen and (min-width: 1200px) {
+  #imgContainer h2 {
+    align-self: flex-start;
+    font-size: 2.1em;
+    margin-bottom: 10px;
+  }
+}
+
+#omOssTextContainer p {
+  text-align: left;
+  padding: 20px;
+  line-height: 1.7;
+}
+@media screen and (min-width: 1200px) {
+  #omOssTextContainer p {
+    width: 45vw;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #omOssTextContainer {
+    margin-top: 100px;
+  }
+}
+
+#omOss {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media screen and (min-width: 1200px) {
+  #omOss {
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+}/*# sourceMappingURL=omOss.css.map */
