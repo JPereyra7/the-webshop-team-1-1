@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
     toPayCartDiv.addEventListener("click", (event) => {
       const target = event.target as HTMLElement;
       const isIncrementButton = target.innerText === "+";
-      const isDecrementButton = target.innerText === "-";
+      // const isDecrementButton = target.innerText === "-";
       
       // Find the closest cart item
       const cartItem = target.closest(".cart-item");
