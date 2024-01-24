@@ -6,8 +6,10 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
+    
   },
   "devDependencies": {
+    "gh-pages": "^6.1.1",
     "sass": "^1.69.5",
     "typescript": "^5.0.2",
     "vite": "^4.4.5"
