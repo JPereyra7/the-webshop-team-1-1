@@ -506,6 +506,6 @@ const vaxterID = document.getElementById("vaxterID") as HTMLDivElement | null;
 
 if (vaxterID) {
   vaxterID.addEventListener('click', () => {
-    window.location.href = 'index.html';
+    window.location.href = 'vaxter.html';
   });
 }
