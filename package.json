@@ -2,19 +2,15 @@
   "name": "webshop-template",
   "private": true,
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "tsc && vite build",
     "preview": "vite preview"
-    
   },
   "devDependencies": {
-    "gh-pages": "^6.1.1",
     "sass": "^1.69.5",
     "typescript": "^5.0.2",
     "vite": "^4.4.5"
-  },
-  "dependencies": {
-    "@babel/plugin-transform-modules-commonjs": "^7.23.3"
   }
 }
