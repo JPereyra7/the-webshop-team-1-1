@@ -11,6 +11,7 @@ export default {
                 nested4: resolve(__dirname, 'omOss.html'),
                 nested5: resolve(__dirname, 'kontaktaOss.html'),
                 nested6: resolve(__dirname, 'checkoutPage.html'),
+                nested7: resolve(__dirname, 'orderConfirmation.html'),
             }
         }
     }
