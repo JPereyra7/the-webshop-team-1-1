@@ -80,7 +80,7 @@ function createHtmlForLandingpage() {
     // When clicking on the products in the landing page, open the product page
     plantItemDiv.addEventListener("click", () => {
       window.sessionStorage.setItem("selectedPlant", JSON.stringify(plant));
-      window.location.replace("/productPage.html");
+      window.location.replace("productPage.html");
     });
 
     if (productpageDiv) {
@@ -130,7 +130,7 @@ function createHtmlForVaxterPage() {
     plantItemDiv.appendChild(directionContainer);
 
     plantItemDiv.addEventListener("click", () => {
-      window.location.replace(`/productPage.html?plantIndex=${i}`);
+      window.location.replace(`productPage.html?plantIndex=${i}`);
       window.sessionStorage.setItem("selectedPlant", JSON.stringify(plant));
     });
 
@@ -207,12 +207,12 @@ function searchbarFunctionality() {
         if (plant.plantId !== undefined) {
 
           // Navigate to productPage.html if plantId is available
-          window.location.replace(`/productPage.html?plantId=${plant.plantId}`);
+          window.location.replace(`productPage.html?plantId=${plant.plantId}`);
         } else {
 
           // Fallback to default behavior for other pages
           window.location.replace(
-            `/productPage.html?plantIndex=${plantList.indexOf(plant)}`
+            `productPage.html?plantIndex=${plantList.indexOf(plant)}`
           );
         }
         window.sessionStorage.setItem("selectedPlant", JSON.stringify(plant));
