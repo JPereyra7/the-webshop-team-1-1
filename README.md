@@ -2,6 +2,8 @@
 
 # The Webshop - En inlämningsuppgift
 
+🔗: https://jpereyra7.github.io/the-webshop-team-1-1/
+
 //Note from Developers:
 We have implemented all of the functions listed below!
 
