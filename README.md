@@ -4,6 +4,8 @@
 
 🔗: https://jpereyra7.github.io/the-webshop-team-1-1/
 
+![Screenshot] (https://raw.githubusercontent.com/JPereyra7/the-webshop-team-1-1/main/src/img/vaxthusetscreenshot.png)
+
 //Note from Developers:
 We have implemented all of the functions listed below!
 
