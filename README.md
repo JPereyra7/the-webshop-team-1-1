@@ -3,6 +3,7 @@
 # The Webshop - En inlämningsuppgift
 
 🔗: https://jpereyra7.github.io/the-webshop-team-1-1/
+Figma file: https://www.figma.com/file/yEqrQUT8xRUE3apuWvDIF2/V%C3%A4xthuset?type=design&node-id=0%3A1&mode=design&t=ypvnPARxVolfRuSr-1
 
 ![alt text](https://raw.githubusercontent.com/JPereyra7/the-webshop-team-1-1/main/src/img/vaxthusetscreenshot.png)
 
