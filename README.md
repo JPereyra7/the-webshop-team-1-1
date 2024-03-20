@@ -10,7 +10,7 @@ Miro Board: https://miro.com/app/board/uXjVN8yC63I=/?share_link_id=891754390968
 
 || Frontend Stack ||
 
-[![My Skills](https://skillicons.dev/icons?i=ts,html,scss,css,vscode)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=ts,html,scss,css,vscode,figma)](https://skillicons.dev)
 
 ![alt text](https://raw.githubusercontent.com/JPereyra7/the-webshop-team-1-1/main/src/img/vaxthusetscreenshot.png)
 
