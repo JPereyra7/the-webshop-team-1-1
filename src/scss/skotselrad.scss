@@ -1,0 +1,249 @@
+@import "../scss/variables";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.skotselContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    gap: 15px;
+    letter-spacing: -.05em;
+    margin-bottom: 50px;
+}
+
+.skotselHeader {
+    font-family: 'Cabinet', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    text-transform: uppercase;
+    line-height: 1.2;
+    text-align: center;
+    width: 100%;
+    max-width: 32ch;
+}
+
+.skotselParagraph {
+    max-width: 80%;
+    font-weight: 400;
+    font-family: "Larish Neue Semibold", Georgia, Times, serif;
+    font-size: 17px;
+    font-style: normal;
+    text-transform: none;
+    line-height: 1.5;
+    text-align: center;
+    width: 100%;
+    max-width: 95%;
+    color: $fifth-paragraph-color;
+}
+
+.skotselSecondHeader {
+    font-family: "Larish Neue Semibold", Georgia, Times, serif;
+    font-size: 24px;
+    font-style: normal;
+    text-transform: none;
+    line-height: 1.2;
+    margin: 0px;
+    color: $primary-footer-header;
+    text-align: inherit;
+}
+
+#skotselCardContainers {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    font-family: "Larish Neue Semibold", Georgia, Times, serif;
+}
+
+.skotselcardImg {
+    margin-top: 15px;
+}
+
+.skotselcardDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    width: 40%; // Adjusted width
+
+    p {
+        text-align: left;
+        word-break: break-word;
+        font-family: Spectral, "Palatino Linotype", "Book Antiqua", Palatino, serif;
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.5;
+        margin-bottom: 0px;
+        max-width: 80%;
+    }
+    h2 {
+        font-family: "Larish Neue Semibold", Georgia, Times, serif;
+        font-size: 22px;
+        font-style: normal;
+        text-transform: none;
+        line-height: 1.5;
+        color:  $primary-footer-header;
+        display: block;
+        margin: 0px 0px 1rem;
+        text-decoration: none;
+        word-break: break-word;
+    }
+}
+
+.expertContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $container-bg-color;
+    padding-top: 25px;
+    margin-top: 25px;
+    margin-bottom: 50px;
+}
+
+.roundImage {
+    margin: 0px 0px 1.5rem;
+}
+
+.expertHeader {
+    font-family: "Messina Sans Condensed", Impact, Charcoal, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    text-transform: uppercase;
+    line-height: 1.2;
+    margin: 0px 0px 1rem;
+    color: $secondary-paragraph-color;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.expertParagraph {
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    letter-spacing: 0.2px;
+    max-width: 90%;
+}
+
+button.expertButton {
+    appearance: none;
+    background: $black-bg;
+    border: none;
+    margin: 1.5rem 0px 25px;
+    font-family: "Libre Franklin", Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 1 auto;
+    color: $link-color;
+    line-height: 1.5;
+    min-width: 48px;
+    padding: 0px 2rem;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 150ms linear 0s;
+    border-radius: 40px;
+    text-transform: none;
+    box-shadow: $expert-button-shadow;
+
+    &:hover {
+        background-color: $expert-button-hover-bg;
+        color: $header-color;
+        transition: 1s;
+        border: $sixth-border-color;
+        box-shadow: $expert-button-hover-shadow;
+    }
+
+    &:active {
+        background-color: $expert-button-hover-bg;
+        color: $header-color;
+        transition: 1s;
+        border: $sixth-border-color;
+        box-shadow: $expert-button-hover-shadow;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .skotselcardDiv {
+        margin-top: 15px;
+        width: 80%;
+        margin-right: 0; 
+        margin-left: 0; 
+        border: $seventh-border-color;
+        border: $fifth-border-color;
+        padding: 5px;
+        box-shadow: $card-container-shadow;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+    p {
+        text-align: center;
+        margin-bottom: 15px;
+        }
+        h2 {
+            margin-top: 15px;
+            text-align: center;
+        }
+    }
+    }
+    @media (min-width: 768px) {
+        .skotselHeader {
+            font-size: 38px;
+            margin-top: 50px;
+        }
+        .skotselParagraph {
+            font-size: 1.4em;
+        }
+        .skotselSecondHeader {
+            font-size: 1.7em;
+        }
+        .skotselContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .skotselcardDiv {
+            display: flex;
+            justify-content: center;
+            align-self: center;
+            max-width: 80%;
+        }
+        .expertHeader {
+            font-size: 38px;
+        }
+
+        .roundImage {
+            width: 30%;
+        }
+
+        .expertParagraph {
+            font-size: 1.1em;
+        }
+        .expertContainer {
+            background-color: $footer-primary-bgcolor;
+        }
+        
+    }

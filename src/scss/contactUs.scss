@@ -1,0 +1,140 @@
+@import "../scss/variables";
+
+.contactContainer {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   max-width: 100%;
+}
+
+.row {
+    margin: -20px 0;
+    .col {
+       padding: 0 20px;
+       float: left;
+       box-sizing: border-box;
+       &.x-50 {
+          width: 50%;
+       }
+       &.x-100 {
+          width: 100%;
+       }
+    }
+ }
+ 
+ .content-wrapper {
+    min-height: 100%;
+    position: relative;
+ }
+ 
+ .keepTouchContainer {
+    max-width: 650px;
+    margin-top: 35px;
+    position: relative;
+    top: 50%;
+   
+   .keepTouchHeader {
+      text-align: center;
+      font-family: Raleway, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 26px;
+      line-height: 48px;
+      padding-bottom: 18px;
+   }
+ }
+
+ .keepTouchParagraph {
+    font-family: Spectral, "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 1.5;
+    color: $third-paragraph-color;
+    margin: 0px 0px 1.5rem;
+    text-align: center;
+    padding-bottom: 48px;
+    border-bottom: $contactForm-border-color;
+ }
+ 
+ .contact-form {
+    .form-field {
+       position: relative;
+       margin: 32px 0;
+    }
+    .input-text {
+       display: block;
+       width: 100%;
+       height: 36px;
+       border-width: 0 0 2px 0;
+       border-color: $black-bg;
+       font-family: Lusitana, serif;
+       font-size: 18px;
+       line-height: 26px;
+       font-weight: 400;
+       
+       &:focus {
+          outline: none;
+       }
+       
+       &:focus,
+       &.not-empty {
+          + .label {
+             transform: translateY(-24px);
+          }
+       }
+    }
+    .label {
+       position: absolute;
+       left: 20px;
+       bottom: 11px;
+       font-family: Lusitana, serif;
+       font-size: 18px;
+       line-height: 26px;
+       font-weight: 400;
+       color: $label-color;
+       cursor: text;
+       transition: transform .2s ease-in-out;
+    }
+    
+    .submit-btn {
+       display: inline-block;
+       background-color: $search-bgcolor;
+       color: $header-color;
+       font-family: "Libre Franklin", Arial, Helvetica, sans-serif;
+       text-transform: none;
+       letter-spacing: 2px;
+       font-size: 14px;
+       line-height: 24px;
+       padding: 8px 16px;
+       border: $secondary-black-border;
+       border-radius: 7px;
+       cursor: pointer;
+    
+    &:hover {
+      transition: 0.7s;
+      background-color: $black-bg;
+      color: $footer-primary-bgcolor;
+      border: $container-bg-color;
+    }
+ }
+}
+ 
+ .note {
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    font-family: Lusitana, serif;
+    font-size: 16px;
+    line-height: 21px;
+    
+    .link {
+       color: $label-color;
+       text-decoration: none;
+       &:hover {
+          text-decoration: underline;
+       }
+    }
+ }

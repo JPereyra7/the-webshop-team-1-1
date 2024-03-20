@@ -1,0 +1,62 @@
+@use "mixins" as m;
+@import "../scss/variables";
+
+#imgContainer {
+    display: flex;
+    justify-content: center;
+    @include m.desktop{
+        flex-direction: column;
+    }
+
+    #plantImgOmOss {
+        margin-top: 10px;
+        height: 350px;
+        border-radius: 39% 61% 63% 37% / 41% 33% 67% 59%;
+        border: $third-border-color;
+        padding-left: 10px;
+        @include m.desktop{
+            width: 400px;
+            display: flex;
+        } 
+    }
+
+    h2 {
+        color: $primary-footer-header;
+        align-self: end;
+        margin-right: 10px;
+        font-size: 1.7em;
+        border-bottom: $third-border-color;
+        @include m.desktop{
+            align-self: flex-start;
+            font-size: 2.1em;
+            margin-bottom: 10px;
+            
+        }
+    }
+}
+
+#omOssTextContainer p {
+    text-align: left;
+    padding: 20px;
+    line-height: 1.7;
+    @include m.desktop{
+        width: 45vw;
+    }
+}
+#omOssTextContainer{
+    @include m.desktop{
+        margin-top: 100px;
+    }
+}
+
+
+#omOss {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include m.desktop{
+        flex-direction: row-reverse;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+}

@@ -1,0 +1,77 @@
+@import url(/src/scss/style.scss);
+@import url(/src/scss/cart.scss);
+@import url(/src/scss/hamburger.scss);
+@import "./variables";
+
+.vaxterContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.vaxterImage {
+    width: 560px;
+    margin-top: 15px;
+    max-width: 100%;
+}
+
+.vaxterHeader {
+    font-family: 'Cabin', sans-serif;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.vaxterParagraph {
+    font-family: 'Cabin', sans-serif;
+    line-height: 1.5;
+    text-align: center;
+    border-bottom: $fourth-border-color;
+    margin-bottom: 25px;
+}
+
+// Typescript generated products styling
+
+.plantContainerParent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 0 auto;
+}
+
+.plantContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 200px;
+    margin: 10px;
+}
+
+.itemContainer {
+    width: 100%;
+    text-align: center;
+    border: $fifth-border-color;
+    padding: 5px;
+    box-shadow: $container-shadow;
+}
+
+p {
+    font-family: 'Cabinet', sans-serif;
+    text-align: center;
+}
+
+h1:hover {
+    color: $item-hover;
+}
+
+@media (min-width: 768px) {
+    .vaxterImage {
+        width: 80%;
+    }
+    .vaxterHeader {
+        font-size: 38px;
+    }
+    .vaxterParagraph {
+        font-size: 1.4em;    
+    }
+}

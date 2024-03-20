@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#confirmationContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 250px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  color: #7b7b7b;
+}
+
+p {
+  color: #7b7b7b;
+}/*# sourceMappingURL=orderConfirmation.css.map */

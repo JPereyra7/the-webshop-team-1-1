@@ -1,4 +1,26 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/LfEK5zyW)
+
 # The Webshop - En inlämningsuppgift
+
+🔗: https://jpereyra7.github.io/the-webshop-team-1-1/
+
+Figma file: https://www.figma.com/file/yEqrQUT8xRUE3apuWvDIF2/V%C3%A4xthuset?type=design&node-id=0%3A1&mode=design&t=ypvnPARxVolfRuSr-1
+
+
+Miro Board: https://miro.com/app/board/uXjVN8yC63I=/?share_link_id=891754390968
+
+
+|| Frontend Stack ||
+
+[![My Skills](https://skillicons.dev/icons?i=ts,html,scss,css,bash,npm,vite,powershell,vscode,figma)](https://skillicons.dev)
+
+![alt text](https://raw.githubusercontent.com/JPereyra7/the-webshop-team-1-1/main/src/img/vaxthusetscreenshot.png)
+
+//Note from Developers:
+We have implemented all of the functions listed below!
+
+For future reference this code could be more cleaned up. Due to the timeframe we focused on implementing all the functions and making sure everything was deployed and presented.
+//------------------------------------------------------------------------------------------------
 
 Denna uppgift går ut på att ni skall bygga en webbshop baserat på kraven här under.
 
@@ -25,10 +47,10 @@ Detta projekt är ett vite-projekt där ni har en färdig struktur att arbeta vi
 - Koden skall vara mycket väl strukturerad, väl formaterad samt innehålla god namngivning
 
   **Agila arbetssätt:**
+
 - använda agil metod
 - genomföra agila aktiviteter
 - tillämpa verktyg som underlättar ett agilt arbetssätt
-
 
 ## Arbetssätt
 
@@ -43,5 +65,4 @@ Ni bör ha mer en än iteration, välj om ni vill ha sprintar eller köra Kanban
 
 ## Styling
 
-Försök att arbeta med så mycket styling ni hinner. Det är en rolig uppgift att ha med i ett portfolio framöver. Se till att era animationer är subtila. Arbeta med hero-images, kanske med lite video/ljud. Och skapa en bra struktur mer er scss redan från början. 
-
+Försök att arbeta med så mycket styling ni hinner. Det är en rolig uppgift att ha med i ett portfolio framöver. Se till att era animationer är subtila. Arbeta med hero-images, kanske med lite video/ljud. Och skapa en bra struktur mer er scss redan från början.

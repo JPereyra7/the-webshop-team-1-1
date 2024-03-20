@@ -1,0 +1,181 @@
+@use "mixins" as m;
+@import "../scss/variables";
+
+.cartImg {
+  // background-color: green;
+  width: 50px;
+  height: 50px;
+}
+
+#cart {
+  color: $black-bg;
+  box-shadow: 10px 10px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 80vw;
+  background-color: $search-bgcolor;
+  opacity: 0.90;
+  display: grid;
+  grid-template-rows: 50px 1fr 60px 60px;
+  border-left: $secondary-black-border;
+  display: none;
+  z-index: 2;
+    #cartItems{
+      overflow: scroll;
+    }
+  @include m.tablet{
+    width: 50vw;
+  }
+  @include m.desktop{
+    width: 30vw;
+  }
+
+  /* Initially hide the cart */
+  .cartH3 {
+    margin: 10px;
+    font-size: 1.3em;
+  }
+
+}
+
+.cart-plant-image {
+  width: 20%;
+}
+
+#cartContent {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  align-items: center;
+  // border-bottom: $secondary-black-border;
+  // border-top: $secondary-black-border;
+  padding: 10px 5px;
+}
+
+#productContent {
+  display: flex;
+  justify-content: space-between;
+}
+
+#goToCheckoutBtn {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+
+  .cartButtons {
+    width: 45%;
+    height: 80%;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+    background-color: $black-bg;
+    border: none;
+    border-radius: 10px;
+    color: $link-color;
+    box-shadow: $expert-button-shadow;
+
+    &:hover{
+      transition: 0.6s;
+      background-color: $search-bgcolor;
+      box-shadow: $search-suggestion-shdw;
+      color: $black-bg;
+      border: $black-border;
+    }
+  }
+
+}
+
+#amount {
+  display: flex;
+  justify-content: space-between;
+  border-top: $black-border;
+  margin: 10px;
+}
+
+.itemPrice {
+  padding: 10px;
+  margin-left: auto;
+  font-weight: bold;
+}
+
+.itemQuantity {
+  padding: 10px;
+  margin-left: auto;
+  font-size: smaller;
+  font-weight: bold;
+  // border-bottom: $black-border;
+
+  .cartBtnQuantity {
+    width: 20px;
+    height: 20px;
+    border-color: $black-bg;
+    border-radius: 10px;
+    background-color: $black-bg;
+    color: $link-color;
+    box-shadow: $expert-button-shadow;
+    &:active{
+      background-color: $link-color;
+      color: $black-bg;
+      box-shadow: $expert-button-hover-shadow;
+    }
+  }
+}
+
+#cart.show {
+  display: grid;
+}
+
+.itemContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  border-bottom: $seventh-border-color;
+}
+
+.itemName {
+  font-size: 1.3em;
+}
+
+//Container for image & name in cart
+.imageNameContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2.5em;
+}
+
+//Container for quantity & price in cart
+.quantityPriceContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+.quantityButtonsContainer {
+  display: flex;
+  gap: 0.5em;
+  margin-right: 10px;
+}
+
+.incrementButton, .decrementButton {
+  padding: 0.7px;
+  border-radius: 5px;
+  width: 25px;
+  color: $link-color;
+  background-color: $black-bg;
+  box-shadow: $expert-button-shadow;
+  margin-bottom: 25px;
+
+  &:hover {
+    transition: 0.5s;
+    background-color: $link-color;
+    border: $black-border;
+    color: $black-bg;
+  }
+}
+
+#totalAmount {
+  font-weight: 900;
+}
+

@@ -1,0 +1,122 @@
+@use "mixins" as m;
+@import "./variables";
+.hamburger-menu {
+    cursor: pointer;
+    padding: 10px;
+    background-color: $primary-header-bgcolor;
+    color: $search-bgcolor;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hamburger-icon {
+    width: 40px;
+    height: 3px;
+    background-color: $search-bgcolor;
+    margin: 6px 0;
+  }
+
+.hamburgerIcon {
+  max-width: 200%;
+  margin-left: 15px;
+}
+
+.navigation-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include m.tablet{
+    margin-top: 20%;
+  }
+  @include m.desktop{
+    margin-top: 10%;
+  }
+}
+
+.navigation-menu li {
+  margin: 5px 0;
+  font-family: 'Cabin', sans-serif;
+}
+
+.navigation-menu a {
+  color: $third-paragraph-color;
+  font-size: 28px;
+  border-bottom: $third-border-color;
+  text-decoration: none;
+
+  &:hover {
+    color: $hover-hamburgerLink-color;
+    text-decoration: underline;
+  }
+}
+
+.close-button {
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 54px;
+  color: $hover-hamburgerLink-color;
+}
+
+.close-button:hover {
+  color: $hover-closeButton-color;
+}
+
+.navigation-menu {
+  width: 100%;
+  height: 100vh;
+  background-color: $hover-closeButton-color;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  padding-top: 50px;
+  opacity: 95%;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+  @include m.desktop{
+    width: 30vw;
+    height: 80vh;
+    border-radius: 10px;
+    border: $third-border-color;
+  }
+}
+
+.navList {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.navList li {
+  margin: 5px 0;
+  font-family: 'Cabin', sans-serif;
+}
+
+.navList a {
+  color: $navlist-color;
+  font-size: 24px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 23px;
+  white-space: nowrap;
+
+  &:hover {
+    color: $hover-hamburgerLink-color;
+    text-decoration: underline;
+  }
+}
+
+.show {
+  display: block;
+  transform: translateX(0);
+}

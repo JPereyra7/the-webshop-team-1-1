@@ -1,0 +1,156 @@
+@import url(/src/scss/style.scss);
+@import url(/src/scss/hamburger.scss);
+@import url(/src/scss/cart.scss);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.4;
+}
+
+#plantCare p {
+  text-align: left;
+}
+
+#productPlantImg {
+  margin: 20px 0 20px 0;
+  background-color: aquamarine;
+  width: 90vw;
+}
+@media screen and (min-width: 1200px) {
+  #productPlantImg {
+    width: 40vw;
+  }
+}
+
+.centerContainer {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#plantNameAndPrice {
+  text-align: center;
+}
+#plantNameAndPrice .italicText {
+  color: rgb(202, 165, 126);
+}
+@media screen and (min-width: 768px) {
+  #plantNameAndPrice {
+    margin-top: -20px;
+    margin-bottom: 20px;
+  }
+}
+
+#plantCare {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+}
+
+#counter {
+  display: flex;
+  gap: 5px;
+}
+#counter .numberBtn {
+  width: 30px;
+  border-radius: 100px;
+  border-color: #000000;
+  background-color: white;
+  padding: 0 5px;
+  font-size: 1.1rem;
+}
+#counter #valueOfPlant {
+  padding: 10px;
+  box-shadow: inset 0px 0px 6px -3px rgba(0, 0, 0, 0.7490196078);
+  border-radius: 5px;
+}
+
+#addToCart {
+  padding: 10px 25px;
+  margin-top: 5px;
+  background-color: #c8bfa4;
+  color: #fff;
+  border-radius: 7px;
+  border: none;
+  font-size: 1.1rem;
+  box-shadow: rgba(50, 50, 93, 0.2509803922) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3019607843) 0px 3px 7px -3px;
+}
+#addToCart:hover {
+  transition: 0.7s;
+  color: #c8bfa4;
+  background-color: #000000;
+  border: 1px solid #575035;
+  box-shadow: rgba(50, 50, 93, 0.2509803922) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3019607843) 0px 3px 7px -3px;
+}
+#addToCart:active {
+  box-shadow: rgba(50, 50, 93, 0.2509803922) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3019607843) 0px 3px 7px -3px;
+  transform: translateY(4px);
+}
+@media screen and (min-width: 1200px) {
+  #addToCart {
+    margin-bottom: 9px;
+    margin-left: 10px;
+  }
+}
+
+#addToCartContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+@media screen and (min-width: 1200px) {
+  #addToCartContainer {
+    width: 87vw;
+    flex-direction: row;
+    margin-top: -100px;
+    justify-content: end;
+  }
+}
+
+.borderBottom {
+  border-bottom: 1px solid #575035;
+  padding-bottom: 10px;
+}
+
+#infoContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  margin-bottom: 50px;
+}
+#infoContainer .marginTop {
+  margin-top: 10px;
+}
+#infoContainer #listInfoDelivery {
+  list-style-type: circle;
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 768px) {
+  #infoContainer {
+    width: 50vw;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #productPage {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+  }
+  .centerContainer {
+    width: 50vw;
+  }
+  #plantName {
+    font-size: 2em;
+  }
+}/*# sourceMappingURL=product.css.map */

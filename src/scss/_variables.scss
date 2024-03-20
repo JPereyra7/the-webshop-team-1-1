@@ -1,0 +1,55 @@
+//---------------------- Breakpoints ------------------------------
+$tablet: 768px;
+$desktop: 1200px;
+
+// --------------------- Font Color --------------------------------
+    $header-color: #000000;
+    $primary-paragraph-color: #808080;
+    $secondary-paragraph-color: #5F5744;
+    $third-paragraph-color: #272727;
+    $fourth-paragraph-color: #CCCCCC;
+    $primary-button-font-color: antiquewhite;
+    $primary-footer-header: #514B19;
+    $link-color: #fff;
+    $hover-black: black;
+    $hover-hamburgerLink-color: #3d3d3d;
+    $hover-closeButton-color: #e2e2e2;
+    $navlist-color: #141414;
+    $item-hover: 292929;
+    $fifth-paragraph-color: #7b7b7b;
+    $label-color: #888;
+    
+
+// --------------------- Background Colors --------------------------------
+    $primary-header-bgcolor: #d5caaa;
+    $search-bgcolor: white;
+    $primary-button-color: #c2af7a; 
+    $primary-button-hover: #b39a7b; 
+    $search-hover-color: #f8f0db55;
+    $footer-primary-bgcolor: #c8bfa4;
+    $black-bg: #000000;
+    $secondary-header-bgcolor: #191919;
+    $container-bg-color: #d8d2ba82;
+    $expert-button-hover-bg: #f1f1f1;
+
+    // --------------------- Borders --------------------------------
+    $white-border-color: 1px solid #ccc;
+    $grey-border-color: 1px solid grey;
+    $black-border: 0.5px solid rgba(0, 0, 0, 0.192);
+    $secondary-black-border: 1px solid black;
+    $secondary-white-color: 1px solid white;
+    $third-border-color: 1px solid #575035;
+    $fourth-border-color: 1px solid #c5c3c3;
+    $fifth-border-color: 1px solid #f1f1f1;
+    $sixth-border-color: 1px solid #634c19;
+    $seventh-border-color: 1px solid gray;
+    $contactForm-border-color: 1px solid #27272776;
+
+    // --------------------- Shadows --------------------------------
+    $search-suggestion-shdw: 5px 2px 4px rgba(0, 0, 0, 0.1);
+    $container-shadow: #32325d40 0px 6px 12px -2px, #0000004d 0px 3px 7px -3px;
+    $plant-value-shadow: inset 0px 0px 6px -3px #000000bf;
+    $plant-value-mozShadow: inset 0px 0px 6px -3px rgba(0, 0, 0, 0.75);
+    $expert-button-shadow: #32325d 2px 2px 5px -12px, #000000d8 0px 3px 7px -3px;;
+    $expert-button-hover-shadow: rgba(50, 50, 93, 0.777) 0px 6px 12px -2px, rgba(0, 0, 0, 0.852) 0px 3px 7px -3px;
+    $card-container-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
