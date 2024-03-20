@@ -6,7 +6,9 @@
 
 Figma file: https://www.figma.com/file/yEqrQUT8xRUE3apuWvDIF2/V%C3%A4xthuset?type=design&node-id=0%3A1&mode=design&t=ypvnPARxVolfRuSr-1
 
+
 Miro Board: https://miro.com/app/board/uXjVN8yC63I=/?share_link_id=891754390968
+
 
 || Frontend Stack ||
 
